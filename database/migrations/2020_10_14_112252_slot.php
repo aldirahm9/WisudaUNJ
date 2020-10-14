@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class Slot extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('slot', function (Blueprint $table) {
             $table->id();
-            $table->string('nrm')->unique();
-            $table->string('password');
-            $table->boolean('role');
-            $table->rememberToken();
+            $table->date('tanggal');
+            $table->integer('kapasitas');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('slot');
     }
 }

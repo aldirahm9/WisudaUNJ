@@ -199,6 +199,31 @@
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
+                <label class="form-label" for="signinSrFakultas">Fakultas</label>
+                <select class="custom-select">
+                    <option selected>Fakultas</option>
+                    <option value="fmipa">FMIPA</option>
+                    <option value="fis">FIS</option>
+                    <option value="fbs">FBS</option>
+                    <option value="ft">FT</option>
+                    <option value="fio">FIO</option>
+                    <option value="fpp">Psikologi</option>
+                  </select>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="js-form-message form-group">
+                <label class="form-label" for="signinSrTanggal">Tanggal</label>
+                <input type="datetime" class="form-control" name="tanggal" id="signinSrTanggal" placeholder="asd" aria-label="NAMA" required
+                       data-msg="Nama Mahasiswa harus diisi"
+                       data-error-class="u-has-error"
+                       data-success-class="u-has-success">
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="js-form-message form-group">
                 <label class="form-label" for="signinSrPassword">
                   <span class="d-flex justify-content-between align-items-center">
                     Password
@@ -214,19 +239,14 @@
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrFakultas">Fakultas</label>
-                <input  class="form-control" name="fakultas" id="signinSrFakultas" placeholder="asd" aria-label="NAMA" required
-                       data-msg="Nama Mahasiswa harus diisi"
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-              <!-- End Form Group -->
-
-              <!-- Form Group -->
-              <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrTanggal">Tanggal</label>
-                <input type="datetime" class="form-control" name="fakultas" id="signinSrFakultas" placeholder="asd" aria-label="NAMA" required
-                       data-msg="Nama Mahasiswa harus diisi"
+                <label class="form-label" for="signinSrConfirmPassword">
+                  <span class="d-flex justify-content-between align-items-center">
+                    Confirm Password
+                    {{-- <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a> --}}
+                  </span>
+                </label>
+                <input type="password" class="form-control" name="password_confirmation" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
+                       data-msg="password tidak sama"
                        data-error-class="u-has-error"
                        data-success-class="u-has-success">
               </div>

@@ -87,14 +87,14 @@
           <!-- Navigation -->
           <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
             <ul class="navbar-nav u-header__navbar-nav">
-              
+
             </ul>
           </div>
           <!-- End Navigation -->
 
           <!-- Last Item -->
           <div class="u-header-center-aligned-nav__col u-header-center-aligned-nav__col-last-item">
-            <a class="btn btn-sm btn-unj transition-3d-hover" href="#" target="_blank">
+            <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('login')}}" target="_blank">
               Daftar
             </a>
           </div>

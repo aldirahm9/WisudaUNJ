@@ -67,7 +67,7 @@
 
           <!-- Last Item -->
           <div class="u-header-center-aligned-nav__col u-header-center-aligned-nav__col-last-item">
-            <a class="btn btn-sm btn-primary transition-3d-hover" href="{{route('login')}}" target="_blank">
+            <a class="btn btn-sm btn-primary transition-3d-hover" href="{{route('register')}}" target="_blank">
               Daftar
             </a>
           </div>

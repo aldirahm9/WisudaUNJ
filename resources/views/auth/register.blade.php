@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
   <!-- Title -->
-  <title>Signup Simple | Front - Responsive Website Template</title>
+  <title>Register - Photoshoot Wisuda UNJ</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="../../favicon.ico">
+  <link rel="shortcut icon" href="{{ asset('logounj.png') }}">
 
   <!-- Google Fonts -->
   <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/fontawesome-all.min.css">
-  <link rel="stylesheet" href="../../assets/vendor/animate.css/animate.min.css">
-  <link rel="stylesheet" href="../../assets/vendor/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="{{asset('front/vendor/font-awesome/css/fontawesome-all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('front/vendor/animate.css/animate.min.css')}}">
+  <link rel="stylesheet" href="{{asset('front/vendor/slick-carousel/slick/slick.css')}}">
 
   <!-- CSS Front Template -->
-  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
 </head>
 <body>
   <!-- ========== HEADER ========== -->
@@ -29,7 +29,7 @@
       <div id="logoAndNav" class="container-fluid">
         <!-- Nav -->
         <nav class="navbar navbar-expand u-header__navbar">
-          <!-- White Logo -->
+          {{-- <!-- White Logo -->
           <a class="d-none d-lg-flex navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-text-white" href="../home/index.html" aria-label="Front">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
               <path fill="#E1E4EA" opacity=".65" d="M23,41.1L23,41.1c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C41,33,32.9,41.1,23,41.1z"/>
@@ -51,15 +51,9 @@
             </svg>
             <span class="d-inline-block u-header__navbar-brand-text">Front</span>
           </a>
-          <!-- End Default Logo -->
+          <!-- End Default Logo --> --}}
 
-          <!-- Button -->
-          <div class="ml-auto">
-            <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
-              Buy Now
-            </a>
-          </div>
-          <!-- End Button -->
+
         </nav>
         <!-- End Nav -->
       </div>
@@ -122,7 +116,7 @@
           <!-- End Testimonials Carousel Main -->
 
           <!-- Testimonials Carousel Pagination -->
-          <div id="testimonialsNavPagination" class="js-slick-carousel u-slick u-slick--transform-off u-slick--pagination-modern u-slick--transform-off mx-auto"
+          <div id="testimonialsNavPagination" class="js-slick-carousel u-slick u-slick--transform-off u-slick--pagination-modern mx-auto"
                data-infinite="true"
                data-autoplay="true"
                data-speed="5000"
@@ -133,19 +127,19 @@
                data-nav-for="#testimonialsNavMain">
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="front/img/100x100/img1.jpg" alt="Image Description">
               </div>
             </div>
 
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img3.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="front/img/100x100/img3.jpg" alt="Image Description">
               </div>
             </div>
 
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img2.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="front/img/100x100/img2.jpg" alt="Image Description">
               </div>
             </div>
           </div>
@@ -156,13 +150,13 @@
             <h4 class="h6 text-white-70 mb-3">Front partners</h4>
             <div class="d-flex justify-content-center">
               <div class="mx-4">
-                <img class="u-clients" src="../../assets/svg/clients-logo/slack-white.svg" alt="Image Description">
+                <img class="u-clients" src="front/svg/clients-logo/slack-white.svg" alt="Image Description">
               </div>
               <div class="mx-4">
-                <img class="u-clients" src="../../assets/svg/clients-logo/google-white.svg" alt="Image Description">
+                <img class="u-clients" src="front/svg/clients-logo/google-white.svg" alt="Image Description">
               </div>
               <div class="mx-4">
-                <img class="u-clients" src="../../assets/svg/clients-logo/spotify-white.svg" alt="Image Description">
+                <img class="u-clients" src="front/svg/clients-logo/spotify-white.svg" alt="Image Description">
               </div>
             </div>
           </div>
@@ -174,19 +168,20 @@
         <div class="row no-gutters">
           <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
             <!-- Form -->
-            <form class="js-validate mt-5">
+            <form class="js-validate mt-5" action="{{ route('register') }}" method="POST" id="formRegister">
+                {{csrf_field()}}
               <!-- Title -->
               <div class="mb-7">
-                <h1 class="h3 text-primary font-weight-normal mb-0">Welcome to <span class="font-weight-semi-bold">Front</span></h1>
-                <p>Fill out the form to get started.</p>
+                <h2 class="h3 text-primary font-weight-normal mb-0">Welcome <span class="font-weight-semi-bold">back</span></h2>
+                <p>Register to manage your account.</p>
               </div>
               <!-- End Title -->
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrEmail">Email address</label>
-                <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="Email address" aria-label="Email address" required
-                       data-msg="Please enter a valid email address."
+                <label class="form-label" for="signinSrNama">Nama</label>
+                <input  class="form-control" name="nama" id="signinSrNama" placeholder="Nama Mahasiswa" aria-label="NAMA" required
+                       data-msg="Nama Mahasiswa harus diisi"
                        data-error-class="u-has-error"
                        data-success-class="u-has-success">
               </div>
@@ -194,7 +189,22 @@
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrPassword">Password</label>
+                <label class="form-label" for="signinSrNRM">NRM</label>
+                <input  class="form-control" name="nrm" id="signinSrNRM" placeholder="NRM" aria-label="NRM" required
+                       data-msg="Please enter a valid NRM."
+                       data-error-class="u-has-error"
+                       data-success-class="u-has-success">
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div class="js-form-message form-group">
+                <label class="form-label" for="signinSrPassword">
+                  <span class="d-flex justify-content-between align-items-center">
+                    Password
+                    {{-- <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a> --}}
+                  </span>
+                </label>
                 <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
                        data-msg="Your password is invalid. Please try again."
                        data-error-class="u-has-error"
@@ -204,40 +214,26 @@
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrConfirmPassword">Confirm password</label>
-                <input type="password" class="form-control" name="confirmPassword" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
-                       data-msg="Password does not match the confirm password."
+                <label class="form-label" for="signinSrFakultas">Fakultas</label>
+                <input  class="form-control" name="fakultas" id="signinSrFakultas" placeholder="asd" aria-label="NAMA" required
+                       data-msg="Nama Mahasiswa harus diisi"
                        data-error-class="u-has-error"
                        data-success-class="u-has-success">
               </div>
               <!-- End Form Group -->
 
-              <!-- Checkbox -->
-              <div class="js-form-message mb-5">
-                <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
-                  <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox" required
-                         data-msg="Please accept our Terms and Conditions."
-                         data-error-class="u-has-error"
-                         data-success-class="u-has-success">
-                  <label class="custom-control-label" for="termsCheckbox">
-                    <small>
-                      I agree to the
-                      <a class="link-muted" href="../pages/terms.html">Terms and Conditions</a>
-                    </small>
-                  </label>
-                </div>
+              <!-- Form Group -->
+              <div class="js-form-message form-group">
+                <label class="form-label" for="signinSrTanggal">Tanggal</label>
+                <input type="datetime" class="form-control" name="fakultas" id="signinSrFakultas" placeholder="asd" aria-label="NAMA" required
+                       data-msg="Nama Mahasiswa harus diisi"
+                       data-error-class="u-has-error"
+                       data-success-class="u-has-success">
               </div>
-              <!-- End Checkbox -->
+              <!-- End Form Group -->
 
-              <!-- Button -->
-              <div class="row align-items-center mb-5">
-                <div class="col-5 col-sm-6">
-                  <span class="small text-muted">Already have an account?</span>
-                  <a class="small" href="login.html">Login</a>
-                </div>
-
-                <div class="col-7 col-sm-6 text-right">
-                  <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
+                <div class="col-6 text-right">
+                  <button type="submit" class="btn btn-primary transition-3d-hover">Daftar</button>
                 </div>
               </div>
               <!-- End Button -->
@@ -252,19 +248,19 @@
   <!-- ========== END MAIN ========== -->
 
   <!-- JS Global Compulsory -->
-  <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
-  <script src="../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
-  <script src="../../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="{{asset('front/vendor/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{{asset('front/vendor/jquery-migrate/dist/jquery-migrate.min.js')}}"></script>
+  <script src="{{asset('front/vendor/popper.js/dist/umd/popper.min.js')}}"></script>
+  <script src="{{asset('front/vendor/bootstrap/bootstrap.min.js')}}"></script>
 
   <!-- JS Implementing Plugins -->
-  <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="../../assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="{{asset('front/vendor/jquery-validation/dist/jquery.validate.min.js')}}"></script>
+  <script src="{{asset('front/vendor/slick-carousel/slick/slick.js')}}"></script>
 
   <!-- JS Front -->
-  <script src="../../assets/js/hs.core.js"></script>
-  <script src="../../assets/js/components/hs.validation.js"></script>
-  <script src="../../assets/js/components/hs.slick-carousel.js"></script>
+  <script src="{{asset('front/js/hs.core.js')}}"></script>
+  <script src="{{asset('front/js/components/hs.validation.js')}}"></script>
+  <script src="{{asset('front/js/components/hs.slick-carousel.js')}}"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -273,13 +269,7 @@
       $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 
       // initialization of form validation
-      $.HSCore.components.HSValidation.init('.js-validate', {
-        rules: {
-          confirmPassword: {
-            equalTo: '#signupPassword'
-          }
-        }
-      });
+      $.HSCore.components.HSValidation.init('.js-validate');
     });
   </script>
 </body>

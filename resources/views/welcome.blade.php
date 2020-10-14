@@ -25,6 +25,16 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
+
+  <style>
+      .bg-unj {
+          background: #006F45 !important;
+      }
+
+      .text-unj {
+          color: #006f45 !important;
+      }
+  </style>
 </head>
 <body>
   <!-- ========== HEADER ========== -->
@@ -67,7 +77,7 @@
 
           <!-- Last Item -->
           <div class="u-header-center-aligned-nav__col u-header-center-aligned-nav__col-last-item">
-            <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
+            <a class="btn btn-sm btn-unj transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
               Daftar
             </a>
           </div>
@@ -95,7 +105,7 @@
            data-nav-for="#heroNavThumb">
         <div class="js-slide">
           <!-- Slide #1 -->
-          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url({{ asset('front/img/1920x800/img2.jpg') }});">
+          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url({{ asset('img/wisuda1.jpg') }});">
             <div class="container space-3 space-top-md-5 space-top-lg-3">
               <div class="row">
                 <div class="col-md-8 col-lg-8 position-relative">
@@ -106,7 +116,7 @@
                   <h1 class="text-white display-4 font-size-md-down-5 mb-0"
                       data-scs-animation-in="fadeInUp"
                       data-scs-animation-delay="200">
-                    Bukan <span class="font-weight-semi-bold">wisuda</span> biasa
+                    #wisuda<span class="font-weight-semi-bold">Digital</span>UNJ
                   </h1>
                 </div>
               </div>
@@ -117,18 +127,18 @@
 
         <div class="js-slide">
           <!-- Slide #2 -->
-          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url({{ asset('front/img/1920x800/img3.jpg') }});">
+          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url({{ asset('img/wisuda2.jpg') }});">
             <div class="container space-3 space-top-md-5 space-top-lg-3">
               <div class="row">
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md-8 col-lg-8">
                   <span class="d-block h4 text-white font-weight-light mb-2"
                         data-scs-animation-in="fadeInUp">
-                    It is an
+                    Wisuda UNJ 2020
                   </span>
                   <h2 class="text-white display-4 font-size-md-down-5 mb-0"
                       data-scs-animation-in="fadeInUp"
                       data-scs-animation-delay="200">
-                    <span class="font-weight-semi-bold">Easy</span> business with Front template
+                    #wisuda<span class="font-weight-semi-bold">Bareng</span>UNJ
                   </h2>
                 </div>
               </div>
@@ -159,19 +169,19 @@
                 <div class="col-lg-4">
                   <h3 class="h5 text-muted">
                     <strong class="d-block">01.</strong>
-                    <span class="d-block text-primary">Advanced editing</span>
+                    <span class="d-block text-unj">Fancy Photobooth</span>
                   </h3>
-                  <p class="mb-0">Modify any aspect of your website or pages with Front.</p>
+                  <p class="mb-0">Jangan lewatkan momen wisuda mu tanpa berfoto dengan keluarga dan kerabat.</p>
                 </div>
               </div>
             </div>
 
-            <div class="w-100 h-100 d-none d-lg-inline-block bg-primary u-hero-v1__last">
+            <div class="w-100 h-100 d-none d-lg-inline-block bg-unj u-hero-v1__last">
               <div class="u-hero-v1__last-inner">
                 <h3 class="h5 text-white">
-                  <strong class="u-hero-v1__last-next">Next:</strong> Fully responsive
+                  <strong class="u-hero-v1__last-next text-success">Next:</strong> Drive Thru
                 </h3>
-                <p class="text-white-70 mb-0">Let visitors to view your content from their choice of device.</p>
+                <p class="text-white-70 mb-0">Tetap menjaga diri dari virus corona dengan mengutamakan protokol kesehatan.</p>
               </div>
             </div>
           </div>
@@ -186,9 +196,9 @@
                 <div class="col-lg-4">
                   <h3 class="h5 text-muted">
                     <strong class="d-block">02.</strong>
-                    <span class="d-block text-danger">Fully responsive</span>
+                    <span class="d-block text-danger">Drive Thru</span>
                   </h3>
-                  <p class="mb-0">Let visitors to view your content from their choice of device.</p>
+                  <p class="mb-0">Tetap menjaga diri dari virus corona dengan mengutamakan protokol kesehatan.</p>
                 </div>
               </div>
             </div>
@@ -196,9 +206,9 @@
             <div class="w-100 h-100 d-none d-lg-inline-block bg-danger u-hero-v1__last">
               <div class="u-hero-v1__last-inner">
                 <h3 class="h5 text-white">
-                  <strong class="u-hero-v1__last-prev">Prev:</strong> Advanced editing
+                  <strong class="u-hero-v1__last-prev">Prev:</strong> Fancy Photobooth
                 </h3>
-                <p class="text-white-70 mb-0">Modify any aspect of your website with Front</p>
+                <p class="text-white-70 mb-0">Jangan lewatkan momen wisuda mu tanpa berfoto dengan keluarga dan kerabat.</p>
               </div>
             </div>
           </div>

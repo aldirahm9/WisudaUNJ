@@ -16,11 +16,11 @@ class Pendaftaran extends Migration
         Schema::create('pendaftaran', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('fakultas_id');
-            $table->foreign('fakultas_id')->references('id')->on('fakultas')->onDelete('cascade');
+            // $table->foreign('fakultas_id')->references('id')->on('fakultas')->onDelete('cascade');
             $table->unsignedBigInteger('slot_id');
-            $table->foreign('slot_id')->references('id')->on('slot')->onDelete('cascade');
+            // $table->foreign('slot_id')->references('id')->on('slot')->onDelete('cascade');
             $table->string('kode_unik');
             $table->timestamps();
         });

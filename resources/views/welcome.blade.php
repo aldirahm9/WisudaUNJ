@@ -5,6 +5,23 @@
   <!-- Title -->
   <title>Photoshoot Wisuda UNJ</title>
 
+  <meta name="title" content="Photoshoot Wisuda UNJ">
+  <meta name="description" content="Udah wisudanya? Skuy poto-poto dulu di kampus bareng pacar, gebetan, abang, empok, encing, enyak, babeh.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="Photoshoot Wisuda UNJ">
+  <meta property="og:description" content="Udah wisudanya? Skuy poto-poto dulu di kampus bareng pacar, gebetan, abang, empok, encing, enyak, babeh.">
+  <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="Photoshoot Wisuda UNJ">
+  <meta property="twitter:description" content="Udah wisudanya? Skuy poto-poto dulu di kampus bareng pacar, gebetan, abang, empok, encing, enyak, babeh.">
+  <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,6 +42,16 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
+
+  <style>
+      .bg-unj {
+          background: #006F45 !important;
+      }
+
+      .text-unj {
+          color: #006f45 !important;
+      }
+  </style>
 </head>
 <body>
   <!-- ========== HEADER ========== -->
@@ -67,7 +94,7 @@
 
           <!-- Last Item -->
           <div class="u-header-center-aligned-nav__col u-header-center-aligned-nav__col-last-item">
-            <a class="btn btn-sm btn-primary transition-3d-hover" href="{{route('register')}}" target="_blank">
+            <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('register')}}" target="_blank">
               Daftar
             </a>
           </div>
@@ -95,7 +122,7 @@
            data-nav-for="#heroNavThumb">
         <div class="js-slide">
           <!-- Slide #1 -->
-          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url({{ asset('front/img/1920x800/img2.jpg') }});">
+          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url({{ asset('img/wisuda1.jpg') }});">
             <div class="container space-3 space-top-md-5 space-top-lg-3">
               <div class="row">
                 <div class="col-md-8 col-lg-8 position-relative">
@@ -106,7 +133,7 @@
                   <h1 class="text-white display-4 font-size-md-down-5 mb-0"
                       data-scs-animation-in="fadeInUp"
                       data-scs-animation-delay="200">
-                    Bukan <span class="font-weight-semi-bold">wisuda</span> biasa
+                    #wisuda<span class="font-weight-semi-bold">Digital</span>UNJ
                   </h1>
                 </div>
               </div>
@@ -117,18 +144,18 @@
 
         <div class="js-slide">
           <!-- Slide #2 -->
-          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url({{ asset('front/img/1920x800/img3.jpg') }});">
+          <div class="d-lg-flex align-items-lg-center u-hero-v1__main" style="background-image: url({{ asset('img/wisuda2.jpg') }});">
             <div class="container space-3 space-top-md-5 space-top-lg-3">
               <div class="row">
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md-8 col-lg-8">
                   <span class="d-block h4 text-white font-weight-light mb-2"
                         data-scs-animation-in="fadeInUp">
-                    It is an
+                    Wisuda UNJ 2020
                   </span>
                   <h2 class="text-white display-4 font-size-md-down-5 mb-0"
                       data-scs-animation-in="fadeInUp"
                       data-scs-animation-delay="200">
-                    <span class="font-weight-semi-bold">Easy</span> business with Front template
+                    #wisuda<span class="font-weight-semi-bold">Bareng</span>UNJ
                   </h2>
                 </div>
               </div>
@@ -159,19 +186,19 @@
                 <div class="col-lg-4">
                   <h3 class="h5 text-muted">
                     <strong class="d-block">01.</strong>
-                    <span class="d-block text-primary">Advanced editing</span>
+                    <span class="d-block text-unj">Fancy Photobooth</span>
                   </h3>
-                  <p class="mb-0">Modify any aspect of your website or pages with Front.</p>
+                  <p class="mb-0">Jangan lewatkan momen wisuda mu tanpa berfoto dengan keluarga dan kerabat.</p>
                 </div>
               </div>
             </div>
 
-            <div class="w-100 h-100 d-none d-lg-inline-block bg-primary u-hero-v1__last">
+            <div class="w-100 h-100 d-none d-lg-inline-block bg-unj u-hero-v1__last">
               <div class="u-hero-v1__last-inner">
                 <h3 class="h5 text-white">
-                  <strong class="u-hero-v1__last-next">Next:</strong> Fully responsive
+                  <strong class="u-hero-v1__last-next text-success">Next:</strong> Drive Thru
                 </h3>
-                <p class="text-white-70 mb-0">Let visitors to view your content from their choice of device.</p>
+                <p class="text-white-70 mb-0">Tetap menjaga diri dari virus corona dengan mengutamakan protokol kesehatan.</p>
               </div>
             </div>
           </div>
@@ -186,9 +213,9 @@
                 <div class="col-lg-4">
                   <h3 class="h5 text-muted">
                     <strong class="d-block">02.</strong>
-                    <span class="d-block text-danger">Fully responsive</span>
+                    <span class="d-block text-danger">Drive Thru</span>
                   </h3>
-                  <p class="mb-0">Let visitors to view your content from their choice of device.</p>
+                  <p class="mb-0">Tetap menjaga diri dari virus corona dengan mengutamakan protokol kesehatan.</p>
                 </div>
               </div>
             </div>
@@ -196,9 +223,9 @@
             <div class="w-100 h-100 d-none d-lg-inline-block bg-danger u-hero-v1__last">
               <div class="u-hero-v1__last-inner">
                 <h3 class="h5 text-white">
-                  <strong class="u-hero-v1__last-prev">Prev:</strong> Advanced editing
+                  <strong class="u-hero-v1__last-prev">Prev:</strong> Fancy Photobooth
                 </h3>
-                <p class="text-white-70 mb-0">Modify any aspect of your website with Front</p>
+                <p class="text-white-70 mb-0">Jangan lewatkan momen wisuda mu tanpa berfoto dengan keluarga dan kerabat.</p>
               </div>
             </div>
           </div>
@@ -211,7 +238,7 @@
 
     <hr class="my-0">
 
-    <!-- Front in Frames Section -->
+    {{-- <!-- Front in Frames Section -->
     <div class="overflow-hidden">
       <div class="container space-2 space-md-3">
         <div class="row justify-content-between align-items-center">
@@ -747,29 +774,24 @@
     </div>
     <!-- End Blog Grid Section -->
   </main>
-  <!-- ========== END MAIN ========== -->
+  <!-- ========== END MAIN ========== --> --}}
 
   <!-- ========== FOOTER ========== -->
   <footer class="container space-top-2 space-top-md-3">
     <div class="border-bottom">
       <div class="row mb-7">
-        <div class="col-lg-3 mb-7 mb-lg-0">
+        <div class="col-lg-4 mb-7 mb-lg-0">
           <div class="d-inline-flex align-self-start flex-column h-100">
             <!-- Logo -->
             <a class="d-flex align-items-center mb-3" href="index.html" aria-label="Front">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px" height="36px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
-                <path fill="#3F7DE0" opacity=".65" d="M23,41L23,41c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18h11.3C38,5,41,8,41,11.7V23C41,32.9,32.9,41,23,41z"/>
-                <path class="fill-info" opacity=".5" d="M28,35.9L28,35.9c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18l11.3,0C43,0,46,3,46,6.6V18C46,27.9,38,35.9,28,35.9z"/>
-                <path class="fill-primary" opacity=".7" d="M18,46L18,46C8,46,0,38,0,28v0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6V28C35.9,38,27.9,46,18,46z"/>
-                <path class="fill-white" d="M17.4,34V18.3h10.2v2.9h-6.4v3.4h4.8v2.9h-4.8V34H17.4z"/>
-              </svg>
-              <span class="brand brand-primary">Front</span>
+              <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
+              <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
             </a>
             <!-- End Logo -->
 
             <!-- Country -->
             <div class="position-relative">
-              <a id="footerCountryInvoker" class="dropdown-nav-link" href="javascript:;" role="button"
+              <span id="footerCountryInvoker" class="dropdown-nav-link"
                  aria-controls="footer-country"
                  aria-haspopup="true"
                  aria-expanded="false"
@@ -782,165 +804,38 @@
                  data-unfold-hide-on-scroll="false"
                  data-unfold-animation-in="slideInUp"
                  data-unfold-animation-out="fadeOut">
-                <img class="dropdown-item-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/us.svg') }}" alt="United States Flag">
-                <span>United States</span>
-              </a>
-
-              <div id="footer-country" class="dropdown-menu dropdown-unfold dropdown-card dropdown-menu-bottom" aria-labelledby="footerCountryInvoker">
-                <div class="card">
-                  <!-- Body -->
-                  <div class="card-body list-group list-group-flush list-group-borderless p-5">
-                    <h4 class="h6 font-weight-semi-bold">Front available in</h4>
-
-                    <div class="row">
-                      <div class="col-6">
-                        <!-- List Group -->
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/au.svg') }}" alt="Australia Flag">
-                          Australia
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/at.svg') }}" alt="Austria Flag">
-                          Austria
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/be.svg') }}" alt="Belgium Flag">
-                          Belgium
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/ca.svg') }}" alt="Canada Flag">
-                          Canada
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/dk.svg') }}" alt="Denmark Flag">
-                          Denmark
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/fi.svg') }}" alt="Finland Flag">
-                          Finland
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/fr.svg') }}" alt="France Flag">
-                          France
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/de.svg') }}" alt="Germany Flag">
-                          Germany
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/nl.svg') }}" alt="Netherlands Flag">
-                          Netherlands
-                        </a>
-                        <!-- End List Group -->
-                      </div>
-
-                      <div class="col-6">
-                        <!-- List Group -->
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/nz.svg') }}" alt="New Zealand Flag">
-                          New Zealand
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/no.svg') }}" alt="Norway Flag">
-                          Norway
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/pt.svg') }}" alt="PortugalPREVIEW Flag">
-                          Portugal
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/sg.svg') }}" alt="Singapore Flag">
-                          Singapore
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/es.svg') }}" alt="Spain Flag">
-                          Spain
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/se.svg') }}" alt="Sweden Flag">
-                          Sweden
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/ch.svg') }}" alt="Switzerland Flag">
-                          Switzerland
-                        </a>
-                        <a class="list-group-item list-group-item-action" href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/gb.svg') }}" alt="United Kingdom Flag">
-                          UK
-                        </a>
-                        <a class="list-group-item list-group-item-action active " href="#">
-                          <img class="list-group-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/us.svg') }}" alt="United States Flag">
-                          US
-                        </a>
-                        <!-- End List Group -->
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Body -->
-
-                  <!-- Footer -->
-                  <a class="card-footer card-bg-light p-5" href="#">
-                    <span class="d-block text-muted mb-1">More countries coming soon.</span>
-                    <small class="d-block">Signup to get notified <span class="fas fa-arrow-right small"></span></small>
-                  </a>
-                  <!-- End Footer -->
-                </div>
-              </div>
+                <img class="dropdown-item-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/id.svg') }}" alt="United States Flag">
+                <span>Indonesia</span>
+              </span>
             </div>
             <!-- End Country -->
           </div>
         </div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 mb-md-0">
-          <h4 class="h6 font-weight-semi-bold">Account</h4>
+        <div class="col-sm-4 col-md-3 col-lg-4 mb-4 mb-md-0">
+          <h4 class="h6 font-weight-semi-bold">Website Resmi UNJ</h4>
 
           <!-- List Group -->
           <ul class="list-group list-group-flush list-group-borderless mb-0">
-            <li><a class="list-group-item list-group-item-action" href="../account/dashboard.html">Account</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../account/my-tasks.html">My tasks</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../account/projects.html">Projects</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../account/invite-friends.html">Invite friends</a></li>
+            <li><a class="list-group-item list-group-item-action" href="http://www.unj.ac.id/">Beranda</a></li>
+            <li><a class="list-group-item list-group-item-action" href="http://www.unj.ac.id/category/berita/">Berita</a></li>
+            <li><a class="list-group-item list-group-item-action" href="http://siakad.unj.ac.id/">Siakad</a></li>
+            <li><a class="list-group-item list-group-item-action" href="http://journal.unj.ac.id/">Jurnal</a></li>
           </ul>
           <!-- End List Group -->
         </div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 mb-md-0">
-          <h4 class="h6 font-weight-semi-bold">Company</h4>
-
-          <!-- List Group -->
-          <ul class="list-group list-group-flush list-group-borderless mb-0">
-            <li><a class="list-group-item list-group-item-action" href="../pages/about-agency.html">About</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../pages/services-agency.html">Services</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../pages/careers.html">Careers</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../blog/grid-right-sidebar.html">Blog</a></li>
-          </ul>
-          <!-- End List Group -->
-        </div>
-
-        <div class="col-sm-4 col-md-3 col-lg-2 mb-4 mb-md-0">
-          <h4 class="h6 font-weight-semi-bold">Resources</h4>
-
-          <!-- List Group -->
-          <ul class="list-group list-group-flush list-group-borderless mb-0">
-            <li><a class="list-group-item list-group-item-action" href="../pages/contacts-agency.html">Contacts</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../pages/help.html">Help</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../pages/terms.html">Terms</a></li>
-            <li><a class="list-group-item list-group-item-action" href="../pages/privacy.html">Privacy</a></li>
-          </ul>
-          <!-- End List Group -->
-        </div>
-
-        <div class="col-md-3 col-lg-2">
-          <h4 class="h6 font-weight-semi-bold">Contact</h4>
+        <div class="col-md-3 col-lg-3">
+          <h4 class="h6 font-weight-semi-bold">Kontak</h4>
 
           <!-- Address -->
           <address>
             <ul class="list-group list-group-flush list-group-borderless mb-0">
-              <li class="list-group-item">+1 (062) 109-9222</li>
+              <li class="list-group-item">Telp: (021) 4898486</li>
               <li class="list-group-item">
-                <a href="mailto:support@htmlstream.com">support@htmlstream.com</a>
+                Email: <a href="mailto:humas@unj.ac.id">humas@unj.ac.id</a>
               </li>
-              <li class="list-group-item">153 Williamson Plaza, Maggieberg, MT 09514</li>
+              <li class="list-group-item">Jl. Rawamangun Muka, RT.11/RW.14, Rawamangun,  Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220</li>
             </ul>
           </address>
           <!-- End Address -->
@@ -950,29 +845,29 @@
 
     <div class="d-flex justify-content-between align-items-center py-7">
       <!-- Copyright -->
-      <p class="small text-muted mb-0">&copy; Front. 2018 Htmlstream.</p>
+      <p class="small text-muted mb-0">&copy; Digiteam UNJ. {{ date('Y') }} Jakarta.</p>
       <!-- End Copyright -->
 
       <!-- Social Networks -->
       <ul class="list-inline mb-0">
         <li class="list-inline-item">
-          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.facebook.com/OfficialUNJ/">
             <span class="fab fa-facebook-f btn-icon__inner"></span>
           </a>
         </li>
         <li class="list-inline-item">
-          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#">
-            <span class="fab fa-google btn-icon__inner"></span>
+          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.youtube.com/channel/UCEbRyX261ttaaW_6-EjTUWA">
+            <span class="fab fa-youtube btn-icon__inner"></span>
           </a>
         </li>
         <li class="list-inline-item">
-          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://twitter.com/UNJ_Official">
             <span class="fab fa-twitter btn-icon__inner"></span>
           </a>
         </li>
         <li class="list-inline-item">
-          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="#">
-            <span class="fab fa-github btn-icon__inner"></span>
+          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.instagram.com/unj_official/">
+            <span class="fab fa-instagram btn-icon__inner"></span>
           </a>
         </li>
       </ul>
@@ -982,7 +877,7 @@
   <!-- ========== END FOOTER ========== -->
 
   <!-- Go to Top -->
-  <a class="js-go-to u-go-to" href="#"
+  <a class="js-go-to u-go-to bg-unj" href="#"
     data-position='{"bottom": 15, "right": 15 }'
     data-type="fixed"
     data-offset-top="400"

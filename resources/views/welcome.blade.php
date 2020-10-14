@@ -94,7 +94,7 @@
 
           <!-- Last Item -->
           <div class="u-header-center-aligned-nav__col u-header-center-aligned-nav__col-last-item">
-            <a class="btn btn-sm btn-unj transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
+            <a class="btn btn-sm btn-unj transition-3d-hover" href="#" target="_blank">
               Daftar
             </a>
           </div>
@@ -812,7 +812,7 @@
           </div>
         </div>
 
-        <div class="col-sm-4 col-md-3 col-lg-5 mb-4 mb-md-0">
+        <div class="col-sm-4 col-md-3 col-lg-4 mb-4 mb-md-0">
           <h4 class="h6 font-weight-semi-bold">Website Resmi UNJ</h4>
 
           <!-- List Group -->
@@ -825,7 +825,7 @@
           <!-- End List Group -->
         </div>
 
-        <div class="col-md-3 col-lg-2">
+        <div class="col-md-3 col-lg-3">
           <h4 class="h6 font-weight-semi-bold">Kontak</h4>
 
           <!-- Address -->

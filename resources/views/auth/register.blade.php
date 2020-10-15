@@ -322,6 +322,7 @@
             minDate: '15/10/2020',
             maxDate: '20/10/2020',
             isInvalidDate: function(date) {
+                return (date.day() == 0 || date.day() == 6);
                 console.log(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 if(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 return true

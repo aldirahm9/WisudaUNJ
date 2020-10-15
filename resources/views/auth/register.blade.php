@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="{{asset('front/vendor/animate.css/animate.min.css')}}">
   <link rel="stylesheet" href="{{asset('front/vendor/slick-carousel/slick/slick.css')}}">
 
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
 </head>
@@ -176,7 +178,7 @@
                 <p>Registrasi untuk melakukan photoshoot.</p>
               </div>
               <!-- End Title -->
-              
+
               <div class="row">
 
                 <!-- Form Group -->
@@ -188,42 +190,40 @@
                          data-success-class="u-has-success">
                 </div>
                 <!-- End Form Group -->
-  
+
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrNRM">NRM</label>
                   <input  class="form-control" name="nrm" id="signinSrNRM" placeholder="NRM" aria-label="NRM" required
                          data-msg="Please enter a valid NRM."
                          data-error-class="u-has-error"
-                         data-success-class="u-has-success">
+                         data-success-class="u-has-success"
+                         onkeypress="validate(event)">
                 </div>
                 <!-- End Form Group -->
-  
+
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrFakultas">Fakultas</label>
-                  <select class="custom-select">
+                  <select class="custom-select" name="fakultas">
                       <option selected>Fakultas</option>
-                      <option value="fmipa">FMIPA</option>
-                      <option value="fis">FIS</option>
-                      <option value="fbs">FBS</option>
-                      <option value="ft">FT</option>
-                      <option value="fio">FIO</option>
-                      <option value="fpp">Psikologi</option>
+                      @foreach ($fakultas as $item)
+                      <option value="{{$item->id}}">{{$item->nama_fakultas}}</option>
+                      @endforeach
                     </select>
                 </div>
                 <!-- End Form Group -->
-  
+
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrTanggal">Tanggal</label>
-                  <input type="datetime" class="form-control" name="tanggal" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="NAMA" required
+                  <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="TANGGAL_KEDATANGAN" required
                          data-msg="Tanggal harus diisi"
                          data-error-class="u-has-error"
-                         data-success-class="u-has-success">
+                         data-success-class="u-has-success" disabled onkeypress="return false">
                 </div>
                 <!-- End Form Group -->
-  
+
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrPassword">
@@ -238,7 +238,7 @@
                          data-success-class="u-has-success">
                 </div>
                 <!-- End Form Group -->
-  
+
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrConfirmPassword">
@@ -253,7 +253,7 @@
                          data-success-class="u-has-success">
                 </div>
                 <!-- End Form Group -->
-                
+
                 <div class="col-12 text-right">
                   <button type="submit" class="btn btn-primary transition-3d-hover">Daftar</button>
                 </div>
@@ -285,15 +285,89 @@
   <script src="{{asset('front/js/components/hs.validation.js')}}"></script>
   <script src="{{asset('front/js/components/hs.slick-carousel.js')}}"></script>
 
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
-      // initialization of slick carousel
-      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+        // initialization of slick carousel
+        $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 
-      // initialization of form validation
-      $.HSCore.components.HSValidation.init('.js-validate');
+        // initialization of form validation
+        $.HSCore.components.HSValidation.init('.js-validate');
+
+        $('select[name="fakultas"]').on('change', function() {
+            $('input[name="tanggal_kedatangan"]').prop('disabled',false)
+            if($(this).val() == 1) {
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",1)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",1)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
+            }
+            if($(this).val() == 2) {
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",2)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",2)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
+            }
+            if($(this).val() == 3) {
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",3)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",3)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
+            }
+            if($(this).val() == 4) {
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",4)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",4)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
+            }
+            if($(this).val() == 5) {
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",5)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",5)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
+            }
+            if($(this).val() == 6) {
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",6)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",6)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
+            }
+            if($(this).val() == 7) {
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",7)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",7)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
+            }
+            if($(this).val() == 8) {
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",8)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
+                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",8)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
+            }
+
+        })
+
+        $('input[name="tanggal_kedatangan"]').daterangepicker({
+            autoUpdateInput: false,
+            minDate: '15/10/2020',
+            maxDate: '20/10/2020',
+            singleDatePicker: true,
+            autoApply: true,
+            locale: {
+               format: 'DD/MM/YYYY'
+            }
+        },function(start) {
+            console.log(start.format('DD/MM/YYYY'))
+            $('input[name="tanggal_kedatangan"]').val(start.format('DD/MM/YYYY'))
+        });
+
     });
+
+    function validate(evt) {
+            var theEvent = evt || window.event;
+
+            // Handle paste
+            if (theEvent.type === 'paste') {
+                key = event.clipboardData.getData('text/plain');
+            } else {
+            // Handle key press
+                var key = theEvent.keyCode || theEvent.which;
+                key = String.fromCharCode(key);
+            }
+            var regex = /[0-9]|\./;
+            if( !regex.test(key) ) {
+                theEvent.returnValue = false;
+                if(theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
   </script>
 </body>
 </html>

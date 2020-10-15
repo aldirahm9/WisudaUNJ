@@ -52,7 +52,7 @@ class RegisterController extends Controller
         $slot = Slot::all();
         foreach($slot as $key=>$item) {
             if($item->pendaftaran->count() == $item->kapasitas) {
-                $invalidDates[$key] = $item;
+                $invalidDates[$key] = $item->tanggal;
             }
         }
         return view('auth.register',['fakultas' => $fakultas,'invalidDates'=>$invalidDates]);
@@ -67,7 +67,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nrm' => ['required', 'string', 'max:255'],
+            'nrm' => ['required', 'string', 'max:255','unique:users'],
             //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);

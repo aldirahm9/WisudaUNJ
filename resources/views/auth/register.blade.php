@@ -220,7 +220,9 @@
                   <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="TANGGAL_KEDATANGAN" required
                          data-msg="Tanggal harus diisi"
                          data-error-class="u-has-error"
-                         data-success-class="u-has-success" disabled onkeypress="return false">
+                         data-success-class="u-has-success" disabled
+                         onkeypress="return false"
+                         autocomplete="off">
                 </div>
                 <!-- End Form Group -->
 
@@ -298,6 +300,10 @@
         // initialization of form validation
         $.HSCore.components.HSValidation.init('.js-validate');
 
+        var invalidDates = @json($invalidDates);
+        var arrInvalidDates = Object.values(invalidDates)
+
+
         $('select[name="fakultas"]').on('change', function() {
             $('input[name="tanggal_kedatangan"]').prop('disabled',false)
             var fakultas = {!! $fakultas !!}
@@ -315,15 +321,22 @@
             autoUpdateInput: false,
             minDate: '15/10/2020',
             maxDate: '20/10/2020',
+            isInvalidDate: function(date) {
+                console.log(arrInvalidDates.includes(date.format('YYYY-M-D')))
+                if(arrInvalidDates.includes(date.format('YYYY-M-D')))
+                return true
+                return false
+            },
             singleDatePicker: true,
             autoApply: true,
             locale: {
                format: 'DD/MM/YYYY'
             }
-        },function(start) {
-            console.log(start.format('DD/MM/YYYY'))
-            $('input[name="tanggal_kedatangan"]').val(start.format('DD/MM/YYYY'))
         });
+
+        $('input[name="tanggal_kedatangan"]').on('apply.daterangepicker',function(ev,picker) {
+            $(this).val(picker.startDate.format('DD/MM/YYYY'))
+        })
 
         $('#signinSrNRM').on('keyup', function() {
             if($(this).val().length == 1) {

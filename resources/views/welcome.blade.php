@@ -94,7 +94,7 @@
 
           <!-- Last Item -->
           <div class="u-header-center-aligned-nav__col u-header-center-aligned-nav__col-last-item">
-            <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('register')}}" target="_blank">
+            <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('register')}}">
               Daftar
             </a>
           </div>

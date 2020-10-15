@@ -210,7 +210,7 @@
                 </div>
 
                 <div class="col-6 text-right">
-                  <button type="submit" class="btn btn-primary transition-3d-hover">Daftar</button>
+                  <button type="submit" class="btn btn-primary transition-3d-hover">Login</button>
                 </div>
               </div>
               <!-- End Button -->

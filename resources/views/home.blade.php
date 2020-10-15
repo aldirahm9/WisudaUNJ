@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ asset('front/vendor/hs-megamenu/src/hs.megamenu.css') }}">
   <link rel="stylesheet" href="{{ asset('front/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}">
   <link rel="stylesheet" href="{{ asset('front/vendor/flatpickr/dist/flatpickr.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('front/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}">
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
@@ -985,7 +986,7 @@
     <!-- Content Section -->
     <div class="bg-light">
       <div class="container space-2">
-        <!-- Stats -->
+        {{-- <!-- Stats -->
         <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
           <!-- Card -->
           <div class="card mb-3 mb-lg-0">
@@ -1035,7 +1036,7 @@
           </div>
           <!-- End Card -->
         </div>
-        <!-- End Stats -->
+        <!-- End Stats --> --}}
 
         <!-- Title -->
         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -2714,6 +2715,8 @@
   <script src="{{ asset('front/vendor/flatpickr/dist/flatpickr.min.js') }}"></script>
   <script src="{{ asset('front/vendor/appear.js') }}"></script>
   <script src="{{ asset('front/vendor/circles/circles.min.js') }}"></script>
+  <script src="{{ asset('front/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('front/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 
   <!-- JS Front -->
   <script src="{{ asset('front/js/hs.core.js') }}"></script>
@@ -2730,6 +2733,8 @@
   <script src="{{ asset('front/js/components/hs.progress-bar.js') }}"></script>
   <script src="{{ asset('front/js/components/hs.svg-injector.js') }}"></script>
   <script src="{{ asset('front/js/components/hs.go-to.js') }}"></script>
+  <script src="{{ asset('front/js/components/hs.selectpicker.js') }}"></script>
+  <script src="{{ asset('front/js/components/hs.datatables.js') }}"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -2801,6 +2806,12 @@
         direction: 'vertical',
         indicatorSelector: '.js-vr-progress-bar'
       });
+
+      // initialization of datatables
+      $.HSCore.components.HSDatatables.init('.js-datatable');
+
+      // initialization of select picker
+      $.HSCore.components.HSSelectPicker.init('.js-select');
 
       // initialization of go to
       $.HSCore.components.HSGoTo.init('.js-go-to');

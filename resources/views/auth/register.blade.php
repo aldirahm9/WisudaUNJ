@@ -173,90 +173,93 @@
               <!-- Title -->
               <div class="mb-7">
                 <h2 class="h3 text-primary font-weight-normal mb-0">Welcome <span class="font-weight-semi-bold">back</span></h2>
-                <p>Register to manage your account.</p>
+                <p>Registrasi untuk melakukan photoshoot.</p>
               </div>
               <!-- End Title -->
+              
+              <div class="row">
 
-              <!-- Form Group -->
-              <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrNama">Nama</label>
-                <input  class="form-control" name="nama" id="signinSrNama" placeholder="Nama Mahasiswa" aria-label="NAMA" required
-                       data-msg="Nama Mahasiswa harus diisi"
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-              <!-- End Form Group -->
-
-              <!-- Form Group -->
-              <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrNRM">NRM</label>
-                <input  class="form-control" name="nrm" id="signinSrNRM" placeholder="NRM" aria-label="NRM" required
-                       data-msg="Please enter a valid NRM."
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-              <!-- End Form Group -->
-
-              <!-- Form Group -->
-              <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrFakultas">Fakultas</label>
-                <select class="custom-select">
-                    <option selected>Fakultas</option>
-                    <option value="fmipa">FMIPA</option>
-                    <option value="fis">FIS</option>
-                    <option value="fbs">FBS</option>
-                    <option value="ft">FT</option>
-                    <option value="fio">FIO</option>
-                    <option value="fpp">Psikologi</option>
-                  </select>
-              </div>
-              <!-- End Form Group -->
-
-              <!-- Form Group -->
-              <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrTanggal">Tanggal</label>
-                <input type="datetime" class="form-control" name="tanggal" id="signinSrTanggal" placeholder="asd" aria-label="NAMA" required
-                       data-msg="Nama Mahasiswa harus diisi"
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-              <!-- End Form Group -->
-
-              <!-- Form Group -->
-              <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrPassword">
-                  <span class="d-flex justify-content-between align-items-center">
-                    Password
-                    {{-- <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a> --}}
-                  </span>
-                </label>
-                <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
-                       data-msg="Your password is invalid. Please try again."
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-              <!-- End Form Group -->
-
-              <!-- Form Group -->
-              <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrConfirmPassword">
-                  <span class="d-flex justify-content-between align-items-center">
-                    Confirm Password
-                    {{-- <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a> --}}
-                  </span>
-                </label>
-                <input type="password" class="form-control" name="password_confirmation" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
-                       data-msg="password tidak sama"
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-              <!-- End Form Group -->
-
-                <div class="col-6 text-right">
+                <!-- Form Group -->
+                <div class="js-form-message form-group col-md-6">
+                  <label class="form-label" for="signinSrNama">Nama</label>
+                  <input  class="form-control" name="nama" id="signinSrNama" placeholder="Nama Mahasiswa" aria-label="NAMA" required
+                         data-msg="Nama Mahasiswa harus diisi"
+                         data-error-class="u-has-error"
+                         data-success-class="u-has-success">
+                </div>
+                <!-- End Form Group -->
+  
+                <!-- Form Group -->
+                <div class="js-form-message form-group col-md-6">
+                  <label class="form-label" for="signinSrNRM">NRM</label>
+                  <input  class="form-control" name="nrm" id="signinSrNRM" placeholder="NRM" aria-label="NRM" required
+                         data-msg="Please enter a valid NRM."
+                         data-error-class="u-has-error"
+                         data-success-class="u-has-success">
+                </div>
+                <!-- End Form Group -->
+  
+                <!-- Form Group -->
+                <div class="js-form-message form-group col-md-6">
+                  <label class="form-label" for="signinSrFakultas">Fakultas</label>
+                  <select class="custom-select">
+                      <option selected>Fakultas</option>
+                      <option value="fmipa">FMIPA</option>
+                      <option value="fis">FIS</option>
+                      <option value="fbs">FBS</option>
+                      <option value="ft">FT</option>
+                      <option value="fio">FIO</option>
+                      <option value="fpp">Psikologi</option>
+                    </select>
+                </div>
+                <!-- End Form Group -->
+  
+                <!-- Form Group -->
+                <div class="js-form-message form-group col-md-6">
+                  <label class="form-label" for="signinSrTanggal">Tanggal</label>
+                  <input type="datetime" class="form-control" name="tanggal" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="NAMA" required
+                         data-msg="Tanggal harus diisi"
+                         data-error-class="u-has-error"
+                         data-success-class="u-has-success">
+                </div>
+                <!-- End Form Group -->
+  
+                <!-- Form Group -->
+                <div class="js-form-message form-group col-md-6">
+                  <label class="form-label" for="signinSrPassword">
+                    <span class="d-flex justify-content-between align-items-center">
+                      Password
+                      {{-- <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a> --}}
+                    </span>
+                  </label>
+                  <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
+                         data-msg="Your password is invalid. Please try again."
+                         data-error-class="u-has-error"
+                         data-success-class="u-has-success">
+                </div>
+                <!-- End Form Group -->
+  
+                <!-- Form Group -->
+                <div class="js-form-message form-group col-md-6">
+                  <label class="form-label" for="signinSrConfirmPassword">
+                    <span class="d-flex justify-content-between align-items-center">
+                      Confirm Password
+                      {{-- <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a> --}}
+                    </span>
+                  </label>
+                  <input type="password" class="form-control" name="password_confirmation" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
+                         data-msg="password tidak sama"
+                         data-error-class="u-has-error"
+                         data-success-class="u-has-success">
+                </div>
+                <!-- End Form Group -->
+                
+                <div class="col-12 text-right">
                   <button type="submit" class="btn btn-primary transition-3d-hover">Daftar</button>
                 </div>
+                <!-- End Button -->
               </div>
-              <!-- End Button -->
+
             </form>
             <!-- End Form -->
           </div>

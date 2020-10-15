@@ -1219,7 +1219,7 @@
                                 {{-- end search --}}
                                 {{-- table --}}
                                 <div class="table-responsive-md u-datatable">
-                                    <table id="example1"
+                                <table id="example{{$key+1}}"
                                         class="js-datatable table table-borderless u-datatable__striped u-datatable__content u-datatable__trigger mb-5"
                                         data-dt-info="#datatableInfo" data-dt-search="#datatableSearch"
                                         data-dt-entries="#datatableEntries" data-dt-page-length="7"
@@ -2107,7 +2107,55 @@
             buttons: [
                 'excel', 'pdf', 'print'
             ]
-        } );
+        });
+        $('#example2').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ]
+        });
+        $('#example3').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ]
+        });
+        $('#example4').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ]
+        });
+        $('#example5').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ]
+        });
+        $('#example6').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ]
+        });
+        $('#example7').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ]
+        });
+        $('#example8').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ]
+        });
+        $('#example9').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print'
+            ]
+        });
 
     </script>
 </body>

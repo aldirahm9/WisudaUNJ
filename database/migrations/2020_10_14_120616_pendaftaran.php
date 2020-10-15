@@ -21,7 +21,8 @@ class Pendaftaran extends Migration
             // $table->foreign('fakultas_id')->references('id')->on('fakultas')->onDelete('cascade');
             $table->unsignedBigInteger('slot_id');
             // $table->foreign('slot_id')->references('id')->on('slot')->onDelete('cascade');
-            $table->string('kode_unik');
+            $table->string('nama_mahasiswa');
+            $table->string('kode_unik')->nullable();
             $table->timestamps();
         });
     }

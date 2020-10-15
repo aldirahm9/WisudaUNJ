@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Hashids\Hashids;
 
 class RegisterController extends Controller
 {
@@ -88,13 +89,15 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role' => 0,
         ]);
-        Pendaftaran::create([
+        $hashids = new Hashids('',6,'abcdefghijklmnopqrstuvwxyz0123456789');
+        $pendaftaran = Pendaftaran::create([
             'user_id' => $user->id,
             'fakultas_id' => $data['fakultas'],
             'nama_mahasiswa' => $data['nama'],
             'slot_id' => $slot->id,
-            'kode_unik' => 'unik sih katanya'
         ]);
+        $pendaftaran->kode_unik = $hashids->encode($pendaftaran->id);
+        $pendaftaran->save();
         return $user;
     }
 }

@@ -300,38 +300,11 @@
 
         $('select[name="fakultas"]').on('change', function() {
             $('input[name="tanggal_kedatangan"]').prop('disabled',false)
-            if($(this).val() == 1) {
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",1)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",1)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
-            }
-            if($(this).val() == 2) {
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",2)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",2)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
-            }
-            if($(this).val() == 3) {
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",3)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",3)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
-            }
-            if($(this).val() == 4) {
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",4)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",4)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
-            }
-            if($(this).val() == 5) {
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",5)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",5)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
-            }
-            if($(this).val() == 6) {
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",6)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",6)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
-            }
-            if($(this).val() == 7) {
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",7)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",7)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
-            }
-            if($(this).val() == 8) {
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment('{{$fakultas->where("id",8)->first()->tanggal_awal_photoshoot}}', "YYYY-MM-DD");
-                $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment('{{$fakultas->where("id",8)->first()->tanggal_akhir_photoshoot}}', "YYYY-MM-DD");
-            }
+            var fakultas = {!! $fakultas !!}
+            var id = $(this).val()
+
+            $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment(fakultas[id-1].tanggal_awal_photoshoot, "YYYY-MM-DD");
+            $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment(fakultas[id-1].tanggal_akhir_photoshoot, "YYYY-MM-DD");
 
         })
 
@@ -350,9 +323,10 @@
         });
 
         $('#signinSrNRM').on('keyup', function() {
-            if($(this).val().length == 3) {
-                if($(this).val() == '314') $('#fakultas').val(1).change()
-                if($(this).val() == '412') $('#fakultas').val(2).change()
+            if($(this).val().length == 1) {
+                if($(this).val() == '3') $('#fakultas').val({{$fakultas->where('nama_fakultas','FMIPA')->first()->id}}).change()
+                if($(this).val() == '1') $('#fakultas').val({{$fakultas->where('nama_fakultas','FIP')->first()->id}}).change()
+                if($(this).val() == '5') $('#fakultas').val({{$fakultas->where('nama_fakultas','FT')->first()->id}}).change()
             }
         });
 

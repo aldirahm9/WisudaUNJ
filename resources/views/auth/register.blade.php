@@ -205,10 +205,10 @@
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrFakultas">Fakultas</label>
-                  <select class="custom-select" name="fakultas">
+                  <select class="custom-select" name="fakultas" id="fakultas">
                       <option selected>Fakultas</option>
                       @foreach ($fakultas as $item)
-                      <option value="{{$item->id}}">{{$item->nama_fakultas}}</option>
+                  <option id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option>
                       @endforeach
                     </select>
                 </div>
@@ -349,25 +349,33 @@
             $('input[name="tanggal_kedatangan"]').val(start.format('DD/MM/YYYY'))
         });
 
+        $('#signinSrNRM').on('keyup', function() {
+            if($(this).val().length == 3) {
+                if($(this).val() == '314') $('#fakultas').val(1).change()
+                if($(this).val() == '412') $('#fakultas').val(2).change()
+            }
+        });
+
     });
 
     function validate(evt) {
-            var theEvent = evt || window.event;
+        var theEvent = evt || window.event;
 
-            // Handle paste
-            if (theEvent.type === 'paste') {
-                key = event.clipboardData.getData('text/plain');
-            } else {
-            // Handle key press
-                var key = theEvent.keyCode || theEvent.which;
-                key = String.fromCharCode(key);
-            }
-            var regex = /[0-9]|\./;
-            if( !regex.test(key) ) {
-                theEvent.returnValue = false;
-                if(theEvent.preventDefault) theEvent.preventDefault();
-            }
+        // Handle paste
+        if (theEvent.type === 'paste') {
+            key = event.clipboardData.getData('text/plain');
+        } else {
+        // Handle key press
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
         }
+        var regex = /[0-9]|\./;
+        if( !regex.test(key) ) {
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+
   </script>
 </body>
 </html>

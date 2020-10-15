@@ -30,12 +30,12 @@ class AdminSeeder extends Seeder
             'tanggal_akhir_photoshoot' => '2020-10-20',
         ]);
         Fakultas::create([
-            'nama_fakultas' => 'FIO',
+            'nama_fakultas' => 'FT',
             'tanggal_awal_photoshoot' => '2020-10-20',
             'tanggal_akhir_photoshoot' => '2020-10-25',
         ]);
         Fakultas::create([
-            'nama_fakultas' => 'FT',
+            'nama_fakultas' => 'FIO',
             'tanggal_awal_photoshoot' => '2020-10-25',
             'tanggal_akhir_photoshoot' => '2020-10-30',
         ]);

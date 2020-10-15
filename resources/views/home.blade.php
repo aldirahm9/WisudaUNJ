@@ -262,7 +262,11 @@
                  data-unfold-animation-out="fadeOutRight"
                  data-unfold-duration="500">
                 <span class="position-relative">
-                  <span class="u-sidebar--account__toggle-text">{{ Auth::user()->nrm}}</span>
+                    @if (Auth() -> user() -> isAdmin())
+                    <span class="u-sidebar--account__toggle-text">Admin</span>
+                    @else
+                    <span class="u-sidebar--account__toggle-text">{{ Auth::user()->pendaftaran->nama_mahasiswa}}</span>
+                    @endif
                   <img class="u-sidebar--account__toggle-img" src="{{ asset('front/img/100x100/img1.jpg') }}" alt="Image Description">
                   <span class="badge badge-sm badge-success badge-pos rounded-circle">3</span>
                 </span>
@@ -859,8 +863,16 @@
                 </span>
               </div>
               <div class="media-body">
-                <h1 class="h3 text-white font-weight-medium mb-1">Howdy, {{ Auth::user()->nrm}}!</h1>
+                @if (Auth() -> user() -> isAdmin())
+                    <h1 class="h3 text-white font-weight-medium mb-1">Halo, Admin!</h1>
+                @else
+                    <h1 class="h3 text-white font-weight-medium mb-1">Halo, {{ Auth::user()->pendaftaran->nama_mahasiswa}}!</h1>
+                @endif
+                @if (Auth() -> user() -> isAdmin())
+                <span class="font-weight-semi-bold"> </span>
+                @else
                 <span class="d-block text-white">{{ Auth::user()->nrm}}</span>
+                @endif
               </div>
             </div>
             <!-- End User Info -->
@@ -1620,8 +1632,12 @@
                 <span class="badge badge-xs badge-outline-success badge-pos rounded-circle"></span>
               </div>
               <div class="ml-3">
-                <span class="font-weight-semi-bold">{{ Auth::user()->nrm}} <span class="badge badge-success ml-1">Pro</span></span>
-                <span class="u-sidebar--account__holder-text">Lead Support Adviser</span>
+                @if (Auth() -> user() -> isAdmin())
+                <span class="font-weight-semi-bold">Admin</span>
+                @else
+                <span class="font-weight-semi-bold">{{ Auth::user()->pendaftaran->nama_mahasiswa}}</span>
+                @endif
+                {{-- <span class="u-sidebar--account__holder-text">Lead Support Adviser</span> --}}
               </div>
 
               <!-- Settings -->

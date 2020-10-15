@@ -218,7 +218,7 @@
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrTanggal">Tanggal</label>
                   <input type="datetime" class="form-control" name="tanggal" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="NAMA" required
-                         data-msg="Nama Mahasiswa harus diisi"
+                         data-msg="Tanggal harus diisi"
                          data-error-class="u-has-error"
                          data-success-class="u-has-success">
                 </div>

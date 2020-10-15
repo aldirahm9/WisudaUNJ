@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/generate/sitemap', function () {
-    SitemapGenerator::create(env('APP_URL'))->writeToFile('sitemap.xml');
+    SitemapGenerator::create('https://photoshoot-wisuda-unj.herokuapp.com/')->writeToFile('sitemap.xml');
 });
 
 Auth::routes();

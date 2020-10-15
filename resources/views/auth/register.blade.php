@@ -308,6 +308,9 @@
 
         })
 
+        if($('#fakultas').val() != 'fakultas') {
+            $('input[name="tanggal_kedatangan"]').prop('disabled',false)
+        }
         $('input[name="tanggal_kedatangan"]').daterangepicker({
             autoUpdateInput: false,
             minDate: '15/10/2020',

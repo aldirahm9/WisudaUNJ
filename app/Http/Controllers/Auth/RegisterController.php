@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Fakultas;
 use App\Models\Pendaftaran;
+use App\Models\Slot;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -45,8 +47,15 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
+        $invalidDates = [];
         $fakultas = Fakultas::all();
-        return view('auth.register',['fakultas' => $fakultas]);
+        $slot = Slot::all();
+        foreach($slot as $key=>$item) {
+            if($item->pendaftaran->count() == $item->kapasitas) {
+                $invalidDates[$key] = $item;
+            }
+        }
+        return view('auth.register',['fakultas' => $fakultas,'invalidDates'=>$invalidDates]);
     }
 
     /**
@@ -72,6 +81,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $tanggal = Carbon::createFromFormat('d/m/Y',$data['tanggal_kedatangan']);
+        $slot = Slot::where('tanggal',Carbon::parse($tanggal)->format('Y-m-d'))->first();
         $user = User::create([
             'nrm' => $data['nrm'],
             'password' => Hash::make($data['password']),
@@ -79,7 +90,10 @@ class RegisterController extends Controller
         ]);
         Pendaftaran::create([
             'user_id' => $user->id,
-
+            'fakultas_id' => $data['fakultas'],
+            'nama_mahasiswa' => $data['nama'],
+            'slot_id' => $slot->id,
+            'kode_unik' => 'unik sih katanya'
         ]);
         return $user;
     }

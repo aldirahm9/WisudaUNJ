@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Fakultas;
 use App\Models\Pendaftaran;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -40,6 +41,12 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showRegistrationForm()
+    {
+        $fakultas = Fakultas::all();
+        return view('auth.register',['fakultas' => $fakultas]);
     }
 
     /**

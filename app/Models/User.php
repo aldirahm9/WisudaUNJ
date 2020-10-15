@@ -47,4 +47,10 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Pendaftaran');
     }
 
+    public function isAdmin()
+    {
+        if ($this->role == 0) return true;
+        return false;
+    }
+
 }

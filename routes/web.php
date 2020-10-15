@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Spatie\Sitemap\SitemapGenerator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/generate/sitemap', function () {
+    SitemapGenerator::create(env('APP_URL'))->writeToFile('sitemap.xml');
 });
 
 Auth::routes();

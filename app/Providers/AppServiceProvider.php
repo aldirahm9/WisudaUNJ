@@ -38,5 +38,9 @@ class AppServiceProvider extends ServiceProvider
         {
             return "Rp <?php echo number_format($angka, 0, ',', '.');?>";
         });
+
+        if (env('APP_ENV') === 'production') {
+            $this->app['request']->server->set('HTTPS', true);
+        }
     }
 }

@@ -16,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if($this->app->environment('production')) {
+            $url->forceScheme('https');
+        }
     }
 
     /**
@@ -36,9 +38,5 @@ class AppServiceProvider extends ServiceProvider
         {
             return "Rp <?php echo number_format($angka, 0, ',', '.');?>";
         });
-
-        if($this->app->environment('production')) {
-            $url->forceScheme('https');
-        }
     }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Title -->
-  <title>Login Simple | Front - Responsive Website Template</title>
+  <title>Masuk - Wisuda Digital UNJ</title>
 
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -21,6 +21,16 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
+
+  <style>
+    .bg-unj {
+        background: #006F45 !important;
+    }
+
+    .text-unj {
+        color: #006f45 !important;
+    }
+  </style>
 </head>
 <body>
   <!-- ========== HEADER ========== -->
@@ -65,7 +75,7 @@
   <main id="content" role="main">
     <!-- Form -->
     <div class="d-flex align-items-center position-relative height-lg-100vh">
-      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center gradient-half-primary-v1 height-lg-100vh px-0">
+      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center gradient-half-primary-v1 bg-unj height-lg-100vh px-0">
         <div class="w-100 p-5">
           <!-- SVG Quote -->
           <figure class="text-center mb-5 mx-auto">
@@ -89,8 +99,8 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">The template is really nice and offers quite a large set of options. Thank you!</blockquote>
-                <h1 class="h6 text-white-70">Maria Muszynska, Google</h1>
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi wisudawan yang telah berhasil meraih kelulusan. Semoga ilmu yang diperoleh bisa berguna bagi kemajuan bangsa!</blockquote>
+                <h1 class="h6 text-white-70">Dr. Komaruddin. M.Si, Rektor UNJ</h1>
               </div>
               <!-- End Testimonials -->
             </div>
@@ -98,20 +108,20 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">It's beautiful and the coding is done quickly and seamlessly. Keep it up!</blockquote>
-                <h2 class="h6 text-white-70">James Austin, Slack</h2>
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi para wisudawan. Semoga sukses di dunia kerja ataupun di dunia usaha!</blockquote>
+                <h2 class="h6 text-white-70">Prof. Dr. Suyono, M.Si, WR1 UNJ</h2>
               </div>
               <!-- End Testimonials -->
             </div>
 
-            <div class="js-slide">
+            {{-- <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
                 <blockquote class="h5 text-white font-weight-normal mb-4">I love Front! I love the ease of use, I love the fact that I have total creative freedom...</blockquote>
                 <h3 class="h6 text-white-70">Charlotte Moore, Amazon</h3>
               </div>
               <!-- End Testimonials -->
-            </div>
+            </div> --}}
           </div>
           <!-- End Testimonials Carousel Main -->
 
@@ -127,40 +137,23 @@
                data-nav-for="#testimonialsNavMain">
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="front/img/100x100/img1.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/rektor.jpg') }}" alt="Image Description">
               </div>
             </div>
 
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="front/img/100x100/img3.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/wr1.jpg') }}" alt="Image Description">
               </div>
             </div>
 
-            <div class="js-slide">
+            {{-- <div class="js-slide">
               <div class="u-avatar mx-auto">
                 <img class="img-fluid rounded-circle" src="front/img/100x100/img2.jpg" alt="Image Description">
               </div>
-            </div>
+            </div> --}}
           </div>
           <!-- End Testimonials Carousel Pagination -->
-
-          <!-- Clients -->
-          <div class="position-absolute right-0 bottom-0 left-0 text-center p-5">
-            <h4 class="h6 text-white-70 mb-3">Front partners</h4>
-            <div class="d-flex justify-content-center">
-              <div class="mx-4">
-                <img class="u-clients" src="front/svg/clients-logo/slack-white.svg" alt="Image Description">
-              </div>
-              <div class="mx-4">
-                <img class="u-clients" src="front/svg/clients-logo/google-white.svg" alt="Image Description">
-              </div>
-              <div class="mx-4">
-                <img class="u-clients" src="front/svg/clients-logo/spotify-white.svg" alt="Image Description">
-              </div>
-            </div>
-          </div>
-          <!-- End Clients -->
         </div>
       </div>
 
@@ -172,8 +165,8 @@
                 {{csrf_field()}}
               <!-- Title -->
               <div class="mb-7">
-                <h2 class="h3 text-primary font-weight-normal mb-0">Welcome <span class="font-weight-semi-bold">back</span></h2>
-                <p>Login to manage your account.</p>
+                <h2 class="h3 text-danger font-weight-normal mb-0">Selamat datang <span class="font-weight-semi-bold">kembali</span></h2>
+                <p class="text-warning">Masuk untuk ubah tanggal kedatangan dan cetak bukti pendaftaran.</p>
               </div>
               <!-- End Title -->
 
@@ -205,12 +198,12 @@
               <!-- Button -->
               <div class="row align-items-center mb-5">
                 <div class="col-6">
-                  <span class="small text-muted">Don't have an account?</span>
-                  <a class="small" href="{{route('register')}}">Signup</a>
+                  <span class="small text-muted">Belum mendaftar?</span>
+                  <a class="small" href="{{route('register')}}">Daftar di sini</a>
                 </div>
 
                 <div class="col-6 text-right">
-                  <button type="submit" class="btn btn-primary transition-3d-hover">Login</button>
+                  <button type="submit" class="btn btn-unj transition-3d-hover">Login</button>
                 </div>
               </div>
               <!-- End Button -->

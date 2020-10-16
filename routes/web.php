@@ -29,3 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin', [adminController::class, 'dashboard']);
 });
+
+Route::get('pdf', function () {
+    return view('pdf.bukti_pendaftaran');
+});

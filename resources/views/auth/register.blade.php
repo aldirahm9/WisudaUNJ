@@ -146,23 +146,6 @@
             </div>
           </div>
           <!-- End Testimonials Carousel Pagination -->
-
-          <!-- Clients -->
-          <div class="position-absolute right-0 bottom-0 left-0 text-center p-5">
-            <h4 class="h6 text-white-70 mb-3">Front partners</h4>
-            <div class="d-flex justify-content-center">
-              <div class="mx-4">
-                <img class="u-clients" src="front/svg/clients-logo/slack-white.svg" alt="Image Description">
-              </div>
-              <div class="mx-4">
-                <img class="u-clients" src="front/svg/clients-logo/google-white.svg" alt="Image Description">
-              </div>
-              <div class="mx-4">
-                <img class="u-clients" src="front/svg/clients-logo/spotify-white.svg" alt="Image Description">
-              </div>
-            </div>
-          </div>
-          <!-- End Clients -->
         </div>
       </div>
 
@@ -170,11 +153,11 @@
         <div class="row no-gutters">
           <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
             <!-- Form -->
-            <form class="js-validate mt-5" action="{{ route('register') }}" method="POST" id="formRegister">
+            <form class="js-validate mt-3" action="{{ route('register') }}" method="POST" id="formRegister">
                 {{csrf_field()}}
               <!-- Title -->
-              <div class="mb-7">
-                <h2 class="h3 text-primary font-weight-normal mb-0">Welcome <span class="font-weight-semi-bold">back</span></h2>
+              <div class="mb-5">
+                <h2 class="h3 text-primary font-weight-normal mb-0">Selamat <span class="font-weight-semi-bold">wisuda</span>!</h2>
                 <p>Registrasi untuk melakukan photoshoot.</p>
               </div>
               <!-- End Title -->
@@ -187,7 +170,8 @@
                   <input  class="form-control" name="nama" id="signinSrNama" placeholder="Nama Mahasiswa" aria-label="NAMA" required
                          data-msg="Nama Mahasiswa harus diisi"
                          data-error-class="u-has-error"
-                         data-success-class="u-has-success">
+                         data-success-class="u-has-success"
+                         autocomplete="off">
                 </div>
                 <!-- End Form Group -->
 
@@ -195,10 +179,12 @@
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrNRM">NRM</label>
                   <input  class="form-control" name="nrm" id="signinSrNRM" placeholder="NRM" aria-label="NRM" required
-                         data-msg="Please enter a valid NRM."
+                         data-msg="Masukkan NRM yang valid."
                          data-error-class="u-has-error"
                          data-success-class="u-has-success"
-                         onkeypress="validate(event)">
+                         onkeypress="validate(event)"
+                         maxlength="10"
+                         autocomplete="off">
                 </div>
                 <!-- End Form Group -->
 
@@ -206,11 +192,11 @@
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrFakultas">Fakultas</label>
                   <select class="custom-select" name="fakultas" id="fakultas">
-                      <option selected>Fakultas</option>
+                      <option selected disabled>Fakultas</option>
                       @foreach ($fakultas as $item)
-                  <option id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option>
+                        <option id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option>
                       @endforeach
-                    </select>
+                  </select>
                 </div>
                 <!-- End Form Group -->
 
@@ -237,7 +223,8 @@
                   <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
                          data-msg="Your password is invalid. Please try again."
                          data-error-class="u-has-error"
-                         data-success-class="u-has-success">
+                         data-success-class="u-has-success"
+                         autocomplete="off">
                 </div>
                 <!-- End Form Group -->
 
@@ -245,17 +232,20 @@
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrConfirmPassword">
                     <span class="d-flex justify-content-between align-items-center">
-                      Confirm Password
+                      Konfirmasi Password
                       {{-- <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a> --}}
                     </span>
                   </label>
                   <input type="password" class="form-control" name="password_confirmation" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
                          data-msg="password tidak sama"
                          data-error-class="u-has-error"
-                         data-success-class="u-has-success">
+                         data-success-class="u-has-success"
+                         autocomplete="off">
                 </div>
                 <!-- End Form Group -->
-
+                <div class="col-12">
+                  <small class="text-warning text-small">*Password digunakan untuk mengubah tanggal kehadiran.</small>
+                </div>
                 <div class="col-12 text-right">
                   <button type="submit" class="btn btn-primary transition-3d-hover">Daftar</button>
                 </div>

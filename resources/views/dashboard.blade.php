@@ -299,14 +299,9 @@
                                 </div>
                                 {{-- end search --}}
                                 {{-- table --}}
-                                <div class="table-responsive-md u-datatable">
+                                <div class="table-responsive-md ">
                                 <table id="example{{$key+1}}"
-                                        class="js-datatable table table-borderless u-datatable__striped u-datatable__content u-datatable__trigger mb-5"
-                                        data-dt-info="#datatableInfo" data-dt-search="#datatableSearch"
-                                        data-dt-entries="#datatableEntries" data-dt-page-length="7"
-                                        data-dt-is-responsive="false" data-dt-is-show-paging="true"
-                                        data-dt-details-invoker=".js-datatabale-details"
-                                        data-dt-select-all-control="#invoiceToggleAllCheckbox">
+                                        class="js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
                                         <thead>
                                             <tr class="text-uppercase font-size-1">
                                             <th>no</th>
@@ -1253,12 +1248,8 @@
 
         $('#example1').DataTable( {
             dom: 'Bfrtip',
-            lengthMenu: [
-                [ 10, 25, 50, -1 ],
-                [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-            ],
             buttons: [
-                'pageLength', 'excel', 'pdf', 'print'
+                'excel', 'pdf', 'print'
             ]
         });
         $('#example2').DataTable( {

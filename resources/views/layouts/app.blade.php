@@ -18,6 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .bg-unj {
+            background: #006F45 !important;
+        }
+
+        .text-unj {
+            color: #006f45 !important;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

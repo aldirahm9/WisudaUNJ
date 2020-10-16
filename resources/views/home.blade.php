@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('front/vendor/flatpickr/dist/flatpickr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
 </head>
@@ -264,593 +266,63 @@
         <!-- Content Section -->
         <div class="bg-light">
             <div class="container space-2">
-                {{-- <!-- Stats -->
-        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
-          <!-- Card -->
-          <div class="card mb-3 mb-lg-0">
-            <div class="card-body p-5">
-              <div class="media align-items-center">
-                <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mr-4">
-                  <span class="fas fa-dollar-sign btn-icon__inner"></span>
-                </span>
-                <div class="media-body">
-                  <span class="d-block font-size-3">$45.99</span>
-                  <h2 class="h6 text-secondary font-weight-normal mb-0">Available balance</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-
-          <!-- Card -->
-          <div class="card mb-3 mb-lg-0">
-            <div class="card-body p-5">
-              <div class="media align-items-center">
-                <span class="btn btn-lg btn-icon btn-soft-success rounded-circle mr-4">
-                  <span class="fas fa-coins btn-icon__inner"></span>
-                </span>
-                <div class="media-body">
-                  <span class="d-block font-size-3">$1.32</span>
-                  <h3 class="h6 text-secondary font-weight-normal mb-0">Reward balance</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-
-          <!-- Card -->
-          <div class="card">
-            <div class="card-body p-5">
-              <div class="media align-items-center">
-                <span class="btn btn-lg btn-icon btn-soft-warning rounded-circle mr-4">
-                  <span class="fas fa-exchange-alt btn-icon__inner"></span>
-                </span>
-                <div class="media-body">
-                  <span class="d-block font-size-3">$0.00</span>
-                  <h3 class="h6 text-secondary font-weight-normal mb-0">Pending balance</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-        </div>
-        <!-- End Stats --> --}}
-
-                <!-- Title -->
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="h6 mb-0">Peserta photoshoot wisuda UNJ</h3>
-                    {{-- <a class="link-muted" href="#">View All</a> --}}
-                </div>
-                <!-- End Title -->
-
-                <!-- Earning Sources -->
-                <div class="mb-7">
-                    <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFMIPA.png')}}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FMIPA</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 1)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                <div class="card card-frame card-frame-highlighted mb-6">
+                    <div class="card-header py-4 px-0 mx-4">
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0"><i class="fa fa-user-circle" aria-hidden="true"></i> Profil</h3>
+                            <h3 class="h6 mb-0">
+                            <button href="#" type="button" class="btn btn-success btn-pill transition-3d-hover">
+                                <i class="fa fa-print" aria-hidden="true"></i>
+                                Print
+                            </button>
+                                Bukti Pendaftaran
+                            </h3>
+                            {{-- <a class="link-muted" href="#">View All</a> --}}
                         </div>
-                        <!-- End Card -->
+                        <div class="row mb-5">
+                            <div class="h6 col-3">Nama</div>
+                            <div class="h6 col-0">:</div>
+                            <div class="h6 col-8">{{ Auth::user()->pendaftaran->nama_mahasiswa }}</div>
 
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFT.png')}}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FT</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 2)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Card -->
+                            <div class="h6 col-3">NRM</div>
+                            <div class="h6 col-0">:</div>
+                            <div class="h6 col-8">{{ Auth::user()->nrm }}</div>
 
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFIO.png')}}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FIO</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 3)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Card -->
-                    </div>
+                            <div class="h6 col-3">Fakultas</div>
+                            <div class="h6 col-0">:</div>
+                            <div class="h6 col-8">{{ Auth::user()->pendaftaran->fakultas->nama_fakultas }}</div>
 
-                    <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFIS.png')}}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FIS</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 4)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Card -->
+                            <div class="h6 col-3 mb-5">Tanggal Foto</div>
+                            <div class="h6 col-0">:</div>
+                            <div class="h6 col-8">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->format('d, M Y') }}</div>
 
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFBS.png')}}"
-                                            alt="Image Description">
+                            <div class="h6 col-8">
+                            <form class="js-validate mt-3" action="/" method="POST" id="formRegister">
+                                {{csrf_field()}}
+                                <div class="row">
+                                    <!-- Form Group -->
+                                    <div class="h6 col-12">
+                                        Ganti Tanggal:
                                     </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FBS</span>
-                                        <small class="d-block text-secondary"> </small>
+                                    <div class="js-form-message form-group col-md-6">
+                                        <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="TANGGAL_KEDATANGAN" required
+                                            data-msg="Tanggal harus diisi"
+                                            data-error-class="u-has-error"
+                                            data-success-class="u-has-success" disabled
+                                            onkeypress="return false"
+                                            autocomplete="off">
                                     </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 5)->count() }}
-                                        </span>
+                                    <div class="col-6 text-lefth-btm">
+                                        <button type="submit" class="btn btn-primary transition-3d-hover">Ubah</button>
                                     </div>
+                                    <!-- End Form Group -->
                                 </div>
-                            </a>
+                            </form>
+                            </div>
                         </div>
-                        <!-- End Card -->
-
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoPsikologi.png')}}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">Psikologi</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 6)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Card -->
-                    </div>
-
-                    <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFIP.png')}}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FIP</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 7)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Card -->
-
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFE.png')}}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FE</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 8)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Card -->
-
-                        <!-- Card -->
-                        <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        <img class="img-fluid rounded-circle" src="{{ asset('img/LogoPasca.png')}}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">Pasca</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 9)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Card -->
                     </div>
                 </div>
-                <!-- End Earning Sources -->
-
-                {{-- <!-- Card -->
-        <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-          <!-- Stats -->
-          <div class="card mb-7 mb-lg-0">
-            <div class="card-body pt-4 pb-5 px-5 mb-3 mb-md-0">
-              <!-- Title & Settings -->
-              <div class="d-flex justify-content-between align-items-center">
-                <h4 class="h6 mb-0">Deposits</h4>
-
-                <!-- Settings Dropdown -->
-                <div class="position-relative">
-                  <a id="depositSettingsDropdownInvoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" role="button"
-                     aria-controls="depositSettingsDropdown"
-                     aria-haspopup="true"
-                     aria-expanded="false"
-                     data-unfold-event="click"
-                     data-unfold-target="#depositSettingsDropdown"
-                     data-unfold-type="css-animation"
-                     data-unfold-duration="300"
-                     data-unfold-delay="300"
-                     data-unfold-hide-on-scroll="true"
-                     data-unfold-animation-in="slideInUp"
-                     data-unfold-animation-out="fadeOut">
-                    <span class="fas fa-ellipsis-h btn-icon__inner"></span>
-                  </a>
-
-                  <div id="depositSettingsDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="depositSettingsDropdownInvoker" style="min-width: 190px;">
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-cogs dropdown-item-icon"></small>
-                      Settings
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-cloud-download-alt dropdown-item-icon"></small>
-                      Download
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-archive dropdown-item-icon"></small>
-                      Archive
-                    </a>
-                  </div>
-                </div>
-                <!-- End Settings Dropdown -->
-              </div>
-              <!-- End Title & Settings -->
-
-              <hr class="mt-3 mb-4">
-
-              <!-- Deposit Info -->
-              <div class="row mb-5">
-                <div class="col-sm-6 mb-4 mb-sm-0">
-                  <span class="align-top">$</span>
-                  <span class="font-size-3 font-weight-medium text-lh-sm">50,102</span>
-                  <div class="mb-1">
-                    <span class="text-secondary font-size-1">Deposit:</span>
-                    <span class="font-weight-medium font-size-1">$1,050</span>
-                  </div>
-                  <div>
-                    <span class="text-primary font-weight-medium text-lh-sm">
-                      <span class="fas fa-arrow-up text-success small"></span>
-                      +2.1% ($122)
-                    </span>
-                  </div>
-                </div>
-
-                <div class="col-sm-6 align-self-end">
-                  <!-- Pie Circle -->
-                  <div class="js-pie text-center"
-                     data-circles-text-class="content-centered-y"
-                     data-circles-value="54"
-                     data-circles-max-value="100"
-                     data-circles-bg-color="rgba(0, 201, 167, 0.1)"
-                     data-circles-fg-color="#00c9a7"
-                     data-circles-radius="50"
-                     data-circles-stroke-width="4"
-                     data-circles-additional-text="%"
-                     data-circles-duration="2000"
-                     data-circles-scroll-animate="true"
-                     data-circles-color="#00c9a7"
-                     data-circles-font-size="24"></div>
-                  <!-- End Pie Circle -->
-                </div>
-              </div>
-
-              <button type="button" class="btn btn-block btn-sm btn-primary transition-3d-hover">Add Funds</button>
-              <!-- End Deposit Info -->
-            </div>
-
-            <div class="card-footer p-5">
-              <!-- Progress Info -->
-              <div class="row align-items-center">
-                <div class="col-6 u-ver-divider">
-                  <label class="small text-muted">Goal:</label>
-                  <small class="font-weight-medium">$100k</small>
-                  <div class="js-hr-progress progress" style="height: 4px;">
-                    <div class="js-hr-progress-bar progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-
-                <div class="col-6">
-                  <label class="small text-muted">Duration:</label>
-                  <small class="font-weight-medium">6 months</small>
-                  <div class="js-hr-progress progress" style="height: 4px;">
-                    <div class="js-hr-progress-bar progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Progress Info -->
-            </div>
-          </div>
-          <!-- End Stats -->
-
-          <!-- Stats -->
-          <div class="card mb-7 mb-lg-0">
-            <div class="card-body pt-4 pb-5 px-5 mb-3 mb-md-0">
-              <!-- Title & Settings -->
-              <div class="d-flex justify-content-between align-items-center">
-                <h4 class="h6 mb-0">Balance</h4>
-
-                <!-- Settings Dropdown -->
-                <div class="position-relative">
-                  <a id="balanceSettingsDropdownInvoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" role="button"
-                     aria-controls="balanceSettingsDropdown"
-                     aria-haspopup="true"
-                     aria-expanded="false"
-                     data-unfold-event="click"
-                     data-unfold-target="#balanceSettingsDropdown"
-                     data-unfold-type="css-animation"
-                     data-unfold-duration="300"
-                     data-unfold-delay="300"
-                     data-unfold-hide-on-scroll="true"
-                     data-unfold-animation-in="slideInUp"
-                     data-unfold-animation-out="fadeOut">
-                    <span class="fas fa-ellipsis-h btn-icon__inner"></span>
-                  </a>
-
-                  <div id="balanceSettingsDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="balanceSettingsDropdownInvoker" style="min-width: 190px;">
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-cogs dropdown-item-icon"></small>
-                      Settings
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-cloud-download-alt dropdown-item-icon"></small>
-                      Download
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-archive dropdown-item-icon"></small>
-                      Archive
-                    </a>
-                  </div>
-                </div>
-                <!-- End Settings Dropdown -->
-              </div>
-              <!-- End Title & Settings -->
-
-              <hr class="mt-3 mb-4">
-
-              <!-- Balance Info -->
-              <div class="row align-items-center mb-4">
-                <div class="col-6 u-ver-divider">
-                  <label class="d-block small text-muted mb-0">Available:</label>
-                  <span class="font-weight-medium">$45.99</span>
-                </div>
-
-                <div class="col-6">
-                  <label class="d-block small text-muted mb-0">Pending:</label>
-                  <span class="font-weight-medium">$0.00</span>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-3">
-                  <div class="js-vr-progress progress-vertical rounded mb-2">
-                    <div class="js-vr-progress-bar bg-primary rounded-bottom" role="progressbar" style="height: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="text-center">
-                    <h4 class="small mb-0">May</h4>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="js-vr-progress progress-vertical rounded mb-2">
-                    <div class="js-vr-progress-bar bg-primary rounded-bottom" role="progressbar" style="height: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="text-center">
-                    <h4 class="small mb-0">Jun</h4>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="js-vr-progress progress-vertical rounded mb-2">
-                    <div class="js-vr-progress-bar bg-primary rounded-bottom" role="progressbar" style="height: 23%;" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="text-center">
-                    <h4 class="small mb-0">Jul</h4>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="js-vr-progress progress-vertical rounded mb-2">
-                    <div class="js-vr-progress-bar bg-primary rounded-bottom" role="progressbar" style="height: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="text-center">
-                    <h4 class="small mb-0">Aug</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- End Balance Info -->
-            </div>
-          </div>
-          <!-- End Stats -->
-
-          <!-- Indicator -->
-          <div class="card">
-            <div class="card-body pt-4 pb-5 px-5 mb-3 mb-md-0">
-              <!-- Title & Settings -->
-              <div class="d-flex justify-content-between align-items-center">
-                <h4 class="h6 mb-0">Activity</h4>
-
-                <!-- Settings Dropdown -->
-                <div class="position-relative">
-                  <a id="activitySettingsDropdownInvoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" role="button"
-                     aria-controls="activitySettingsDropdown"
-                     aria-haspopup="true"
-                     aria-expanded="false"
-                     data-unfold-event="click"
-                     data-unfold-target="#activitySettingsDropdown"
-                     data-unfold-type="css-animation"
-                     data-unfold-duration="300"
-                     data-unfold-delay="300"
-                     data-unfold-hide-on-scroll="true"
-                     data-unfold-animation-in="slideInUp"
-                     data-unfold-animation-out="fadeOut">
-                    <span class="fas fa-ellipsis-h btn-icon__inner"></span>
-                  </a>
-
-                  <div id="activitySettingsDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="activitySettingsDropdownInvoker" style="min-width: 190px;">
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-eye dropdown-item-icon"></small>
-                      Mark as read
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-eye-slash dropdown-item-icon"></small>
-                      Mark as unread
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-archive dropdown-item-icon"></small>
-                      Archive
-                    </a>
-                  </div>
-                </div>
-                <!-- End Settings Dropdown -->
-              </div>
-              <!-- End Title & Settings -->
-
-              <hr class="mt-3 mb-4">
-
-              <div class="overflow-hidden">
-                <div class="js-scrollbar pr-3" style="max-height: 300px;">
-                  <!-- Activity Feed -->
-                  <ul class="list-unstyled u-indicator-vertical-dashed">
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-primary rounded-circle mr-3">
-                        <span class="btn-icon__inner">A</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">Amanta Owens</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">Slack home page redesign</span></p>
-                        <small class="d-block text-muted">30 min ago</small>
-                      </div>
-                    </li>
-
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-success rounded-circle mr-3">
-                        <span class="btn-icon__inner">S</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">Sebastian Diaz</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">Mapbox logo redesign</span></p>
-                        <small class="d-block text-muted">44 min ago</small>
-                      </div>
-                    </li>
-
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-warning rounded-circle mr-3">
-                        <span class="btn-icon__inner text-white">F</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">Eliza Donovan</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">Spotify branding</span></p>
-                        <small class="d-block text-muted">1 hour ago</small>
-                      </div>
-                    </li>
-
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-primary rounded-circle mr-3">
-                        <span class="btn-icon__inner">C</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">Cler Lockhart</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">Dropbox home page redesign</span></p>
-                        <small class="d-block text-muted">15 hours ago</small>
-                      </div>
-                    </li>
-
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-danger rounded-circle mr-3">
-                        <span class="btn-icon__inner">J</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">James Collins</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">InVison branding</span></p>
-                        <small class="d-block text-muted">1 day ago</small>
-                      </div>
-                    </li>
-                  </ul>
-                  <!-- End Activity Feed -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Indicator -->
-        </div>
-        <!-- End Card --> --}}
             </div>
         </div>
         <!-- End Content Section -->
@@ -998,6 +470,7 @@
     <script src="{{ asset('front/js/components/hs.go-to.js') }}"></script>
     <script src="{{ asset('front/js/components/hs.selectpicker.js') }}"></script>
     <script src="{{ asset('front/js/components/hs.datatables.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
     <!-- JS Plugins Init. -->
     <script>

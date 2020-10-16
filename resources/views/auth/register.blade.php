@@ -23,6 +23,15 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
+  <style>
+    .bg-unj {
+        background: #006F45 !important;
+    }
+
+    .text-unj {
+        color: #006f45 !important;
+    }
+  </style>
 </head>
 <body>
   <!-- ========== HEADER ========== -->
@@ -67,7 +76,7 @@
   <main id="content" role="main">
     <!-- Form -->
     <div class="d-flex align-items-center position-relative height-lg-100vh">
-      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center gradient-half-primary-v1 height-lg-100vh px-0">
+      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center bg-unj height-lg-100vh px-0">
         <div class="w-100 p-5">
           <!-- SVG Quote -->
           <figure class="text-center mb-5 mx-auto">
@@ -91,8 +100,8 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">The template is really nice and offers quite a large set of options. Thank you!</blockquote>
-                <h1 class="h6 text-white-70">Maria Muszynska, Google</h1>
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat kepada para wisudawan yang telah berhasil meraih kelulusan. Semoga ilmu yang diperoleh bisa berguna bagi kemajuan bangsa!</blockquote>
+                <h1 class="h6 text-white-70">Dr. Komaruddin. M.Si, Rektor UNJ</h1>
               </div>
               <!-- End Testimonials -->
             </div>
@@ -100,8 +109,8 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">It's beautiful and the coding is done quickly and seamlessly. Keep it up!</blockquote>
-                <h2 class="h6 text-white-70">James Austin, Slack</h2>
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi para wisudawan. Semoga sukses di dunia kerja ataupun di dunia usaha!</blockquote>
+                <h2 class="h6 text-white-70">Prof. Dr. Suyono, M.Si, WR1 UNJ</h2>
               </div>
               <!-- End Testimonials -->
             </div>
@@ -129,13 +138,13 @@
                data-nav-for="#testimonialsNavMain">
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="front/img/100x100/img1.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/rektor.jpg') }}" alt="Image Description">
               </div>
             </div>
 
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="front/img/100x100/img3.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/wr1.jpg') }}" alt="Image Description">
               </div>
             </div>
 
@@ -157,7 +166,7 @@
                 {{csrf_field()}}
               <!-- Title -->
               <div class="mb-5">
-                <h2 class="h3 text-primary font-weight-normal mb-0">Selamat <span class="font-weight-semi-bold">wisuda</span>!</h2>
+                <h2 class="h3 text-danger font-weight-normal mb-0">Selamat <span class="font-weight-semi-bold">wisuda</span>!</h2>
                 <p>Registrasi untuk melakukan photoshoot.</p>
               </div>
               <!-- End Title -->
@@ -246,7 +255,7 @@
                 <div class="col-12">
                   <small class="text-warning text-small">*Password digunakan untuk mengubah tanggal kehadiran.</small>
                 </div>
-                <div class="col-12 text-right">
+                <div class="col-12 text-right mt-2">
                   <button type="submit" class="btn btn-primary transition-3d-hover">Daftar</button>
                 </div>
                 <!-- End Button -->

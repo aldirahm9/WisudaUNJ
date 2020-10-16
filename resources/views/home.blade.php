@@ -29,6 +29,11 @@
 
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
+    <style>
+           .text-unj {
+          color: #006f45 !important;
+      }
+    </style>
 </head>
 
 <body class="u-custombox-no-scroll">
@@ -270,13 +275,12 @@
                     <div class="card-header py-4 px-0 mx-4">
                         <!-- Title -->
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h3 class="h4 mb-0"><i class="fa fa-user-circle" aria-hidden="true"></i> Profil</h3>
+                            <h3 class="h4 mb-0"><i class="fa fa-user-circle text-unj" aria-hidden="true"></i> Profil</h3>
                             <h3 class="h6 mb-0">
                             <button href="#" type="button" class="btn btn-success btn-pill transition-3d-hover">
                                 <i class="fa fa-print" aria-hidden="true"></i>
-                                Print
+                                Print Bukti Pendaftaran
                             </button>
-                                Bukti Pendaftaran
                             </h3>
                             {{-- <a class="link-muted" href="#">View All</a> --}}
                         </div>
@@ -295,7 +299,7 @@
 
                             <div class="h6 col-3 mb-5">Tanggal Foto</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->format('d, M Y') }}</div>
+                            <div class="h6 col-8">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->format('d M Y') }}</div>
 
                             <div class="h6 col-8">
                             <form class="js-validate mt-3" action="/" method="POST" id="formRegister">
@@ -326,6 +330,8 @@
             </div>
         </div>
         <!-- End Content Section -->
+        <!-- pdf -->
+        <div class="html-content"></div>
     </main>
     <!-- ========== END MAIN ========== -->
 

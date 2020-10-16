@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ asset('front/vendor/hs-megamenu/src/hs.megamenu.css') }}">
   <link rel="stylesheet" href="{{ asset('front/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}">
   <link rel="stylesheet" href="{{ asset('front/vendor/flatpickr/dist/flatpickr.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('front/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}">
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
@@ -985,7 +986,7 @@
     <!-- Content Section -->
     <div class="bg-light">
       <div class="container space-2">
-        <!-- Stats -->
+        {{-- <!-- Stats -->
         <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
           <!-- Card -->
           <div class="card mb-3 mb-lg-0">
@@ -1035,7 +1036,7 @@
           </div>
           <!-- End Card -->
         </div>
-        <!-- End Stats -->
+        <!-- End Stats --> --}}
 
         <!-- Title -->
         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -1505,95 +1506,102 @@
   <!-- ========== END MAIN ========== -->
 
   <!-- ========== FOOTER ========== -->
-  <footer>
-    <!-- Lists -->
+  <footer class="container space-top-2 space-top-md-3">
     <div class="border-bottom">
-      <div class="container space-2">
-        <div class="row justify-content-md-between">
-          <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
-            <h4 class="h6 font-weight-semi-bold">About</h4>
+      <div class="row mb-7">
+        <div class="col-lg-4 mb-7 mb-lg-0">
+          <div class="d-inline-flex align-self-start flex-column h-100">
+            <!-- Logo -->
+            <a class="d-flex align-items-center mb-3" href="index.html" aria-label="Front">
+              <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
+              <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
+            </a>
+            <!-- End Logo -->
 
-            <!-- List Group -->
-            <ul class="list-group list-group-flush list-group-borderless mb-0">
-              <li><a class="list-group-item list-group-item-action" href="../pages/about-agency.html">About</a></li>
-              <li><a class="list-group-item list-group-item-action" href="../pages/services-agency.html">Services</a></li>
-              <li><a class="list-group-item list-group-item-action" href="../pages/careers.html">Careers</a></li>
-            </ul>
-            <!-- End List Group -->
-          </div>
-
-          <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
-            <h4 class="h6 font-weight-semi-bold">Account</h4>
-
-            <!-- List Group -->
-            <ul class="list-group list-group-flush list-group-borderless mb-0">
-              <li><a class="list-group-item list-group-item-action" href="dashboard.html">Account</a></li>
-              <li><a class="list-group-item list-group-item-action" href="my-tasks.html">My tasks</a></li>
-              <li><a class="list-group-item list-group-item-action" href="projects.html">Projects</a></li>
-            </ul>
-            <!-- End List Group -->
-          </div>
-
-          <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
-            <h4 class="h6 font-weight-semi-bold">Resources</h4>
-
-            <!-- List Group -->
-            <ul class="list-group list-group-flush list-group-borderless mb-0">
-              <li><a class="list-group-item list-group-item-action" href="../pages/help.html">Help</a></li>
-              <li><a class="list-group-item list-group-item-action" href="../pages/terms.html">Terms</a></li>
-              <li><a class="list-group-item list-group-item-action" href="../pages/privacy.html">Privacy</a></li>
-            </ul>
-            <!-- End List Group -->
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <h4 class="h6 font-weight-semi-bold mb-4">We are driven to deliver results for all your businesses.</h4>
-
-            <!-- Button -->
-            <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2 mr-1">
-              <span class="media align-items-center">
-                <span class="fab fa-apple fa-2x mr-3"></span>
-                <span class="media-body">
-                  <span class="d-block">Download on the</span>
-                  <strong class="font-size-1">App Store</strong>
-                </span>
+            <!-- Country -->
+            <div class="position-relative">
+              <span id="footerCountryInvoker" class="dropdown-nav-link"
+                 aria-controls="footer-country"
+                 aria-haspopup="true"
+                 aria-expanded="false"
+                 data-toggle="dropdown"
+                 data-unfold-event="click"
+                 data-unfold-target="#footer-country"
+                 data-unfold-type="css-animation"
+                 data-unfold-duration="300"
+                 data-unfold-delay="300"
+                 data-unfold-hide-on-scroll="false"
+                 data-unfold-animation-in="slideInUp"
+                 data-unfold-animation-out="fadeOut">
+                <img class="dropdown-item-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/id.svg') }}" alt="United States Flag">
+                <span>Indonesia</span>
               </span>
-            </button>
-            <!-- End Button -->
-
-            <!-- Button -->
-            <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2">
-              <span class="media align-items-center">
-                <span class="fab fa-google-play fa-2x mr-3"></span>
-                <span class="media-body">
-                  <span class="d-block">Get it on</span>
-                  <strong class="font-size-1">Google Play</strong>
-                </span>
-              </span>
-            </button>
-            <!-- End Button -->
+            </div>
+            <!-- End Country -->
           </div>
+        </div>
+
+        <div class="col-sm-4 col-md-3 col-lg-4 mb-4 mb-md-0">
+          <h4 class="h6 font-weight-semi-bold">Website Resmi UNJ</h4>
+
+          <!-- List Group -->
+          <ul class="list-group list-group-flush list-group-borderless mb-0">
+            <li><a class="list-group-item list-group-item-action" href="http://www.unj.ac.id/">Beranda</a></li>
+            <li><a class="list-group-item list-group-item-action" href="http://www.unj.ac.id/category/berita/">Berita</a></li>
+            <li><a class="list-group-item list-group-item-action" href="http://siakad.unj.ac.id/">Siakad</a></li>
+            <li><a class="list-group-item list-group-item-action" href="http://journal.unj.ac.id/">Jurnal</a></li>
+          </ul>
+          <!-- End List Group -->
+        </div>
+
+        <div class="col-md-3 col-lg-3">
+          <h4 class="h6 font-weight-semi-bold">Kontak</h4>
+
+          <!-- Address -->
+          <address>
+            <ul class="list-group list-group-flush list-group-borderless mb-0">
+              <li class="list-group-item">Telp: (021) 4898486</li>
+              <li class="list-group-item">
+                Email: <a href="mailto:humas@unj.ac.id">humas@unj.ac.id</a>
+              </li>
+              <li class="list-group-item">Jl. Rawamangun Muka, RT.11/RW.14, Rawamangun,  Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220</li>
+            </ul>
+          </address>
+          <!-- End Address -->
         </div>
       </div>
     </div>
-    <!-- End Lists -->
 
-    <!-- Copyright -->
-    <div class="container text-center space-1">
-      <!-- Logo -->
-      <a class="d-inline-flex align-items-center mb-2" href="../home/index.html" aria-label="Front">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px" height="36px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
-          <path fill="#3F7DE0" opacity=".65" d="M23,41L23,41c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18h11.3C38,5,41,8,41,11.7V23C41,32.9,32.9,41,23,41z"/>
-          <path class="fill-info" opacity=".5" d="M28,35.9L28,35.9c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18l11.3,0C43,0,46,3,46,6.6V18C46,27.9,38,35.9,28,35.9z"/>
-          <path class="fill-primary" opacity=".7" d="M18,46L18,46C8,46,0,38,0,28v0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6V28C35.9,38,27.9,46,18,46z"/>
-          <path class="fill-white" d="M17.4,34V18.3h10.2v2.9h-6.4v3.4h4.8v2.9h-4.8V34H17.4z"/>
-        </svg>
-        <span class="brand brand-primary">Front</span>
-      </a>
-      <!-- End Logo -->
-      <p class="small text-muted">&copy; Front. 2018 Htmlstream. All rights reserved.</p>
+    <div class="d-flex justify-content-between align-items-center py-7">
+      <!-- Copyright -->
+      <p class="small text-muted mb-0">&copy; Digiteam UNJ. {{ date('Y') }} Jakarta.</p>
+      <!-- End Copyright -->
+
+      <!-- Social Networks -->
+      <ul class="list-inline mb-0">
+        <li class="list-inline-item">
+          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.facebook.com/OfficialUNJ/">
+            <span class="fab fa-facebook-f btn-icon__inner"></span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.youtube.com/channel/UCEbRyX261ttaaW_6-EjTUWA">
+            <span class="fab fa-youtube btn-icon__inner"></span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://twitter.com/UNJ_Official">
+            <span class="fab fa-twitter btn-icon__inner"></span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.instagram.com/unj_official/">
+            <span class="fab fa-instagram btn-icon__inner"></span>
+          </a>
+        </li>
+      </ul>
+      <!-- End Social Networks -->
     </div>
-    <!-- End Copyright -->
   </footer>
   <!-- ========== END FOOTER ========== -->
 
@@ -2714,6 +2722,8 @@
   <script src="{{ asset('front/vendor/flatpickr/dist/flatpickr.min.js') }}"></script>
   <script src="{{ asset('front/vendor/appear.js') }}"></script>
   <script src="{{ asset('front/vendor/circles/circles.min.js') }}"></script>
+  <script src="{{ asset('front/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('front/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 
   <!-- JS Front -->
   <script src="{{ asset('front/js/hs.core.js') }}"></script>
@@ -2730,6 +2740,8 @@
   <script src="{{ asset('front/js/components/hs.progress-bar.js') }}"></script>
   <script src="{{ asset('front/js/components/hs.svg-injector.js') }}"></script>
   <script src="{{ asset('front/js/components/hs.go-to.js') }}"></script>
+  <script src="{{ asset('front/js/components/hs.selectpicker.js') }}"></script>
+  <script src="{{ asset('front/js/components/hs.datatables.js') }}"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -2801,6 +2813,12 @@
         direction: 'vertical',
         indicatorSelector: '.js-vr-progress-bar'
       });
+
+      // initialization of datatables
+      $.HSCore.components.HSDatatables.init('.js-datatable');
+
+      // initialization of select picker
+      $.HSCore.components.HSSelectPicker.init('.js-select');
 
       // initialization of go to
       $.HSCore.components.HSGoTo.init('.js-go-to');

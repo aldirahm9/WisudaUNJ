@@ -30,6 +30,4 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin', [adminController::class, 'dashboard']);
 });
 
-Route::get('pdf', function () {
-    return view('pdf.bukti_pendaftaran');
-});
+Route::get('pdf', [App\Http\Controllers\HomeController::class, 'pdf'])->name('pdf');

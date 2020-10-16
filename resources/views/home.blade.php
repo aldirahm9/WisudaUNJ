@@ -277,10 +277,10 @@
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h3 class="h4 mb-0"><i class="fa fa-user-circle text-unj" aria-hidden="true"></i> Profil</h3>
                             <h3 class="h6 mb-0">
-                            <button href="#" type="button" class="btn btn-success btn-pill transition-3d-hover">
+                            <a href="{{URL::to('/pdf')}}" type="button" class="btn btn-success btn-pill transition-3d-hover">
                                 <i class="fa fa-print" aria-hidden="true"></i>
                                 Print Bukti Pendaftaran
-                            </button>
+                            </a>
                             </h3>
                             {{-- <a class="link-muted" href="#">View All</a> --}}
                         </div>

@@ -107,7 +107,7 @@
                     <table>
                         <tr>
                             <td class="title" >
-                                <img src="{{asset('logounj.png')}}" style="width:100%; max-width:100px;vertical-align: middle">
+                                <img src="./logounj.png" style="width:100%; max-width:100px;vertical-align: middle">
                                 <span style="vertical-align: middle">Wisuda Digital UNJ</span>
                             </td>
                             <td><b><u>

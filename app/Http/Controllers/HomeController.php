@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pendaftaran;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -28,5 +29,11 @@ class HomeController extends Controller
         return redirect('/admin');
         $pendaftaran = Pendaftaran::all();
         return view('home', ['pendaftaran' => $pendaftaran]);
+    }
+
+    public function pdf()
+    {
+        $pdf = PDF::loadView('pdf.bukti_pendaftaran');
+        return $pdf->download('filename.pdf');
     }
 }

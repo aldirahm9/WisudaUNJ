@@ -249,5 +249,6 @@
       $.HSCore.components.HSValidation.init('.js-validate');
     });
   </script>
+  @include('sweetalert::alert')
 </body>
 </html>

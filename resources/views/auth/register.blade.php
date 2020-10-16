@@ -229,8 +229,8 @@
                       {{-- <a class="link-muted text-capitalize font-weight-normal" href="recover-account.html">Forgot Password?</a> --}}
                     </span>
                   </label>
-                  <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
-                         data-msg="Your password is invalid. Please try again."
+                  <input minlength="6" type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
+                         data-msg="Minimal password 6 karakter"
                          data-error-class="u-has-error"
                          data-success-class="u-has-success"
                          autocomplete="off">
@@ -367,5 +367,6 @@
     }
 
   </script>
+  @include('sweetalert::alert')
 </body>
 </html>

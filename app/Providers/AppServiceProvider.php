@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Routing\UrlGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,12 +24,21 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(UrlGenerator $url)
     {
+        config(['app.locale' => 'id']);
+
+        \Carbon\Carbon::setLocale('id');
+
         Schema::defaultStringLength(191);
 
-        if($this->app->environtment('production')) {
-            \URL::forceScheme('https');
+        Blade::directive('rupiah', function ($angka)
+        {
+            return "Rp <?php echo number_format($angka, 0, ',', '.');?>";
+        });
+
+        if($this->app->environment('production')) {
+            $url->forceScheme('https');
         }
     }
 }

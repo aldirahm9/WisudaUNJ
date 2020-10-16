@@ -23,6 +23,15 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
+  <style>
+    .bg-unj {
+        background: #006F45 !important;
+    }
+
+    .text-unj {
+        color: #006f45 !important;
+    }
+  </style>
 </head>
 <body>
   <!-- ========== HEADER ========== -->
@@ -67,7 +76,7 @@
   <main id="content" role="main">
     <!-- Form -->
     <div class="d-flex align-items-center position-relative height-lg-100vh">
-      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center gradient-half-primary-v1 height-lg-100vh px-0">
+      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center bg-unj height-lg-100vh px-0">
         <div class="w-100 p-5">
           <!-- SVG Quote -->
           <figure class="text-center mb-5 mx-auto">
@@ -157,7 +166,7 @@
                 {{csrf_field()}}
               <!-- Title -->
               <div class="mb-5">
-                <h2 class="h3 text-primary font-weight-normal mb-0">Selamat <span class="font-weight-semi-bold">wisuda</span>!</h2>
+                <h2 class="h3 text-danger font-weight-normal mb-0">Selamat <span class="font-weight-semi-bold">wisuda</span>!</h2>
                 <p>Registrasi untuk melakukan photoshoot.</p>
               </div>
               <!-- End Title -->
@@ -246,7 +255,7 @@
                 <div class="col-12">
                   <small class="text-warning text-small">*Password digunakan untuk mengubah tanggal kehadiran.</small>
                 </div>
-                <div class="col-12 text-right">
+                <div class="col-12 text-right mt-2">
                   <button type="submit" class="btn btn-primary transition-3d-hover">Daftar</button>
                 </div>
                 <!-- End Button -->

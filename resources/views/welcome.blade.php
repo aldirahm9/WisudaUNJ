@@ -3,22 +3,22 @@
 <html lang="en">
 <head>
   <!-- Title -->
-  <title>Photoshoot Wisuda UNJ</title>
+  <title>Wisuda Digital UNJ</title>
 
-  <meta name="title" content="Photoshoot Wisuda UNJ">
+  <meta name="title" content="Wisuda Digital UNJ">
   <meta name="description" content="Udah wisudanya? Skuy poto-poto dulu di kampus bareng pacar, gebetan, abang, empok, encing, enyak, babeh.">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://metatags.io/">
-  <meta property="og:title" content="Photoshoot Wisuda UNJ">
+  <meta property="og:title" content="Wisuda Digital UNJ">
   <meta property="og:description" content="Udah wisudanya? Skuy poto-poto dulu di kampus bareng pacar, gebetan, abang, empok, encing, enyak, babeh.">
   <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://metatags.io/">
-  <meta property="twitter:title" content="Photoshoot Wisuda UNJ">
+  <meta property="twitter:title" content="Wisuda Digital UNJ">
   <meta property="twitter:description" content="Udah wisudanya? Skuy poto-poto dulu di kampus bareng pacar, gebetan, abang, empok, encing, enyak, babeh.">
   <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
@@ -66,7 +66,7 @@
             <!-- Logo -->
             <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-text-white" href="index.html" aria-label="Front">
               <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="width: 46px; height: auto">
-              <span class="ml-2 text-white">Photoshoot Wisuda UNJ</span>
+              <span class="ml-2 text-white">Wisuda Digital UNJ</span>
             </a>
             <!-- End Logo -->
 
@@ -87,16 +87,30 @@
           <!-- Navigation -->
           <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
             <ul class="navbar-nav u-header__navbar-nav">
-
+              @if (Auth::check())
+                <li class="nav-item d-md-none">
+                  <a href="{{ route('register') }}" class="nav-link">Masuk</a>
+                </li>
+              @else
+                <li class="nav-item d-md-none">
+                  <a href="{{ route('register') }}" class="nav-link">Daftar</a>
+                </li>
+              @endif
             </ul>
           </div>
           <!-- End Navigation -->
 
           <!-- Last Item -->
           <div class="u-header-center-aligned-nav__col u-header-center-aligned-nav__col-last-item">
-            <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('register')}}">
-              Daftar
-            </a>
+            @if (Auth::check())
+              <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('register')}}">
+                Masuk
+              </a>
+            @else
+              <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('register')}}">
+                Daftar
+              </a>
+            @endif
           </div>
           <!-- End Last Item -->
         </nav>
@@ -238,7 +252,7 @@
 
     <hr class="my-0">
 
-    {{-- <!-- Front in Frames Section -->
+    <!-- Front in Frames Section -->
     <div class="overflow-hidden">
       <div class="container space-2 space-md-3">
         <div class="row justify-content-between align-items-center">
@@ -246,14 +260,15 @@
             <div class="pr-md-4">
               <!-- Title -->
               <div class="mb-7">
-                <span class="u-label u-label--sm u-label--success mb-2">About</span>
-                <h2 class="text-primary">Front in <span class="font-weight-semi-bold">frames</span></h2>
-                <p>Enhance your brand with easy-to-use powerful customization features.</p>
-                <p>The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
+                <span class="u-label u-label--sm u-label--warning mb-2">Tentang</span>
+                <h2 class="text-danger">Wisuda <span class="font-weight-semi-bold">digital</span></h2>
+                <p>Berangkat dari kondisi pandemi virus corona, Universitas Negeri Jakarta berinisiatif untuk mengubah tata cara pelaksanaan wisuda untuk semester 111/112.</p>
+                <p>Selain pelaksanaan wisuda yang dilakukan secara online, rangkaian berikutnya akan membuat kamu tidak kehilangan momen-momen wisuda yang dilakukan dengan cara offline.</p>
+                <p>Untuk menghadirkan hal tersebut, UNJ membuat rangkaian acara <strong class="text-warning">Photoshoot Wisuda UNJ</strong>. Kamu masih bisa berfoto-foto bersama keluarga dan kerabat di lingkungan kampus A UNJ</p>
               </div>
               <!-- End Title -->
 
-              <a class="btn btn-sm btn-primary btn-wide transition-3d-hover" href="index.html">Find out More <span class="fas fa-angle-right ml-2"></span></a>
+              <a class="btn btn-sm btn-unj btn-wide transition-3d-hover" href="{{ route('register') }}">Daftar <span class="fas fa-angle-right ml-2"></span></a>
             </div>
           </div>
 
@@ -263,11 +278,11 @@
               <div class="col-5 align-self-end px-2 mb-3">
                 <!-- Fancybox -->
                 <a class="js-fancybox u-media-viewer" href="javascript:;"
-                   data-src="{{ asset('front/img/1920x1080/img2.jpg') }}"
+                   data-src="{{ asset('img/photoshot1.JPG') }}"
                    data-fancybox="lightbox-gallery-hidden"
                    data-caption="Front in frames - image #01"
                    data-speed="700">
-                  <img class="img-fluid rounded" src="{{ asset('front/img/320x320/img1.jpg') }}" alt="Image Description">
+                  <img class="img-fluid rounded" src="{{ asset('img/photoshot1.JPG') }}" alt="Image Description">
 
                   <span class="u-media-viewer__container">
                     <span class="u-media-viewer__icon">
@@ -281,11 +296,11 @@
               <div class="col-7 px-2 mb-3">
                 <!-- Fancybox -->
                 <a class="js-fancybox u-media-viewer" href="javascript:;"
-                   data-src="{{ asset('front/img/1920x1080/img4.jpg') }}"
+                   data-src="{{ asset('img/photoshot2.JPG') }}"
                    data-fancybox="lightbox-gallery-hidden"
                    data-caption="Front in frames - image #02"
                    data-speed="700">
-                  <img class="img-fluid rounded" src="{{ asset('front/img/450x450/img1.jpg') }}" alt="Image Description">
+                  <img class="img-fluid rounded" src="{{ asset('img/photoshot2.JPG') }}" alt="Image Description">
 
                   <span class="u-media-viewer__container">
                     <span class="u-media-viewer__icon">
@@ -299,11 +314,11 @@
               <div class="col-5 offset-1 px-2 mb-3">
                 <!-- Fancybox -->
                 <a class="js-fancybox u-media-viewer" href="javascript:;"
-                   data-src="{{ asset('front/img/1920x1920/img1.jpg') }}"
+                   data-src="{{ asset('img/photoshot3.JPG') }}"
                    data-fancybox="lightbox-gallery-hidden"
                    data-caption="Front in frames - image #03"
                    data-speed="700">
-                  <img class="img-fluid rounded" src="{{ asset('front/img/280x310/img1.jpg') }}" alt="Image Description">
+                  <img class="img-fluid rounded" src="{{ asset('img/photoshot3.JPG') }}" alt="Image Description">
 
                   <span class="u-media-viewer__container">
                     <span class="u-media-viewer__icon">
@@ -317,11 +332,11 @@
               <div class="col-5 px-2 mb-3">
                 <!-- Fancybox -->
                 <a class="js-fancybox u-media-viewer" href="javascript:;"
-                   data-src="{{ asset('front/img/1920x1080/img3.jpg') }}"
+                   data-src="{{ asset('img/photoshot4.JPG') }}"
                    data-fancybox="lightbox-gallery-hidden"
                    data-caption="Front in frames - image #04"
                    data-speed="700">
-                  <img class="img-fluid rounded" src="{{ asset('front/img/300x180/img1.jpg') }}" alt="Image Description">
+                  <img class="img-fluid rounded" src="{{ asset('img/photoshot4.JPG') }}" alt="Image Description">
 
                   <span class="u-media-viewer__container">
                     <span class="u-media-viewer__icon">
@@ -348,7 +363,7 @@
     </div>
     <!-- End Front in Frames Section -->
 
-    <!-- Devices v2 Section -->
+    {{-- <!-- Devices v2 Section -->
     <div id="SVGSubscribe" class="svg-preloader bg-primary u-devices-v2">
       <div class="container space-2 space-md-3 position-relative z-index-2">
         <!-- Title -->
@@ -785,7 +800,7 @@
             <!-- Logo -->
             <a class="d-flex align-items-center mb-3" href="/" aria-label="Front">
               <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
-              <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
+              <span class="text-unj ml-2">Wisuda Digital UNJ</span>
             </a>
             <!-- End Logo -->
 

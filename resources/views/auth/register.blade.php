@@ -100,8 +100,8 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">The template is really nice and offers quite a large set of options. Thank you!</blockquote>
-                <h1 class="h6 text-white-70">Maria Muszynska, Google</h1>
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat kepada para wisudawan yang telah berhasil meraih kelulusan. Semoga ilmu yang diperoleh bisa berguna bagi kemajuan bangsa!</blockquote>
+                <h1 class="h6 text-white-70">Dr. Komaruddin. M.Si, Rektor UNJ</h1>
               </div>
               <!-- End Testimonials -->
             </div>
@@ -109,8 +109,8 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">It's beautiful and the coding is done quickly and seamlessly. Keep it up!</blockquote>
-                <h2 class="h6 text-white-70">James Austin, Slack</h2>
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi para wisudawan. Semoga sukses di dunia kerja ataupun di dunia usaha!</blockquote>
+                <h2 class="h6 text-white-70">Prof. Dr. Suyono, M.Si, WR1 UNJ</h2>
               </div>
               <!-- End Testimonials -->
             </div>
@@ -138,13 +138,13 @@
                data-nav-for="#testimonialsNavMain">
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="front/img/100x100/img1.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/rektor.jpg') }}" alt="Image Description">
               </div>
             </div>
 
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="front/img/100x100/img3.jpg" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/wr1.jpg') }}" alt="Image Description">
               </div>
             </div>
 

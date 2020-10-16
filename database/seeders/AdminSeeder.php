@@ -65,7 +65,7 @@ class AdminSeeder extends Seeder
             'tanggal_akhir_photoshoot' => '2020-11-23',
         ]);
         Fakultas::create([
-            'nama_fakultas' => 'Pasca',
+            'nama_fakultas' => 'Pascasarjana',
             'tanggal_awal_photoshoot' => '2020-11-24',
             'tanggal_akhir_photoshoot' => '2020-11-26',
         ]);

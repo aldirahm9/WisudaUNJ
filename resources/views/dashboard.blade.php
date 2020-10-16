@@ -485,11 +485,12 @@
                 <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
                     <!-- Card -->
                     <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
+                        <a class="card-body p-4" >
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFMIPA.png')}}"
-                                        alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFMIPA.png')}}"
+                                        alt="Image Description"> --}}
+                                        <i style="color: #8033E6;" class="fas fa-flask fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">FMIPA</span>
@@ -510,8 +511,9 @@
                         <a class="card-body p-4" href="#">
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFT.png')}}" alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/LogoFT.png')}}" alt="Image Description"> --}}
+                                        <i style="color: #0082D9;" class="fas fa-wrench fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">FT</span>
@@ -532,8 +534,9 @@
                         <a class="card-body p-4" href="#">
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFIO.png')}}" alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/LogoFIO.png')}}" alt="Image Description"> --}}
+                                        <i style="color: black;" class="fas fa-volleyball-ball fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">FIO</span>
@@ -556,8 +559,9 @@
                         <a class="card-body p-4" href="#">
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFIS.png')}}" alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/LogoFIS.png')}}" alt="Image Description"> --}}
+                                        <i style="color: #F20000;" class="fas fa-user fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">FIS</span>
@@ -578,8 +582,9 @@
                         <a class="card-body p-4" href="#">
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFBS.png')}}" alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/LogoFBS.png')}}" alt="Image Description"> --}}
+                                        <i style="color: #FFB3FF;" class="fas fa-book fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">FBS</span>
@@ -600,8 +605,9 @@
                         <a class="card-body p-4" href="#">
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoPsikologi.png')}}" alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/LogoPsikologi.png')}}" alt="Image Description"> --}}
+                                        <i style="color: lightblue;" class="fas fa-brain fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">Psikologi</span>
@@ -624,8 +630,9 @@
                         <a class="card-body p-4" href="#">
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFIP.png')}}" alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/LogoFIP.png')}}" alt="Image Description"> --}}
+                                        <i style="color: #99FF33;" class="fas fa-school fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">FIP</span>
@@ -646,8 +653,9 @@
                         <a class="card-body p-4" href="#">
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFE.png')}}" alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/LogoFE.png')}}" alt="Image Description"> --}}
+                                        <i style="color: #FF00FF;" class="fas fa-coins fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">FE</span>
@@ -668,8 +676,9 @@
                         <a class="card-body p-4" href="#">
                             <div class="media align-items-center">
                                 <div class="u-avatar mr-3">
-                                    <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoPasca.png')}}" alt="Image Description">
+                                    {{-- <img class="img-fluid rounded-circle"
+                                        src="{{ asset('img/LogoPasca.png')}}" alt="Image Description"> --}}
+                                        <i style="color: #E68A17;" class="fas fa-graduation-cap fa-3x"></i>
                                 </div>
                                 <div class="media-body">
                                     <span class="text-dark">Pasca</span>

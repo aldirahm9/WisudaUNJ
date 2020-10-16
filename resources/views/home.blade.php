@@ -283,19 +283,19 @@
                         <div class="row mb-5">
                             <div class="h6 col-3">Nama</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">Muhammad Fathan Qoriiba</div>
+                            <div class="h6 col-8">{{ Auth::user()->pendaftaran->nama_mahasiswa }}</div>
 
                             <div class="h6 col-3">NRM</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">3145161299</div>
+                            <div class="h6 col-8">{{ Auth::user()->nrm }}</div>
 
                             <div class="h6 col-3">Fakultas</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">FMIPA</div>
+                            <div class="h6 col-8">{{ Auth::user()->pendaftaran->fakultas->nama_fakultas }}</div>
 
                             <div class="h6 col-3 mb-5">Tanggal Foto</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">25 Feb 2020</div>
+                            <div class="h6 col-8">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->format('d, M Y') }}</div>
 
                             <div class="h6 col-8">
                             <form class="js-validate mt-3" action="/" method="POST" id="formRegister">

@@ -37,8 +37,8 @@ class AppServiceProvider extends ServiceProvider
             return "Rp <?php echo number_format($angka, 0, ',', '.');?>";
         });
 
-        if($this->app->environment('production')) {
-            $url->forceScheme('https');
-        }
+        // if($this->app->environment('production')) {
+        //     $url->forceScheme('https');
+        // }
     }
 }

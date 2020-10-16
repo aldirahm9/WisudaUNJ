@@ -100,7 +100,7 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat kepada para wisudawan yang telah berhasil meraih kelulusan. Semoga ilmu yang diperoleh bisa berguna bagi kemajuan bangsa!</blockquote>
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi wisudawan yang telah berhasil meraih kelulusan. Semoga ilmu yang diperoleh bisa berguna bagi kemajuan bangsa!</blockquote>
                 <h1 class="h6 text-white-70">Dr. Komaruddin. M.Si, Rektor UNJ</h1>
               </div>
               <!-- End Testimonials -->
@@ -115,14 +115,14 @@
               <!-- End Testimonials -->
             </div>
 
-            <div class="js-slide">
+            {{-- <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
                 <blockquote class="h5 text-white font-weight-normal mb-4">I love Front! I love the ease of use, I love the fact that I have total creative freedom...</blockquote>
                 <h3 class="h6 text-white-70">Charlotte Moore, Amazon</h3>
               </div>
               <!-- End Testimonials -->
-            </div>
+            </div> --}}
           </div>
           <!-- End Testimonials Carousel Main -->
 
@@ -148,11 +148,11 @@
               </div>
             </div>
 
-            <div class="js-slide">
+            {{-- <div class="js-slide">
               <div class="u-avatar mx-auto">
                 <img class="img-fluid rounded-circle" src="front/img/100x100/img2.jpg" alt="Image Description">
               </div>
-            </div>
+            </div> --}}
           </div>
           <!-- End Testimonials Carousel Pagination -->
         </div>
@@ -166,7 +166,7 @@
                 {{csrf_field()}}
               <!-- Title -->
               <div class="mb-5">
-                <h2 class="h3 text-danger font-weight-normal mb-0">Selamat <span class="font-weight-semi-bold">wisuda</span>!</h2>
+                <h2 class="h3 text-success font-weight-normal mb-0">Selamat <span class="font-weight-semi-bold">wisuda</span>!</h2>
                 <p>Registrasi untuk melakukan photoshoot.</p>
               </div>
               <!-- End Title -->
@@ -175,8 +175,8 @@
 
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
-                  <label class="form-label" for="signinSrNama">Nama</label>
-                  <input  class="form-control" name="nama" id="signinSrNama" placeholder="Nama Mahasiswa" aria-label="NAMA" required
+                  <label class="form-label" for="signinSrNama">Nama Lengkap</label>
+                  <input  class="form-control" name="nama" id="signinSrNama" placeholder="Nama Wisudawan" aria-label="NAMA" required
                          data-msg="Nama Mahasiswa harus diisi"
                          data-error-class="u-has-error"
                          data-success-class="u-has-success"
@@ -211,7 +211,7 @@
 
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
-                  <label class="form-label" for="signinSrTanggal">Tanggal</label>
+                  <label class="form-label" for="signinSrTanggal">Tanggal Kedatangan</label>
                   <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="TANGGAL_KEDATANGAN" required
                          data-msg="Tanggal harus diisi"
                          data-error-class="u-has-error"
@@ -253,10 +253,11 @@
                 </div>
                 <!-- End Form Group -->
                 <div class="col-12">
-                  <small class="text-warning text-small">*Password digunakan untuk mengubah tanggal kehadiran.</small>
+                  <small class="text-warning text-small">*Password digunakan untuk mengubah tanggal kedatangan.</small>
+                  <small class="text-danger text-small">*Diharap untuk wisudawan S2 & S3 agar memilih fakultas dengan program studi asalnya.</small>
                 </div>
                 <div class="col-12 text-right mt-2">
-                  <button type="submit" class="btn btn-primary transition-3d-hover">Daftar</button>
+                  <button type="submit" class="btn btn-unj transition-3d-hover">Daftar</button>
                 </div>
                 <!-- End Button -->
               </div>

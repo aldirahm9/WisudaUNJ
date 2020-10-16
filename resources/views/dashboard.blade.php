@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>Photoshoot Wisuda UNJ</title>
+    <title>Wisuda Digital UNJ</title>
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
@@ -121,9 +121,9 @@
                                 <div class="d-flex align-items-center">
                                     <div class="u-search-push-top__banner-container">
                                         <img class="img-fluid u-search-push-top__banner-img"
-                                            src="{{ asset('front/img/mockups/img3.png" alt="Image Description') }}">
+                                            src="{{ asset('front/img/mockups/img3.png') }}" alt="Image Description">
                                         <img class="img-fluid u-search-push-top__banner-img"
-                                            src="{{ asset('front/img/mockups/img2.png" alt="Image Description') }}">
+                                            src="{{ asset('front/img/mockups/img2.png') }}" alt="Image Description">
                                     </div>
 
                                     <div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pendaftaran;
+use App\Models\Slot;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use PDF;
 
@@ -28,8 +30,15 @@ class HomeController extends Controller
     {
         if(auth()->user()->isAdmin())
         return redirect('/admin');
+        $slot = Slot::all();
         $pendaftaran = Pendaftaran::all();
-        return view('home', ['pendaftaran' => $pendaftaran]);
+        $invalidDates = [];
+        foreach($slot as $key=>$item) {
+            if($item->pendaftaran->count() == $item->kapasitas) {
+                $invalidDates[$key] = $item->tanggal;
+            }
+        }
+        return view('home', ['pendaftaran' => $pendaftaran,'invalidDates'=>$invalidDates]);
     }
 
     public function pdf()
@@ -39,5 +48,17 @@ class HomeController extends Controller
         $pdf = PDF::loadView('pdf.bukti_pendaftaran',$pendaftaran);
         $nama = str_replace(' ','_',$pendaftaran->nama_mahasiswa);
         return $pdf->download($nama . '_' . Auth::user()->nrm . '_WisudaDigitalUNJ.pdf');
+    }
+
+    public function ubahTanggal(Request $request)
+    {
+        $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
+        $slot = Slot::where('tanggal',Carbon::parse($tanggal)->format('Y-m-d'))->first();
+
+
+        $pendaftaran = Auth::user()->pendaftaran;
+        $pendaftaran->slot_id = $slot->id;
+        $pendaftaran->save();
+        return redirect('home');
     }
 }

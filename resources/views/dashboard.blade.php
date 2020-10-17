@@ -153,7 +153,7 @@
                     <!-- Logo -->
                     <a class="d-flex align-items-center mb-3" href="/admin" aria-label="Front">
                         <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
-                        <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
+                        <span class="text-unj ml-2">Wisuda Digital UNJ</span>
                     </a>
                     <!-- End Logo -->
                 </nav>
@@ -166,7 +166,7 @@
     <!-- ========== MAIN ========== -->
     <main id="content" role="main">
         <!-- Breadcrumb Section -->
-        <div class="bg-primary">
+        <div class="bg-unj">
             <div class="container space-top-1 pb-3">
                 <div class="row">
                     <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
@@ -201,7 +201,7 @@
                                 <img class="img-fluid rounded-circle" src="{{ asset('img/foto_admin.png') }}"
                                     alt="Image Description">
                                 <span
-                                    class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right rounded-circle">
+                                    class="badge badge-md badge-outline-primary badge-pos badge-pos--bottom-right rounded-circle">
                                     <span class="fas fa-check"></span>
                                 </span>
                             </div>
@@ -281,70 +281,55 @@
                     <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFMIPA.png')}}"
-                                        alt="Image Description"> --}}
-                                        <i style="color: #8033E6;" class="fas fa-flask fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FMIPA</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 1)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-indigo rounded-circle">
+                                        <span class="fas fa-flask btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Fakultas MIPA</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 1)->count() >= 1)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 1)->count() }} Pendaftar</p>
+                                @else
+                                    <p class="text-right text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
 
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle"
-                                            src="{{ asset('img/LogoFT.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #0082D9;" class="fas fa-wrench fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FT</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 2)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-primary rounded-circle">
+                                        <span class="fas fa-cogs btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Fakultas Teknik</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 2)->count() >= 2)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 1)->count() }} Pendaftar</p>
+                                @else
+                                    <p class="text-right text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
 
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle"
-                                            src="{{ asset('img/LogoFIO.png')}}" alt="Image Description"> --}}
-                                        <i style="color: black;" class="fas fa-volleyball-ball fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FIO</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 3)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-dark rounded-circle">
+                                        <span class="fas fa-football-ball btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Fakultas Ilmu Olahraga</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 3)->count() >= 2)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 3)->count() }} Pendaftar</p>
+                                @else
+                                    <p class="text-right text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
                     </div>
@@ -352,70 +337,55 @@
                     <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle"
-                                            src="{{ asset('img/LogoFIS.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #F20000;" class="fas fa-user fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FIS</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 4)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-danger rounded-circle">
+                                        <span class="fas fa-users btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Fakultas Ilmu Sosial</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 4)->count() >= 1)
+                                    <p class="text-primary mb-0">{{ $pendaftaran->where('fakultas_id', 4)->count() }} pendaftar</p>
+                                @else
+                                    <p class="text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
 
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle"
-                                            src="{{ asset('img/LogoFBS.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #FFB3FF;" class="fas fa-book fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FBS</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 5)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-instagram rounded-circle">
+                                        <span class="fas fa-palette btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Fakultas Bahasa & Seni</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 5)->count() >= 2)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 5)->count() }} Pendaftar</p>
+                                @else
+                                    <p class="text-right text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
 
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle"
-                                            src="{{ asset('img/LogoPsikologi.png')}}" alt="Image Description"> --}}
-                                        <i style="color: lightblue;" class="fas fa-brain fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">Psikologi</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 6)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-info rounded-circle">
+                                        <span class="fas fa-brain btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Fakultas Psikologi</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 6)->count() >= 2)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 6)->count() }} Pendaftar</p>
+                                @else
+                                    <p class="text-right text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
                     </div>
@@ -423,70 +393,55 @@
                     <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle"
-                                            src="{{ asset('img/LogoFIP.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #99FF33;" class="fas fa-school fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FIP</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 7)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-success rounded-circle">
+                                        <span class="fas fa-chalkboard-teacher btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Fakultas Pendidikan</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 7)->count() >= 2)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 7)->count() }} Pendaftar</p>
+                                @else
+                                    <p class="text-right text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
 
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle"
-                                            src="{{ asset('img/LogoFE.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #FF00FF;" class="fas fa-coins fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">FE</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 8)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-github rounded-circle">
+                                        <span class="fas fa-chart-line btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Fakultas Ekonomi</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 8)->count() >= 2)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 8)->count() }} Pendaftar</p>
+                                @else
+                                    <p class="text-right text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
 
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" href="#">
-                                <div class="media align-items-center">
-                                    <div class="u-avatar mr-3">
-                                        {{-- <img class="img-fluid rounded-circle"
-                                            src="{{ asset('img/LogoPasca.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #E68A17;" class="fas fa-graduation-cap fa-3x"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <span class="text-dark">Pasca</span>
-                                        <small class="d-block text-secondary"> </small>
-                                    </div>
-                                    <div class="media-body text-right">
-                                        <span class="text-primary ml-3">
-                                            {{ $pendaftaran->where('fakultas_id', 9)->count() }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="card-body">
+                                <h5>
+                                    <span class="btn btn-sm btn-icon btn-soft-warning rounded-circle">
+                                        <span class="fas fa-graduation-cap btn-icon__inner"></span>
+                                    </span>
+                                    <span class="ml-1">Pascasarjana</span>
+                                </h5>
+                                @if ($pendaftaran->where('fakultas_id', 9)->count() >= 2)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 9)->count() }} Pendaftar</p>
+                                @else
+                                    <p class="text-right text-right mb-0">Belum ada pendaftar</p>
+                                @endif
+                            </div>
                         </div>
                         <!-- End Card -->
                     </div>
@@ -518,7 +473,7 @@
                                 </div>
                                 {{-- selesai Kartu ucapan Form Kosong --}}
                                 @else
-                                <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                                <ul class="nav nav-tabs mt-3" id="myTab2" role="tablist">
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
                                     <li class="nav-item waves-effect waves-light">
                                       <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten{{$slot_item->id}}" role="tab" aria-controls="konten{{$slot_item->id}}" aria-selected="false">{{ \Carbon\Carbon::parse($slot_item->tanggal)->translatedFormat('d F Y') }}</a>

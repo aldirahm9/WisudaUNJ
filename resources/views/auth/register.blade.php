@@ -285,6 +285,7 @@
 
   <!-- JS Plugins Init. -->
   <script>
+    var fakultas = {!! $fakultas !!}
     $(document).on('ready', function () {
         // initialization of slick carousel
         $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
@@ -298,7 +299,7 @@
 
         $('select[name="fakultas"]').on('change', function() {
             $('input[name="tanggal_kedatangan"]').prop('disabled',false)
-            var fakultas = {!! $fakultas !!}
+
             var id = $(this).val()
 
             $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment(fakultas[id-1].tanggal_awal_photoshoot, "YYYY-MM-DD");

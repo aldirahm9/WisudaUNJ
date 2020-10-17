@@ -16,6 +16,6 @@ class Fakultas extends Model
 
     public function pendaftaran()
     {
-        return $this->hasOne('App\Models\Pendaftaran');
+        return $this->hasMany('App\Models\Pendaftaran');
     }
 }

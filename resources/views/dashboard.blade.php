@@ -174,8 +174,7 @@
                             class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
                             <!-- Breadcrumb -->
                             <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-                                <li class="breadcrumb-item"><a class="breadcrumb-link"
-                                        href="/">Home</a></li>
+                                <li class="breadcrumb-item"><a class="breadcrumb-link" href="/">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                             </ol>
                             <!-- End Breadcrumb -->
@@ -228,9 +227,8 @@
                                         <!-- General -->
                                         <li class="nav-item hs-has-sub-menu u-header__nav-item" data-event="hover"
                                             data-animation-in="slideInUp" data-animation-out="fadeOut">
-                                            <a id="generalDropdown"
-                                                class="nav-link u-header__nav-link"
-                                                href="/" aria-haspopup="true" aria-expanded="false"
+                                            <a id="generalDropdown" class="nav-link u-header__nav-link" href="/"
+                                                aria-haspopup="true" aria-expanded="false"
                                                 aria-labelledby="generalDropdownMenu">
                                                 Home
                                             </a>
@@ -258,8 +256,7 @@
                         </a> --}}
                         <form action="{{ route('logout') }}" method="post">
                             {{ csrf_field() }}
-                            <button type="submit"
-                                class="btn btn-sm btn-danger transition-3d-hover">Logout</button>
+                            <button type="submit" class="btn btn-sm btn-danger transition-3d-hover">Logout</button>
                         </form>
                         <!-- End Button -->
                     </div>
@@ -275,7 +272,7 @@
                 <!-- Title -->
                 {{-- <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3 class="h6 mb-0">Peserta photoshoot wisuda UNJ</h3> --}}
-                    {{-- <a class="link-muted" href="#">View All</a> --}}
+                {{-- <a class="link-muted" href="#">View All</a> --}}
                 {{-- </div> --}}
                 <!-- End Title -->
 
@@ -284,12 +281,12 @@
                     <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
                         <!-- Card -->
                         <div class="card card-frame mb-3">
-                            <a class="card-body p-4" >
+                            <a class="card-body p-4">
                                 <div class="media align-items-center">
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFMIPA.png')}}"
-                                            alt="Image Description"> --}}
-                                            <i style="color: #8033E6;" class="fas fa-flask fa-3x"></i>
+                                        alt="Image Description"> --}}
+                                        <i style="color: #8033E6;" class="fas fa-flask fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">FMIPA</span>
@@ -312,7 +309,7 @@
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle"
                                             src="{{ asset('img/LogoFT.png')}}" alt="Image Description"> --}}
-                                            <i style="color: #0082D9;" class="fas fa-wrench fa-3x"></i>
+                                        <i style="color: #0082D9;" class="fas fa-wrench fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">FT</span>
@@ -335,7 +332,7 @@
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle"
                                             src="{{ asset('img/LogoFIO.png')}}" alt="Image Description"> --}}
-                                            <i style="color: black;" class="fas fa-volleyball-ball fa-3x"></i>
+                                        <i style="color: black;" class="fas fa-volleyball-ball fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">FIO</span>
@@ -360,7 +357,7 @@
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle"
                                             src="{{ asset('img/LogoFIS.png')}}" alt="Image Description"> --}}
-                                            <i style="color: #F20000;" class="fas fa-user fa-3x"></i>
+                                        <i style="color: #F20000;" class="fas fa-user fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">FIS</span>
@@ -383,7 +380,7 @@
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle"
                                             src="{{ asset('img/LogoFBS.png')}}" alt="Image Description"> --}}
-                                            <i style="color: #FFB3FF;" class="fas fa-book fa-3x"></i>
+                                        <i style="color: #FFB3FF;" class="fas fa-book fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">FBS</span>
@@ -406,7 +403,7 @@
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle"
                                             src="{{ asset('img/LogoPsikologi.png')}}" alt="Image Description"> --}}
-                                            <i style="color: lightblue;" class="fas fa-brain fa-3x"></i>
+                                        <i style="color: lightblue;" class="fas fa-brain fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">Psikologi</span>
@@ -431,7 +428,7 @@
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle"
                                             src="{{ asset('img/LogoFIP.png')}}" alt="Image Description"> --}}
-                                            <i style="color: #99FF33;" class="fas fa-school fa-3x"></i>
+                                        <i style="color: #99FF33;" class="fas fa-school fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">FIP</span>
@@ -454,7 +451,7 @@
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle"
                                             src="{{ asset('img/LogoFE.png')}}" alt="Image Description"> --}}
-                                            <i style="color: #FF00FF;" class="fas fa-coins fa-3x"></i>
+                                        <i style="color: #FF00FF;" class="fas fa-coins fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">FE</span>
@@ -477,7 +474,7 @@
                                     <div class="u-avatar mr-3">
                                         {{-- <img class="img-fluid rounded-circle"
                                             src="{{ asset('img/LogoPasca.png')}}" alt="Image Description"> --}}
-                                            <i style="color: #E68A17;" class="fas fa-graduation-cap fa-3x"></i>
+                                        <i style="color: #E68A17;" class="fas fa-graduation-cap fa-3x"></i>
                                     </div>
                                     <div class="media-body">
                                         <span class="text-dark">Pasca</span>
@@ -500,610 +497,182 @@
                 <div class="card mb-6">
                     <div class="card-header py-4 px-0 mx-4">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            @foreach($fakultas as $key => $item)
                             <li class="nav-item waves-effect waves-light">
-                                <a class="nav-link {{$key==0 ? 'active' : '' }}" id="{{ $item->nama_fakultas }}-tab" data-toggle="tab" href="#{{ $item->nama_fakultas }}" role="tab"
-                                    aria-controls="{{ $item->nama_fakultas }}" aria-selected="false">{{ $item->nama_fakultas }}</a>
+                              <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
                             </li>
-                            @endforeach
-                        </ul>
-
-                        <div class="tab-content" id="myTabContent">
-                            @foreach($fakultas as $key => $item2)
-                            <div class="tab-pane fade {{$key==0 ? 'active show' : '' }}" id="{{ $item2->nama_fakultas }}" role="tabpanel" aria-labelledby="{{ $item2->nama_fakultas }}-tab">
-
-                                Pilih Tanggal: {{ $item2->nama_fakultas }}
-
-                                <ul class="nav nav-tabs" id="myTab2" role="tablist">
-                                    @foreach($slot->whereIn('id', $item2->pendaftaran->pluck('slot_id')->unique()) as $key => $item3)
+                            <li class="nav-item waves-effect waves-light">
+                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                            </li>
+                            <li class="nav-item waves-effect waves-light">
+                              <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="true">Contact</a>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                {{-- double tab nav --}}
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link {{$key==0 ? 'active' : '' }}" id="{{ $item3->id }}-tab" data-toggle="tab" href="#{{ $item3->id }}" role="tab"
-                                            aria-controls="{{ $item3->id }}" aria-selected="false">{{ \Carbon\Carbon::parse($item3->tanggal)->translatedFormat('d F Y') }}</a>
+                                      <a class="nav-link" id="home2-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="false">home2</a>
                                     </li>
-                                    @endforeach
+                                    <li class="nav-item waves-effect waves-light">
+                                      <a class="nav-link" id="profile2-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile2" aria-selected="false">profile2</a>
+                                    </li>
+                                    <li class="nav-item waves-effect waves-light">
+                                      <a class="nav-link active" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="true">contact2</a>
+                                    </li>
                                   </ul>
-                                  <div class="tab-content" id="myTabContent2">
-                                    @foreach($slot->wherein('id', $item2->pendaftaran->pluck('slot_id')->unique()) as $key => $item4)
-                                    <div class="tab-pane fade {{$key==0 ? 'active show' : '' }}" id="{{ $item4->id }}" role="tabpanel" aria-labelledby="{{ $item4->id }}-tab">
-
-                                        halo {{ $item4->tanggal }}
-                                        {{-- <div class="table-responsive-md ">
-                                            <table
-                                                    class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
-                                                    <thead>
-                                                        <tr class="text-uppercase font-size-1">
-                                                        <th>no</th>
-                                                        <th scope="col" class="font-weight-medium">
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                            Nama
-                                                            <div class="ml-2">
-                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                            </div>
-                                                            </div>
-                                                        </th>
-                                                        <th scope="col" class="font-weight-medium">
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                            NRM
-                                                            <div class="ml-2">
-                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                            </div>
-                                                            </div>
-                                                        </th>
-                                                        <th scope="col" class="font-weight-medium">
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                            Fakultas
-                                                            <div class="ml-2">
-                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                            </div>
-                                                            </div>
-                                                        </th>
-                                                        <th scope="col" class="font-weight-medium">
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                            Tanggal
-                                                            <div class="ml-2">
-                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                            </div>
-                                                            </div>
-                                                        </th>
-                                                        <th scope="col" class="font-weight-medium">
-                                                            <div class="d-flex justify-content-between align-items-center">
-                                                            Kode Unik
-                                                            <div class="ml-2">
-                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                            </div>
-                                                            </div>
-                                                        </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="font-size-1">
-                                                        @foreach($pendaftaran->where('fakultas_id', $item2->id) as $mahasiswa) <tr>
-                                                            <td>{{ $loop->iteration }}</td>
-                                                            <td class="align-middle">{{ $mahasiswa->nama_mahasiswa }}</td>
-                                                            <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
-                                                            <td class="align-middle">{{ $mahasiswa->fakultas->nama_fakultas }}</td>
-                                                            <td class="align-middle">{{ \Carbon\Carbon::parse($mahasiswa->slot->tanggal)->translatedFormat('d F Y') }}</td>
-                                                            <td class="align-middle">{{ $mahasiswa->kode_unik }}</td>
-                                                            </tr>
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div> --}}
-
-
-                                        </div>
-                                        @endforeach
-
+                                  <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade" id="home2" role="tabpanel" aria-labelledby="home2-tab">Raw denim you
+                                      probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
+                                      cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+                                      dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia
+                                      cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+                                    <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile2-tab">Food truck fixie
+                                      locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog
+                                      sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+                                      booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo
+                                      nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero
+                                      magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
+                                      shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
+                                      vero sint qui sapiente accusamus tattooed echo park.</div>
+                                    <div class="tab-pane fade active show" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">Etsy mixtape wayfarers,
+                                      ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi
+                                      farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore
+                                      carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
+                                      pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk
+                                      vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork
+                                      sustainable tofu synth chambray yr.</div>
                                   </div>
-
-                                {{-- search --}}
-                                {{-- <div class="js-focus-state input-group input-group-sm mb-4">
-                                </div> --}}
-                                {{-- end search --}}
-                                {{-- table --}}
-                                {{-- <div class="table-responsive-md ">
-                                <table id="example{{$key+1}}"
-                                        class="js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
-                                        <thead>
-                                            <tr class="text-uppercase font-size-1">
-                                            <th>no</th>
-                                            <th scope="col" class="font-weight-medium">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                Nama
-                                                <div class="ml-2">
-                                                    <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                    <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                </div>
-                                                </div>
-                                            </th>
-                                            <th scope="col" class="font-weight-medium">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                NRM
-                                                <div class="ml-2">
-                                                    <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                    <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                </div>
-                                                </div>
-                                            </th>
-                                            <th scope="col" class="font-weight-medium">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                Fakultas
-                                                <div class="ml-2">
-                                                    <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                    <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                </div>
-                                                </div>
-                                            </th>
-                                            <th scope="col" class="font-weight-medium">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                Tanggal
-                                                <div class="ml-2">
-                                                    <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                    <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                </div>
-                                                </div>
-                                            </th>
-                                            <th scope="col" class="font-weight-medium">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                Kode Unik
-                                                <div class="ml-2">
-                                                    <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                                    <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                                                </div>
-                                                </div>
-                                            </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="font-size-1">
-                                            @foreach($pendaftaran->where('fakultas_id', $item4->id) as $mahasiswa) <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td class="align-middle">{{ $mahasiswa->nama_mahasiswa }}</td>
-                                                <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
-                                                <td class="align-middle">{{ $mahasiswa->fakultas->nama_fakultas }}</td>
-                                                <td class="align-middle">{{ \Carbon\Carbon::parse($mahasiswa->slot->tanggal)->translatedFormat('d F Y') }}</td>
-                                                <td class="align-middle">{{ $mahasiswa->kode_unik }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div> --}}
-
-
+                                {{-- selesai double tab nav --}}
                             </div>
-                            @endforeach
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
+                              locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog
+                              sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+                              booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo
+                              nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero
+                              magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
+                              shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
+                              vero sint qui sapiente accusamus tattooed echo park.</div>
+                            <div class="tab-pane fade active show" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape wayfarers,
+                              ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi
+                              farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore
+                              carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
+                              pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk
+                              vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork
+                              sustainable tofu synth chambray yr.</div>
                           </div>
+
+                    </div>
                 </div>
             </div>
-
-            {{-- <!-- Card -->
-        <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-          <!-- Stats -->
-          <div class="card mb-7 mb-lg-0">
-            <div class="card-body pt-4 pb-5 px-5 mb-3 mb-md-0">
-              <!-- Title & Settings -->
-              <div class="d-flex justify-content-between align-items-center">
-                <h4 class="h6 mb-0">Deposits</h4>
-
-                <!-- Settings Dropdown -->
-                <div class="position-relative">
-                  <a id="depositSettingsDropdownInvoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" role="button"
-                     aria-controls="depositSettingsDropdown"
-                     aria-haspopup="true"
-                     aria-expanded="false"
-                     data-unfold-event="click"
-                     data-unfold-target="#depositSettingsDropdown"
-                     data-unfold-type="css-animation"
-                     data-unfold-duration="300"
-                     data-unfold-delay="300"
-                     data-unfold-hide-on-scroll="true"
-                     data-unfold-animation-in="slideInUp"
-                     data-unfold-animation-out="fadeOut">
-                    <span class="fas fa-ellipsis-h btn-icon__inner"></span>
-                  </a>
-
-                  <div id="depositSettingsDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="depositSettingsDropdownInvoker" style="min-width: 190px;">
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-cogs dropdown-item-icon"></small>
-                      Settings
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-cloud-download-alt dropdown-item-icon"></small>
-                      Download
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-archive dropdown-item-icon"></small>
-                      Archive
-                    </a>
-                  </div>
-                </div>
-                <!-- End Settings Dropdown -->
-              </div>
-              <!-- End Title & Settings -->
-
-              <hr class="mt-3 mb-4">
-
-              <!-- Deposit Info -->
-              <div class="row mb-5">
-                <div class="col-sm-6 mb-4 mb-sm-0">
-                  <span class="align-top">$</span>
-                  <span class="font-size-3 font-weight-medium text-lh-sm">50,102</span>
-                  <div class="mb-1">
-                    <span class="text-secondary font-size-1">Deposit:</span>
-                    <span class="font-weight-medium font-size-1">$1,050</span>
-                  </div>
-                  <div>
-                    <span class="text-primary font-weight-medium text-lh-sm">
-                      <span class="fas fa-arrow-up text-success small"></span>
-                      +2.1% ($122)
-                    </span>
-                  </div>
-                </div>
-
-                <div class="col-sm-6 align-self-end">
-                  <!-- Pie Circle -->
-                  <div class="js-pie text-center"
-                     data-circles-text-class="content-centered-y"
-                     data-circles-value="54"
-                     data-circles-max-value="100"
-                     data-circles-bg-color="rgba(0, 201, 167, 0.1)"
-                     data-circles-fg-color="#00c9a7"
-                     data-circles-radius="50"
-                     data-circles-stroke-width="4"
-                     data-circles-additional-text="%"
-                     data-circles-duration="2000"
-                     data-circles-scroll-animate="true"
-                     data-circles-color="#00c9a7"
-                     data-circles-font-size="24"></div>
-                  <!-- End Pie Circle -->
-                </div>
-              </div>
-
-              <button type="button" class="btn btn-block btn-sm btn-primary transition-3d-hover">Add Funds</button>
-              <!-- End Deposit Info -->
-            </div>
-
-            <div class="card-footer p-5">
-              <!-- Progress Info -->
-              <div class="row align-items-center">
-                <div class="col-6 u-ver-divider">
-                  <label class="small text-muted">Goal:</label>
-                  <small class="font-weight-medium">$100k</small>
-                  <div class="js-hr-progress progress" style="height: 4px;">
-                    <div class="js-hr-progress-bar progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-
-                <div class="col-6">
-                  <label class="small text-muted">Duration:</label>
-                  <small class="font-weight-medium">6 months</small>
-                  <div class="js-hr-progress progress" style="height: 4px;">
-                    <div class="js-hr-progress-bar progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Progress Info -->
-            </div>
-          </div>
-          <!-- End Stats -->
-
-          <!-- Stats -->
-          <div class="card mb-7 mb-lg-0">
-            <div class="card-body pt-4 pb-5 px-5 mb-3 mb-md-0">
-              <!-- Title & Settings -->
-              <div class="d-flex justify-content-between align-items-center">
-                <h4 class="h6 mb-0">Balance</h4>
-
-                <!-- Settings Dropdown -->
-                <div class="position-relative">
-                  <a id="balanceSettingsDropdownInvoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" role="button"
-                     aria-controls="balanceSettingsDropdown"
-                     aria-haspopup="true"
-                     aria-expanded="false"
-                     data-unfold-event="click"
-                     data-unfold-target="#balanceSettingsDropdown"
-                     data-unfold-type="css-animation"
-                     data-unfold-duration="300"
-                     data-unfold-delay="300"
-                     data-unfold-hide-on-scroll="true"
-                     data-unfold-animation-in="slideInUp"
-                     data-unfold-animation-out="fadeOut">
-                    <span class="fas fa-ellipsis-h btn-icon__inner"></span>
-                  </a>
-
-                  <div id="balanceSettingsDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="balanceSettingsDropdownInvoker" style="min-width: 190px;">
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-cogs dropdown-item-icon"></small>
-                      Settings
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-cloud-download-alt dropdown-item-icon"></small>
-                      Download
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-archive dropdown-item-icon"></small>
-                      Archive
-                    </a>
-                  </div>
-                </div>
-                <!-- End Settings Dropdown -->
-              </div>
-              <!-- End Title & Settings -->
-
-              <hr class="mt-3 mb-4">
-
-              <!-- Balance Info -->
-              <div class="row align-items-center mb-4">
-                <div class="col-6 u-ver-divider">
-                  <label class="d-block small text-muted mb-0">Available:</label>
-                  <span class="font-weight-medium">$45.99</span>
-                </div>
-
-                <div class="col-6">
-                  <label class="d-block small text-muted mb-0">Pending:</label>
-                  <span class="font-weight-medium">$0.00</span>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-3">
-                  <div class="js-vr-progress progress-vertical rounded mb-2">
-                    <div class="js-vr-progress-bar bg-primary rounded-bottom" role="progressbar" style="height: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="text-center">
-                    <h4 class="small mb-0">May</h4>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="js-vr-progress progress-vertical rounded mb-2">
-                    <div class="js-vr-progress-bar bg-primary rounded-bottom" role="progressbar" style="height: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="text-center">
-                    <h4 class="small mb-0">Jun</h4>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="js-vr-progress progress-vertical rounded mb-2">
-                    <div class="js-vr-progress-bar bg-primary rounded-bottom" role="progressbar" style="height: 23%;" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="text-center">
-                    <h4 class="small mb-0">Jul</h4>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="js-vr-progress progress-vertical rounded mb-2">
-                    <div class="js-vr-progress-bar bg-primary rounded-bottom" role="progressbar" style="height: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <div class="text-center">
-                    <h4 class="small mb-0">Aug</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- End Balance Info -->
-            </div>
-          </div>
-          <!-- End Stats -->
-
-          <!-- Indicator -->
-          <div class="card">
-            <div class="card-body pt-4 pb-5 px-5 mb-3 mb-md-0">
-              <!-- Title & Settings -->
-              <div class="d-flex justify-content-between align-items-center">
-                <h4 class="h6 mb-0">Activity</h4>
-
-                <!-- Settings Dropdown -->
-                <div class="position-relative">
-                  <a id="activitySettingsDropdownInvoker" class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="javascript:;" role="button"
-                     aria-controls="activitySettingsDropdown"
-                     aria-haspopup="true"
-                     aria-expanded="false"
-                     data-unfold-event="click"
-                     data-unfold-target="#activitySettingsDropdown"
-                     data-unfold-type="css-animation"
-                     data-unfold-duration="300"
-                     data-unfold-delay="300"
-                     data-unfold-hide-on-scroll="true"
-                     data-unfold-animation-in="slideInUp"
-                     data-unfold-animation-out="fadeOut">
-                    <span class="fas fa-ellipsis-h btn-icon__inner"></span>
-                  </a>
-
-                  <div id="activitySettingsDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="activitySettingsDropdownInvoker" style="min-width: 190px;">
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-eye dropdown-item-icon"></small>
-                      Mark as read
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-eye-slash dropdown-item-icon"></small>
-                      Mark as unread
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <small class="fas fa-archive dropdown-item-icon"></small>
-                      Archive
-                    </a>
-                  </div>
-                </div>
-                <!-- End Settings Dropdown -->
-              </div>
-              <!-- End Title & Settings -->
-
-              <hr class="mt-3 mb-4">
-
-              <div class="overflow-hidden">
-                <div class="js-scrollbar pr-3" style="max-height: 300px;">
-                  <!-- Activity Feed -->
-                  <ul class="list-unstyled u-indicator-vertical-dashed">
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-primary rounded-circle mr-3">
-                        <span class="btn-icon__inner">A</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">Amanta Owens</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">Slack home page redesign</span></p>
-                        <small class="d-block text-muted">30 min ago</small>
-                      </div>
-                    </li>
-
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-success rounded-circle mr-3">
-                        <span class="btn-icon__inner">S</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">Sebastian Diaz</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">Mapbox logo redesign</span></p>
-                        <small class="d-block text-muted">44 min ago</small>
-                      </div>
-                    </li>
-
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-warning rounded-circle mr-3">
-                        <span class="btn-icon__inner text-white">F</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">Eliza Donovan</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">Spotify branding</span></p>
-                        <small class="d-block text-muted">1 hour ago</small>
-                      </div>
-                    </li>
-
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-primary rounded-circle mr-3">
-                        <span class="btn-icon__inner">C</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">Cler Lockhart</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">Dropbox home page redesign</span></p>
-                        <small class="d-block text-muted">15 hours ago</small>
-                      </div>
-                    </li>
-
-                    <li class="media u-indicator-vertical-dashed-item">
-                      <span class="btn btn-xs btn-icon btn-danger rounded-circle mr-3">
-                        <span class="btn-icon__inner">J</span>
-                      </span>
-                      <div class="media-body">
-                        <h5 class="font-size-1 mb-1">James Collins</h5>
-                        <p class="small mb-1">Added new task: <span class="font-weight-medium">InVison branding</span></p>
-                        <small class="d-block text-muted">1 day ago</small>
-                      </div>
-                    </li>
-                  </ul>
-                  <!-- End Activity Feed -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Indicator -->
-        </div>
-        <!-- End Card --> --}}
-        </div>
         </div>
         <!-- End Content Section -->
     </main>
     <!-- ========== END MAIN ========== -->
 
     <!-- ========== FOOTER ========== -->
-  <footer class="container space-top-2 space-top-md-3">
-    <div class="border-bottom">
-      <div class="row mb-7">
-        <div class="col-lg-4 mb-7 mb-lg-0">
-          <div class="d-inline-flex align-self-start flex-column h-100">
-            <!-- Logo -->
-            <a class="d-flex align-items-center mb-3" href="index.html" aria-label="Front">
-              <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
-              <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
-            </a>
-            <!-- End Logo -->
+    <footer class="container space-top-2 space-top-md-3">
+        <div class="border-bottom">
+            <div class="row mb-7">
+                <div class="col-lg-4 mb-7 mb-lg-0">
+                    <div class="d-inline-flex align-self-start flex-column h-100">
+                        <!-- Logo -->
+                        <a class="d-flex align-items-center mb-3" href="index.html" aria-label="Front">
+                            <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
+                            <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
+                        </a>
+                        <!-- End Logo -->
 
-            <!-- Country -->
-            <div class="position-relative">
-              <span id="footerCountryInvoker" class="dropdown-nav-link"
-                 aria-controls="footer-country"
-                 aria-haspopup="true"
-                 aria-expanded="false"
-                 data-toggle="dropdown"
-                 data-unfold-event="click"
-                 data-unfold-target="#footer-country"
-                 data-unfold-type="css-animation"
-                 data-unfold-duration="300"
-                 data-unfold-delay="300"
-                 data-unfold-hide-on-scroll="false"
-                 data-unfold-animation-in="slideInUp"
-                 data-unfold-animation-out="fadeOut">
-                <img class="dropdown-item-icon" src="{{ asset('front/vendor/flag-icon-css/flags/4x3/id.svg') }}" alt="United States Flag">
-                <span>Indonesia</span>
-              </span>
+                        <!-- Country -->
+                        <div class="position-relative">
+                            <span id="footerCountryInvoker" class="dropdown-nav-link" aria-controls="footer-country"
+                                aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"
+                                data-unfold-event="click" data-unfold-target="#footer-country"
+                                data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
+                                data-unfold-hide-on-scroll="false" data-unfold-animation-in="slideInUp"
+                                data-unfold-animation-out="fadeOut">
+                                <img class="dropdown-item-icon"
+                                    src="{{ asset('front/vendor/flag-icon-css/flags/4x3/id.svg') }}"
+                                    alt="United States Flag">
+                                <span>Indonesia</span>
+                            </span>
+                        </div>
+                        <!-- End Country -->
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-3 col-lg-4 mb-4 mb-md-0">
+                    <h4 class="h6 font-weight-semi-bold">Website Resmi UNJ</h4>
+
+                    <!-- List Group -->
+                    <ul class="list-group list-group-flush list-group-borderless mb-0">
+                        <li><a class="list-group-item list-group-item-action" href="http://www.unj.ac.id/">Beranda</a>
+                        </li>
+                        <li><a class="list-group-item list-group-item-action"
+                                href="http://www.unj.ac.id/category/berita/">Berita</a></li>
+                        <li><a class="list-group-item list-group-item-action" href="http://siakad.unj.ac.id/">Siakad</a>
+                        </li>
+                        <li><a class="list-group-item list-group-item-action"
+                                href="http://journal.unj.ac.id/">Jurnal</a></li>
+                    </ul>
+                    <!-- End List Group -->
+                </div>
+
+                <div class="col-md-3 col-lg-3">
+                    <h4 class="h6 font-weight-semi-bold">Kontak</h4>
+
+                    <!-- Address -->
+                    <address>
+                        <ul class="list-group list-group-flush list-group-borderless mb-0">
+                            <li class="list-group-item">Telp: (021) 4898486</li>
+                            <li class="list-group-item">
+                                Email: <a href="mailto:humas@unj.ac.id">humas@unj.ac.id</a>
+                            </li>
+                            <li class="list-group-item">Jl. Rawamangun Muka, RT.11/RW.14, Rawamangun, Pulo Gadung, Kota
+                                Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220</li>
+                        </ul>
+                    </address>
+                    <!-- End Address -->
+                </div>
             </div>
-            <!-- End Country -->
-          </div>
         </div>
 
-        <div class="col-sm-4 col-md-3 col-lg-4 mb-4 mb-md-0">
-          <h4 class="h6 font-weight-semi-bold">Website Resmi UNJ</h4>
+        <div class="d-flex justify-content-between align-items-center py-7">
+            <!-- Copyright -->
+            <p class="small text-muted mb-0">&copy; Digiteam UNJ. {{ date('Y') }} Jakarta.</p>
+            <!-- End Copyright -->
 
-          <!-- List Group -->
-          <ul class="list-group list-group-flush list-group-borderless mb-0">
-            <li><a class="list-group-item list-group-item-action" href="http://www.unj.ac.id/">Beranda</a></li>
-            <li><a class="list-group-item list-group-item-action" href="http://www.unj.ac.id/category/berita/">Berita</a></li>
-            <li><a class="list-group-item list-group-item-action" href="http://siakad.unj.ac.id/">Siakad</a></li>
-            <li><a class="list-group-item list-group-item-action" href="http://journal.unj.ac.id/">Jurnal</a></li>
-          </ul>
-          <!-- End List Group -->
-        </div>
-
-        <div class="col-md-3 col-lg-3">
-          <h4 class="h6 font-weight-semi-bold">Kontak</h4>
-
-          <!-- Address -->
-          <address>
-            <ul class="list-group list-group-flush list-group-borderless mb-0">
-              <li class="list-group-item">Telp: (021) 4898486</li>
-              <li class="list-group-item">
-                Email: <a href="mailto:humas@unj.ac.id">humas@unj.ac.id</a>
-              </li>
-              <li class="list-group-item">Jl. Rawamangun Muka, RT.11/RW.14, Rawamangun,  Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220</li>
+            <!-- Social Networks -->
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent"
+                        href="https://www.facebook.com/OfficialUNJ/">
+                        <span class="fab fa-facebook-f btn-icon__inner"></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent"
+                        href="https://www.youtube.com/channel/UCEbRyX261ttaaW_6-EjTUWA">
+                        <span class="fab fa-youtube btn-icon__inner"></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent"
+                        href="https://twitter.com/UNJ_Official">
+                        <span class="fab fa-twitter btn-icon__inner"></span>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent"
+                        href="https://www.instagram.com/unj_official/">
+                        <span class="fab fa-instagram btn-icon__inner"></span>
+                    </a>
+                </li>
             </ul>
-          </address>
-          <!-- End Address -->
+            <!-- End Social Networks -->
         </div>
-      </div>
-    </div>
-
-    <div class="d-flex justify-content-between align-items-center py-7">
-      <!-- Copyright -->
-      <p class="small text-muted mb-0">&copy; Digiteam UNJ. {{ date('Y') }} Jakarta.</p>
-      <!-- End Copyright -->
-
-      <!-- Social Networks -->
-      <ul class="list-inline mb-0">
-        <li class="list-inline-item">
-          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.facebook.com/OfficialUNJ/">
-            <span class="fab fa-facebook-f btn-icon__inner"></span>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.youtube.com/channel/UCEbRyX261ttaaW_6-EjTUWA">
-            <span class="fab fa-youtube btn-icon__inner"></span>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://twitter.com/UNJ_Official">
-            <span class="fab fa-twitter btn-icon__inner"></span>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn btn-sm btn-icon btn-soft-secondary btn-bg-transparent" href="https://www.instagram.com/unj_official/">
-            <span class="fab fa-instagram btn-icon__inner"></span>
-          </a>
-        </li>
-      </ul>
-      <!-- End Social Networks -->
-    </div>
-  </footer>
-  <!-- ========== END FOOTER ========== -->
+    </footer>
+    <!-- ========== END FOOTER ========== -->
 
 
 
@@ -1237,7 +806,7 @@
             $.HSCore.components.HSGoTo.init('.js-go-to');
         });
 
-        $('.table_admin').DataTable( {
+        $('.table_admin').DataTable({
             dom: 'Bfrtip',
             buttons: [
                 'excel', 'pdf', 'print'

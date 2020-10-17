@@ -510,14 +510,14 @@
                                 <ul class="nav nav-tabs" id="myTab2" role="tablist">
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
                                     <li class="nav-item waves-effect waves-light">
-                                      <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten{{$slot_item->id}}" role="tab" aria-controls="konten{{$slot_item->id}}" aria-selected="false">{{$slot_item->tanggal}}</a>
+                                      <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten{{$slot_item->id}}" role="tab" aria-controls="konten{{$slot_item->id}}" aria-selected="false">{{ \Carbon\Carbon::parse($slot_item->tanggal)->translatedFormat('d F Y') }}</a>
                                     </li>
                                     @endforeach
                                   </ul>
                                   <div class="tab-content" id="myTabContent2">
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
                                     <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
-                                        <div class="table-responsive-md ">
+                                        <div class="table-responsive-md mt-5">
                                             <table
                                                     class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
                                                     <thead>

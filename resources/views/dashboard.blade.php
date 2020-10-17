@@ -511,19 +511,101 @@
                         <div class="tab-content" id="myTabContent">
                             @foreach($fakultas as $key => $item2)
                             <div class="tab-pane fade {{$key==0 ? 'active show' : '' }}" id="{{ $item2->nama_fakultas }}" role="tabpanel" aria-labelledby="{{ $item2->nama_fakultas }}-tab">
+
+                                Pilih Tanggal: {{ $item2->nama_fakultas }}
+
+                                <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                                    @foreach($slot->whereIn('id', $item2->pendaftaran->pluck('slot_id')->unique()) as $key => $item3)
+                                    <li class="nav-item waves-effect waves-light">
+                                        <a class="nav-link {{$key==0 ? 'active' : '' }}" id="{{ $item3->id }}-tab" data-toggle="tab" href="#{{ $item3->id }}" role="tab"
+                                            aria-controls="{{ $item3->id }}" aria-selected="false">{{ \Carbon\Carbon::parse($item3->tanggal)->translatedFormat('d F Y') }}</a>
+                                    </li>
+                                    @endforeach
+                                  </ul>
+                                  <div class="tab-content" id="myTabContent2">
+                                    @foreach($slot->wherein('id', $item2->pendaftaran->pluck('slot_id')->unique()) as $key => $item4)
+                                    <div class="tab-pane fade {{$key==0 ? 'active show' : '' }}" id="{{ $item4->id }}" role="tabpanel" aria-labelledby="{{ $item4->id }}-tab">
+
+                                        halo {{ $item4->tanggal }}
+                                        {{-- <div class="table-responsive-md ">
+                                            <table
+                                                    class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
+                                                    <thead>
+                                                        <tr class="text-uppercase font-size-1">
+                                                        <th>no</th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            Nama
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            NRM
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            Fakultas
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            Tanggal
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            Kode Unik
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="font-size-1">
+                                                        @foreach($pendaftaran->where('fakultas_id', $item2->id) as $mahasiswa) <tr>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->nama_mahasiswa }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->fakultas->nama_fakultas }}</td>
+                                                            <td class="align-middle">{{ \Carbon\Carbon::parse($mahasiswa->slot->tanggal)->translatedFormat('d F Y') }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->kode_unik }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div> --}}
+
+
+                                        </div>
+                                        @endforeach
+
+                                  </div>
+
                                 {{-- search --}}
-                                <div class="js-focus-state input-group input-group-sm mb-4">
-                                    {{-- <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <span class="fas fa-search"></span>
-                                        </span>
-                                    </div>
-                                    <input id="datatableSearch" class="form-control" type="email"
-                                        placeholder="Search. . ." aria-label="Search activities"> --}}
-                                </div>
+                                {{-- <div class="js-focus-state input-group input-group-sm mb-4">
+                                </div> --}}
                                 {{-- end search --}}
                                 {{-- table --}}
-                                <div class="table-responsive-md ">
+                                {{-- <div class="table-responsive-md ">
                                 <table id="example{{$key+1}}"
                                         class="js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
                                         <thead>
@@ -577,7 +659,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="font-size-1">
-                                            @foreach($pendaftaran->where('fakultas_id', $item2->id) as $mahasiswa) <tr>
+                                            @foreach($pendaftaran->where('fakultas_id', $item4->id) as $mahasiswa) <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td class="align-middle">{{ $mahasiswa->nama_mahasiswa }}</td>
                                                 <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
@@ -588,7 +670,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> --}}
 
 
                             </div>
@@ -1155,55 +1237,7 @@
             $.HSCore.components.HSGoTo.init('.js-go-to');
         });
 
-        $('#example1').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'print'
-            ]
-        });
-        $('#example2').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'print'
-            ]
-        });
-        $('#example3').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'print'
-            ]
-        });
-        $('#example4').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'print'
-            ]
-        });
-        $('#example5').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'print'
-            ]
-        });
-        $('#example6').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'print'
-            ]
-        });
-        $('#example7').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'print'
-            ]
-        });
-        $('#example8').DataTable( {
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'print'
-            ]
-        });
-        $('#example9').DataTable( {
+        $('.table_admin').DataTable( {
             dom: 'Bfrtip',
             buttons: [
                 'excel', 'pdf', 'print'

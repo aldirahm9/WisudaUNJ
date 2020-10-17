@@ -549,6 +549,24 @@
                                             </th>
                                             <th scope="col" class="font-weight-medium">
                                                 <div class="d-flex justify-content-between align-items-center">
+                                                Fakultas
+                                                <div class="ml-2">
+                                                    <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                    <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                </div>
+                                                </div>
+                                            </th>
+                                            <th scope="col" class="font-weight-medium">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                Tanggal
+                                                <div class="ml-2">
+                                                    <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                    <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                </div>
+                                                </div>
+                                            </th>
+                                            <th scope="col" class="font-weight-medium">
+                                                <div class="d-flex justify-content-between align-items-center">
                                                 Kode Unik
                                                 <div class="ml-2">
                                                     <span class="fas fa-angle-up u-datatable__thead-icon"></span>
@@ -563,6 +581,8 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td class="align-middle">{{ $mahasiswa->nama_mahasiswa }}</td>
                                                 <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
+                                                <td class="align-middle">{{ $mahasiswa->fakultas->nama_fakultas }}</td>
+                                                <td class="align-middle">{{ \Carbon\Carbon::parse($mahasiswa->slot->tanggal)->translatedFormat('d F Y') }}</td>
                                                 <td class="align-middle">{{ $mahasiswa->kode_unik }}</td>
                                                 </tr>
                                             @endforeach

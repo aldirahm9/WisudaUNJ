@@ -299,7 +299,7 @@
 
                             <div class="h6 col-3 mb-5">Tanggal Foto</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->format('d M Y') }}</div>
+                            <div class="h6 col-8">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->translatedFormat('l, d F Y') }}</div>
 
                             <div class="h6 col-8">
                             <form class="js-validate mt-3" action="/" method="POST" id="formRegister">

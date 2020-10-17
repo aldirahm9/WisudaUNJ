@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 use App\Http\Controllers\adminController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

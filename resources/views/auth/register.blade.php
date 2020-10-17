@@ -201,9 +201,10 @@
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrFakultas">Fakultas</label>
                   <select class="custom-select" name="fakultas" id="fakultas">
-                      <option selected disabled>Fakultas</option>
+                      <option selected disabled hidden>Fakultas</option>
                       @foreach ($fakultas as $item)
-                        <option id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option>
+                        <option title="{{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lte(Carbon\Carbon::now()) ? 'Masa photoshoot sudah berakhir' : ''}}"
+                        {{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lte(Carbon\Carbon::now()) ? 'disabled' : ''}} id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option>
                       @endforeach
                   </select>
                 </div>
@@ -314,16 +315,16 @@
 
         })
 
-        if($('#fakultas').val() != 'fakultas') {
+        if($('#fakultas').val() != null) {
             $('input[name="tanggal_kedatangan"]').prop('disabled',false)
         }
+
         $('input[name="tanggal_kedatangan"]').daterangepicker({
             autoUpdateInput: false,
             minDate: '15/10/2020',
             maxDate: '20/10/2020',
             isInvalidDate: function(date) {
-                return (date.day() == 0 || date.day() == 6);
-                console.log(arrInvalidDates.includes(date.format('YYYY-M-D')))
+                return (date.day() == 0 || date.day() == 6 || date.format('M/D/YYYY') == new Date().toLocaleDateString());
                 if(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 return true
                 return false

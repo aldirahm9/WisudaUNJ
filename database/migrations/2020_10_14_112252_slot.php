@@ -14,7 +14,7 @@ class Slot extends Migration
     public function up()
     {
         Schema::create('slot', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->date('tanggal');
             $table->integer('kapasitas');
             $table->timestamps();

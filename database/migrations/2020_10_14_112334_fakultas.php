@@ -14,7 +14,7 @@ class Fakultas extends Migration
     public function up()
     {
         Schema::create('fakultas', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('nama_fakultas');
             $table->date('tanggal_awal_photoshoot');
             $table->date('tanggal_akhir_photoshoot');

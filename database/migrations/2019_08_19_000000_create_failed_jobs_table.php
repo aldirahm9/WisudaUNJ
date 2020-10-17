@@ -15,7 +15,7 @@ class CreateFailedJobsTable extends Migration
     {
         Schema::dropIfExists('failed_jobs');
         Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('uuid')->unique();
             $table->text('connection');
             $table->text('queue');

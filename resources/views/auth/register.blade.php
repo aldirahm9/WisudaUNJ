@@ -313,7 +313,7 @@
         $('input[name="tanggal_kedatangan"]').daterangepicker({
             autoUpdateInput: false,
             isInvalidDate: function(date) {
-                return (date.day() == 0 || date.day() == 6 || date.format('M/D/YYYY') == new Date().toLocaleDateString());
+                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date());
                 if(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 return true
                 return false

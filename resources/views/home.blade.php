@@ -526,7 +526,10 @@
             minDate: '{{Carbon\Carbon::parse(Auth::user()->pendaftaran->fakultas->tanggal_awal_photoshoot)->format("d/m/Y")}}',
             maxDate: '{{Carbon\Carbon::parse(Auth::user()->pendaftaran->fakultas->tanggal_akhir_photoshoot)->format("d/m/Y")}}',
             isInvalidDate: function(date) {
-                return (date.day() == 0 || date.day() == 6 || date.format('M/D/YYYY') <= new Date().toLocaleDateString());
+
+                console.log(new Date(date.format('M/D/YYYY')) <= +new Date())
+                console.log(date.format('D/M/YYYY'))
+                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date());
                 if(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 return true
                 return false

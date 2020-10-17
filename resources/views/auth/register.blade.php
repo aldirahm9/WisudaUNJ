@@ -314,7 +314,7 @@
         $('input[name="tanggal_kedatangan"]').daterangepicker({
             autoUpdateInput: false,
             isInvalidDate: function(date) {
-                return (date.day() == 0 || date.day() == 6 || date.format('M/D/YYYY') == new Date().toLocaleDateString());
+                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date());
                 if(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 return true
                 return false
@@ -329,14 +329,6 @@
         $('input[name="tanggal_kedatangan"]').on('apply.daterangepicker',function(ev,picker) {
             $(this).val(picker.startDate.format('DD/MM/YYYY'))
         })
-
-        $('#signinSrNRM').on('keyup', function() {
-            if($(this).val().length == 1) {
-                if($(this).val() == '3') $('#fakultas').val({{$fakultas->where('nama_fakultas','FMIPA')->first()->id}}).change()
-                if($(this).val() == '1') $('#fakultas').val({{$fakultas->where('nama_fakultas','FIP')->first()->id}}).change()
-                if($(this).val() == '5') $('#fakultas').val({{$fakultas->where('nama_fakultas','FT')->first()->id}}).change()
-            }
-        });
 
     });
 

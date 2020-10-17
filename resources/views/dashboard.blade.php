@@ -32,6 +32,9 @@
 </head>
 
 <body class="u-custombox-no-scroll">
+    @php
+        $tableid = 1
+    @endphp
     <!-- ========== HEADER ========== -->
     <header id="header" class="u-header">
         <!-- Search -->
@@ -153,7 +156,10 @@
                     <!-- Logo -->
                     <a class="d-flex align-items-center mb-3" href="/admin" aria-label="Front">
                         <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
-                        <span class="text-unj ml-2">Wisuda Digital UNJ</span>
+                        <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
+                    </a>
+                    <!-- End Logo -->
+                                      <span class="text-unj ml-2">Wisuda Digital UNJ</span>
                     </a>
                     <!-- End Logo -->
                 </nav>
@@ -484,7 +490,7 @@
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
                                     <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
                                         <div class="table-responsive-md mt-5">
-                                            <table
+                                            <table id="table{{$tableid}}"
                                                     class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
                                                     <thead>
                                                         <tr class="text-uppercase font-size-1">
@@ -548,62 +554,18 @@
                                                         @endforeach
                                                     </tbody>
                                                 </table>
+                                                @php
+                                                    $tableid++
+                                                @endphp
                                             </div>
 
                                     </div>
                                       @endforeach
-                                    <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile2-tab">Food truck fixie
-                                      locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog
-                                      sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
-                                      booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo
-                                      nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero
-                                      magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
-                                      shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
-                                      vero sint qui sapiente accusamus tattooed echo park.</div>
-                                    <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">Etsy mixtape wayfarers,
-                                      ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi
-                                      farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore
-                                      carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
-                                      pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk
-                                      vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork
-                                      sustainable tofu synth chambray yr.</div>
+
                                   </div>
                                 {{-- selesai double tab nav --}}
                                 @endif
-                            </div>
-                            @endforeach
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
-                              locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog
-                              sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
-                              booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo
-                              nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero
-                              magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
-                              shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
-                              vero sint qui sapiente accusamus tattooed echo park.</div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape wayfarers,
-                              ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi
-                              farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore
-                              carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
-                              pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk
-                              vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork
-                              sustainable tofu synth chambray yr.</div>
-                          </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Content Section -->
-    </main>
-    <!-- ========== END MAIN ========== -->
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="container space-top-2 space-top-md-3">
-        <div class="border-bottom">
-            <div class="row mb-7">
-                <div class="col-lg-4 mb-7 mb-lg-0">
-                    <div class="d-inline-flex align-self-start flex-column h-100">
-                        <!-- Logo -->
                         <a class="d-flex align-items-center mb-3" href="index.html" aria-label="Front">
                             <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
                             <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
@@ -833,12 +795,17 @@
             $.HSCore.components.HSGoTo.init('.js-go-to');
         });
 
-        $('.table_admin').DataTable({
+        @foreach($slot as $item)
+        $('#table{{$loop->iteration}}').DataTable({
             dom: 'Bfrtip',
             buttons: [
-                'excel', 'pdf', 'print'
+                {
+                extend: 'excelHtml5',
+                title: 'Wisuda Digital UNJ {{Carbon\Carbon::parse($item->tanggal)->translatedFormat("d F Y")}}'
+            }, 'pdf', 'print'
             ]
         });
+        @endforeach
 
     </script>
 </body>

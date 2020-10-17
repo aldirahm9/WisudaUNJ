@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pendaftaran;
+use Illuminate\Support\Facades\Auth;
 use PDF;
 
 class HomeController extends Controller
@@ -33,7 +34,10 @@ class HomeController extends Controller
 
     public function pdf()
     {
-        $pdf = PDF::loadView('pdf.bukti_pendaftaran');
-        return $pdf->download('filename.pdf');
+        $pendaftaran = Auth::user()->pendaftaran;
+        view()->share('pendaftaran',$pendaftaran);
+        $pdf = PDF::loadView('pdf.bukti_pendaftaran',$pendaftaran);
+        $nama = str_replace(' ','_',$pendaftaran->nama_mahasiswa);
+        return $pdf->download($nama . '_' . Auth::user()->nrm . '_WisudaDigitalUNJ.pdf');
     }
 }

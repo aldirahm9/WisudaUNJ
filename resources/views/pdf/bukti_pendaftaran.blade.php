@@ -106,11 +106,11 @@
                 <td colspan="2">
                     <table>
                         <tr>
-                            <td class="title" >
-                                <img src="./logounj.png" style="width:100%; max-width:100px;vertical-align: middle">
-                                <span style="vertical-align: middle">Wisuda Digital UNJ</span>
+                            <td class="title" style="width: 100%">
+                                <img src="./logounj.png" style="width:50%; max-width:100px;vertical-align: middle">
+                                <span style="vertical-align: middle; font-size:35px">Wisuda Digital UNJ</span>
                             </td>
-                            <td><b><u>
+                            <td><b style="font-size: 10px"><u>
                                 #WisudaUNJ2020<br>
                                 #WisudaBarengUNJ<br>
                                 #WisudaDigitalUNJ
@@ -132,7 +132,7 @@
                             </td>
 
                             <td>
-                                Senin, 21/10/2020<br>
+                                {{Carbon\Carbon::parse($pendaftaran->slot->tanggal)->translatedFormat('l, d F Y')}}<br>
                                 {{-- John Doe<br>
                                 john@example.com --}}
                             </td>
@@ -157,7 +157,7 @@
                 </td>
 
                 <td>
-                    Aldi Rahmansyah
+                    {{$pendaftaran->nama_mahasiswa}}
                 </td>
             </tr>
 
@@ -177,7 +177,7 @@
                 </td>
 
                 <td>
-                    3145161324
+                    {{$pendaftaran->user->nrm}}
                 </td>
             </tr>
 
@@ -187,7 +187,7 @@
                 </td>
 
                 <td>
-                    FMIPA
+                    {{$pendaftaran->fakultas->nama_fakultas}}
                 </td>
             </tr>
 
@@ -197,7 +197,7 @@
                 </td>
 
                 <td>
-                    <strong>lorem ipsum</strong>
+                    <strong>{{$pendaftaran->kode_unik}}</strong>
                 </td>
             </tr>
         </table>

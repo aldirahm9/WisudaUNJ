@@ -124,12 +124,12 @@
                             <!-- Banner -->
                             <div class="rounded u-search-push-top__banner">
                                 <div class="d-flex align-items-center">
-                                    <div class="u-search-push-top__banner-container">
+                                    {{-- <div class="u-search-push-top__banner-container">
                                         <img class="img-fluid u-search-push-top__banner-img"
                                             src="{{ asset('front/img/mockups/img3.png" alt="Image Description') }}">
                                         <img class="img-fluid u-search-push-top__banner-img"
                                             src="{{ asset('front/img/mockups/img2.png" alt="Image Description') }}">
-                                    </div>
+                                    </div> --}}
 
                                     <div>
                                         <div class="mb-4">
@@ -171,7 +171,7 @@
     <!-- ========== MAIN ========== -->
     <main id="content" role="main">
         <!-- Breadcrumb Section -->
-        <div class="bg-primary">
+        <div class="bg-unj">
             <div class="container space-top-1 pb-3">
                 <div class="row">
                     <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
@@ -206,7 +206,7 @@
                                 <img class="img-fluid rounded-circle" src="{{ asset('img/foto_wisudawan.png') }}"
                                     alt="Image Description">
                                 <span
-                                    class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right rounded-circle">
+                                    class="badge badge-md badge-outline-primary badge-pos badge-pos--bottom-right rounded-circle">
                                     <span class="fas fa-check"></span>
                                 </span>
                             </div>
@@ -276,8 +276,8 @@
                         <!-- Title -->
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h3 class="h4 mb-0"><i class="fa fa-user-circle text-unj" aria-hidden="true"></i> Profil</h3>
-                            <h3 class="h6 mb-0">
-                            <a href="{{URL::to('/pdf')}}" type="button" class="btn btn-success btn-pill transition-3d-hover">
+                            <h3 class="h6 mb-0 d-none d-md-block">
+                            <a href="{{URL::to('/pdf')}}" type="button" class="btn btn-warning btn-pill transition-3d-hover text-white">
                                 <i class="fa fa-print" aria-hidden="true"></i>
                                 Print Bukti Pendaftaran
                             </a>
@@ -285,21 +285,28 @@
                             {{-- <a class="link-muted" href="#">View All</a> --}}
                         </div>
                         <div class="row mb-5">
-                            <div class="h6 col-3">Nama</div>
+                            <div class="h6 col-4">Nama</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">{{ Auth::user()->pendaftaran->nama_mahasiswa }}</div>
+                            <div class="h6 col-7">{{ Auth::user()->pendaftaran->nama_mahasiswa }}</div>
 
-                            <div class="h6 col-3">NRM</div>
+                            <div class="h6 col-4">NRM</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">{{ Auth::user()->nrm }}</div>
+                            <div class="h6 col-7">{{ Auth::user()->nrm }}</div>
 
-                            <div class="h6 col-3">Fakultas</div>
+                            <div class="h6 col-4">Fakultas</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">{{ Auth::user()->pendaftaran->fakultas->nama_fakultas }}</div>
+                            <div class="h6 col-7">{{ Auth::user()->pendaftaran->fakultas->nama_fakultas }}</div>
 
-                            <div class="h6 col-3 mb-5">Tanggal Foto</div>
+                            <div class="h6 col-4 mb-5">Tanggal Foto</div>
                             <div class="h6 col-0">:</div>
-                            <div class="h6 col-8">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->translatedFormat('l, d F Y') }}</div>
+                            <div class="h6 col-7">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->translatedFormat('l, d F Y') }}</div>
+
+                            <h3 class="h6 col-12 d-block d-md-none">
+                                <a href="{{URL::to('/pdf')}}" type="button" class="btn btn-warning btn-pill transition-3d-hover text-white">
+                                    <i class="fa fa-print" aria-hidden="true"></i>
+                                    Print Bukti Pendaftaran
+                                </a>
+                            </h3>
 
                             <div class="h6 col-8">
                             <form class="js-validate mt-3" action="{{route('ubahTanggal')}}" method="POST" id="formRegister">
@@ -309,7 +316,7 @@
                                     <div class="h6 col-12">
                                         Ganti Tanggal:
                                     </div>
-                                    <div class="js-form-message form-group col-md-6">
+                                    <div class="js-form-message form-group col-md-6 pr-1">
                                         <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="TANGGAL_KEDATANGAN" required
                                             data-msg="Tanggal harus diisi"
                                             data-error-class="u-has-error"
@@ -317,8 +324,8 @@
                                             onkeypress="return false"
                                             autocomplete="off">
                                     </div>
-                                    <div class="col-6 text-lefth-btm">
-                                        <button type="submit" class="btn btn-primary transition-3d-hover" >Ubah</button>
+                                    <div class="col-6 pl-0">
+                                        <button type="submit" class="btn btn-primary transition-3d-hover">Ubah</button>
                                     </div>
                                     <!-- End Form Group -->
                                 </div>

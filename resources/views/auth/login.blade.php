@@ -21,16 +21,6 @@
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
-
-  <style>
-    .bg-unj {
-        background: #006F45 !important;
-    }
-
-    .text-unj {
-        color: #006f45 !important;
-    }
-  </style>
 </head>
 <body>
   <!-- ========== HEADER ========== -->

@@ -2366,14 +2366,14 @@ fieldset:disabled a.btn {
 
 .btn-unj {
   color: #fff;
-  background-color: #006F45;
-  border-color: #006F45;
+  background-color: #008283;
+  border-color: #008283;
 }
 
 .btn-unj:hover {
   color: #fff;
-  background-color: #006F45;
-  border-color: #006F45;
+  background-color: #008283;
+  border-color: #008283;
 }
 
 .btn-unj:focus, .btn-unj.focus {
@@ -2382,15 +2382,15 @@ fieldset:disabled a.btn {
 
 .btn-unj.disabled, .btn-unj:disabled {
   color: #fff;
-  background-color: #008F85;
-  border-color: #008F85;
+  background-color: #007246;
+  border-color: #007246;
 }
 
 .btn-unj:not(:disabled):not(.disabled):active, .btn-unj:not(:disabled):not(.disabled).active,
 .show > .btn-unj.dropdown-toggle {
   color: #fff;
-  background-color: #006F45;
-  border-color: #006F45;
+  background-color: #008283;
+  border-color: #008283;
 }
 
 .btn-unj:not(:disabled):not(.disabled):active:focus, .btn-unj:not(:disabled):not(.disabled).active:focus,
@@ -6274,6 +6274,14 @@ button.close {
 
 .align-text-top {
   vertical-align: text-top !important;
+}
+
+.bg-unj {
+  background: #008283 !important;
+}
+
+.text-unj {
+  color: #008283 !important;
 }
 
 .bg-primary {
@@ -15497,8 +15505,8 @@ button:focus {
 
 /* indigo air */
 .btn-soft-indigo {
-  color: #2d1582;
-  background: rgba(45, 21, 130, 0.1);
+  color: #7b00c2;
+  background: rgba(80, 3, 104, 0.1);
   border-color: transparent;
 }
 
@@ -15571,29 +15579,47 @@ button:focus {
   box-shadow: none;
 }
 
+.btn-soft-fbs[type]:focus {
+  color: #e600a1;
+  background: rgba(146, 5, 115, 0.226);
+  border-color: transparent;
+}
+
+.btn-soft-fbs[href]:hover, .btn-soft-fbs[href]:focus, .btn-soft-fbs[href]:active, .btn-soft-fbs[href].active, .btn-soft-fbs[type]:hover, .btn-soft-fbs[type]:focus, .btn-soft-fbs[type]:active, .btn-soft-fbs[type].active {
+  color: #ffffff;
+  background: #e600a1;
+  box-shadow: 0 4px 11px rgba(155, 63, 120, 0.35);
+}
+
+.btn-soft-fbs[href].disabled, .btn-soft-fbs[href]:disabled, .btn-soft-fbs[type].disabled, .btn-soft-fbs[type]:disabled {
+  color: #e600a1;
+  background-color: rgba(146, 5, 115, 0.226);
+  box-shadow: none;
+}
+
 /* instagram air */
 .btn-soft-instagram {
-  color: #3f729b;
-  background: rgba(63, 114, 155, 0.1);
+  color: #ff5fcf;
+  background: rgba(252, 157, 216, 0.267);
   border-color: transparent;
 }
 
 .btn-soft-instagram[href]:hover, .btn-soft-instagram[href]:focus, .btn-soft-instagram[href]:active, .btn-soft-instagram[href].active, .btn-soft-instagram[type]:hover, .btn-soft-instagram[type]:focus, .btn-soft-instagram[type]:active, .btn-soft-instagram[type].active {
   color: #fff;
-  background: #3f729b;
-  box-shadow: 0 4px 11px rgba(63, 114, 155, 0.35);
+  background: #ff5fcf;
+  box-shadow: 0 4px 11px rgba(105, 55, 86, 0.171);
 }
 
 .btn-soft-instagram[href].disabled, .btn-soft-instagram[href]:disabled, .btn-soft-instagram[type].disabled, .btn-soft-instagram[type]:disabled {
-  color: #3f729b;
-  background-color: rgba(63, 114, 155, 0.1);
+  color: #ff5fcf;
+  background-color: rgba(252, 157, 216, 0.267);
   box-shadow: none;
 }
 
 /* github air */
 .btn-soft-github {
-  color: #24292e;
-  background: rgba(36, 41, 46, 0.1);
+  color: #CA6627;
+  background: rgba(117, 96, 1, 0.1);
   border-color: transparent;
 }
 

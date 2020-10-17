@@ -312,8 +312,8 @@
                                     </span>
                                     <span class="ml-1">Fakultas Teknik</span>
                                 </h5>
-                                @if ($pendaftaran->where('fakultas_id', 2)->count() >= 2)
-                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 1)->count() }} Pendaftar</p>
+                                @if ($pendaftaran->where('fakultas_id', 2)->count() >= 1)
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 2)->count() }} Pendaftar</p>
                                 @else
                                     <p class="text-right text-right mb-0">Belum ada pendaftar</p>
                                 @endif
@@ -330,7 +330,7 @@
                                     </span>
                                     <span class="ml-1">Fakultas Ilmu Olahraga</span>
                                 </h5>
-                                @if ($pendaftaran->where('fakultas_id', 3)->count() >= 2)
+                                @if ($pendaftaran->where('fakultas_id', 3)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 3)->count() }} Pendaftar</p>
                                 @else
                                     <p class="text-right text-right mb-0">Belum ada pendaftar</p>
@@ -368,7 +368,7 @@
                                     </span>
                                     <span class="ml-1">Fakultas Bahasa & Seni</span>
                                 </h5>
-                                @if ($pendaftaran->where('fakultas_id', 5)->count() >= 2)
+                                @if ($pendaftaran->where('fakultas_id', 5)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 5)->count() }} Pendaftar</p>
                                 @else
                                     <p class="text-right text-right mb-0">Belum ada pendaftar</p>
@@ -386,7 +386,7 @@
                                     </span>
                                     <span class="ml-1">Fakultas Psikologi</span>
                                 </h5>
-                                @if ($pendaftaran->where('fakultas_id', 6)->count() >= 2)
+                                @if ($pendaftaran->where('fakultas_id', 6)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 6)->count() }} Pendaftar</p>
                                 @else
                                     <p class="text-right text-right mb-0">Belum ada pendaftar</p>
@@ -406,7 +406,7 @@
                                     </span>
                                     <span class="ml-1">Fakultas Pendidikan</span>
                                 </h5>
-                                @if ($pendaftaran->where('fakultas_id', 7)->count() >= 2)
+                                @if ($pendaftaran->where('fakultas_id', 7)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 7)->count() }} Pendaftar</p>
                                 @else
                                     <p class="text-right text-right mb-0">Belum ada pendaftar</p>
@@ -424,7 +424,7 @@
                                     </span>
                                     <span class="ml-1">Fakultas Ekonomi</span>
                                 </h5>
-                                @if ($pendaftaran->where('fakultas_id', 8)->count() >= 2)
+                                @if ($pendaftaran->where('fakultas_id', 8)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 8)->count() }} Pendaftar</p>
                                 @else
                                     <p class="text-right text-right mb-0">Belum ada pendaftar</p>
@@ -442,7 +442,7 @@
                                     </span>
                                     <span class="ml-1">Pascasarjana</span>
                                 </h5>
-                                @if ($pendaftaran->where('fakultas_id', 9)->count() >= 2)
+                                @if ($pendaftaran->where('fakultas_id', 9)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 9)->count() }} Pendaftar</p>
                                 @else
                                     <p class="text-right text-right mb-0">Belum ada pendaftar</p>

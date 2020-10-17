@@ -245,11 +245,12 @@
                 </div>
                 <!-- End Form Group -->
                 <div class="col-12">
-                  <small class="text-warning text-small">*Password digunakan untuk mengubah tanggal kedatangan.</small>
+                  <small class="text-warning text-small">*Password digunakan untuk mencetak bukti pendaftaran.</small><br>
                   <small class="text-danger text-small">*Diharap untuk wisudawan S2 & S3 agar memilih fakultas dengan program studi asalnya.</small>
                 </div>
                 <div class="col-12 text-right mt-2">
-                  <button type="submit" class="btn btn-unj transition-3d-hover">Daftar</button>
+                  <p class="float-left">Sudah mendaftar? <a href="{{ route('login') }}">Login di sini</a></p>
+                  <button type="submit" class="btn btn-unj float-right transition-3d-hover">Daftar</button>
                 </div>
                 <!-- End Button -->
               </div>

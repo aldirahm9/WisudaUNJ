@@ -329,14 +329,6 @@
             $(this).val(picker.startDate.format('DD/MM/YYYY'))
         })
 
-        $('#signinSrNRM').on('keyup', function() {
-            if($(this).val().length == 1) {
-                if($(this).val() == '3') $('#fakultas').val({{$fakultas->where('nama_fakultas','FMIPA')->first()->id}}).change()
-                if($(this).val() == '1') $('#fakultas').val({{$fakultas->where('nama_fakultas','FIP')->first()->id}}).change()
-                if($(this).val() == '5') $('#fakultas').val({{$fakultas->where('nama_fakultas','FT')->first()->id}}).change()
-            }
-        });
-
     });
 
     function validate(evt) {

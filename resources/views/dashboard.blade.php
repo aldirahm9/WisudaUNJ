@@ -507,6 +507,17 @@
                               @foreach($fakultas as $fak)
                           <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="{{$fak->nama_fakultas}}" role="tabpanel" aria-labelledby="{{$fak->nama_fakultas}}-tab">
                                 {{-- double tab nav --}}
+                                @if ($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique())->first()==NULL)
+                                {{-- Kartu ucapan Form Kosong --}}
+                                <div class="card card-frame">
+                                    <div class="card-body mt-3">
+                                        <div class="alert alert-danger" role="alert">
+                                            No Data Available!
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- selesai Kartu ucapan Form Kosong --}}
+                                @else
                                 <ul class="nav nav-tabs" id="myTab2" role="tablist">
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
                                     <li class="nav-item waves-effect waves-light">
@@ -603,6 +614,7 @@
                                       sustainable tofu synth chambray yr.</div>
                                   </div>
                                 {{-- selesai double tab nav --}}
+                                @endif
                             </div>
                             @endforeach
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie

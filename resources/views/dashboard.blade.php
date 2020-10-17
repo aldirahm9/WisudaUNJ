@@ -497,36 +497,95 @@
                 <div class="card mb-6">
                     <div class="card-header py-4 px-0 mx-4">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            @foreach($fakultas as $fak)
                             <li class="nav-item waves-effect waves-light">
-                              <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home</a>
+                              <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$fak->nama_fakultas}}-tab" data-toggle="tab" href="#{{$fak->nama_fakultas}}" role="tab" aria-controls="{{$fak->nama_fakultas}}" aria-selected="false">{{$fak->nama_fakultas}}</a>
                             </li>
-                            <li class="nav-item waves-effect waves-light">
-                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-                            </li>
-                            <li class="nav-item waves-effect waves-light">
-                              <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="true">Contact</a>
-                            </li>
+                            @endforeach
                           </ul>
                           <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                              @foreach($fakultas as $fak)
+                          <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="{{$fak->nama_fakultas}}" role="tabpanel" aria-labelledby="{{$fak->nama_fakultas}}-tab">
                                 {{-- double tab nav --}}
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                                    @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
                                     <li class="nav-item waves-effect waves-light">
-                                      <a class="nav-link" id="home2-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="false">home2</a>
+                                      <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten{{$slot_item->id}}" role="tab" aria-controls="konten{{$slot_item->id}}" aria-selected="false">{{$slot_item->tanggal}}</a>
                                     </li>
-                                    <li class="nav-item waves-effect waves-light">
-                                      <a class="nav-link" id="profile2-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile2" aria-selected="false">profile2</a>
-                                    </li>
-                                    <li class="nav-item waves-effect waves-light">
-                                      <a class="nav-link active" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="true">contact2</a>
-                                    </li>
+                                    @endforeach
                                   </ul>
-                                  <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade" id="home2" role="tabpanel" aria-labelledby="home2-tab">Raw denim you
-                                      probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
-                                      cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-                                      dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia
-                                      cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+                                  <div class="tab-content" id="myTabContent2">
+                                    @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
+                                    <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
+                                        <div class="table-responsive-md ">
+                                            <table
+                                                    class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
+                                                    <thead>
+                                                        <tr class="text-uppercase font-size-1">
+                                                        <th>no</th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            Nama
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            NRM
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            Fakultas
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            Tanggal
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col" class="font-weight-medium">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                            Kode Unik
+                                                            <div class="ml-2">
+                                                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                            </div>
+                                                            </div>
+                                                        </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="font-size-1">
+                                                        @foreach($pendaftaran->where('fakultas_id', $fak->id)->where('slot_id',$slot_item->id) as $mahasiswa) <tr>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->nama_mahasiswa }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->fakultas->nama_fakultas }}</td>
+                                                            <td class="align-middle">{{ \Carbon\Carbon::parse($mahasiswa->slot->tanggal)->translatedFormat('d F Y') }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->kode_unik }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                    </div>
+                                      @endforeach
                                     <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile2-tab">Food truck fixie
                                       locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog
                                       sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
@@ -535,7 +594,7 @@
                                       magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
                                       shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
                                       vero sint qui sapiente accusamus tattooed echo park.</div>
-                                    <div class="tab-pane fade active show" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">Etsy mixtape wayfarers,
+                                    <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">Etsy mixtape wayfarers,
                                       ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi
                                       farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore
                                       carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
@@ -545,6 +604,7 @@
                                   </div>
                                 {{-- selesai double tab nav --}}
                             </div>
+                            @endforeach
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
                               locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog
                               sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
@@ -553,7 +613,7 @@
                               magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
                               shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher
                               vero sint qui sapiente accusamus tattooed echo park.</div>
-                            <div class="tab-pane fade active show" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape wayfarers,
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape wayfarers,
                               ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi
                               farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore
                               carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred

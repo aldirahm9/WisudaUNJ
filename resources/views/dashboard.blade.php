@@ -565,6 +565,7 @@
                                   </div>
                                 {{-- selesai double tab nav --}}
                                 @endif
+                                @endforeach
 
                         <a class="d-flex align-items-center mb-3" href="index.html" aria-label="Front">
                             <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
@@ -802,7 +803,8 @@
                 {
                 extend: 'excelHtml5',
                 title: 'Wisuda Digital UNJ {{Carbon\Carbon::parse($item->tanggal)->translatedFormat("d F Y")}}'
-            }, 'pdf', 'print'
+                },
+                'pdf', 'print'
             ]
         });
         @endforeach

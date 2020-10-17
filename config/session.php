@@ -31,7 +31,8 @@ return [
     |
     */
 
-    'lifetime' => env('SESSION_LIFETIME', 120),
+    //2 x 30 hari x 24 jam x 60 menit = 86.400 menit
+    'lifetime' => env('SESSION_LIFETIME', 86400),
 
     'expire_on_close' => false,
 

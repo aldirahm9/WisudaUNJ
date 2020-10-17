@@ -849,7 +849,7 @@
                 {
                 extend: 'excelHtml5',
                 title: 'Wisuda Digital UNJ {{Carbon\Carbon::parse($item->tanggal)->translatedFormat("d F Y")}}'
-            },, 'pdf', 'print'
+            }, 'pdf', 'print'
             ]
         });
         @endforeach

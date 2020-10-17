@@ -272,6 +272,230 @@
         <div class="bg-light">
             <div class="container space-2">
 
+                <!-- Title -->
+                {{-- <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="h6 mb-0">Peserta photoshoot wisuda UNJ</h3> --}}
+                    {{-- <a class="link-muted" href="#">View All</a> --}}
+                {{-- </div> --}}
+                <!-- End Title -->
+
+                <!-- Earning Sources -->
+                <div class="mb-3">
+                    <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" >
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFMIPA.png')}}"
+                                            alt="Image Description"> --}}
+                                            <i style="color: #8033E6;" class="fas fa-flask fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">FMIPA</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 1)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" href="#">
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle"
+                                            src="{{ asset('img/LogoFT.png')}}" alt="Image Description"> --}}
+                                            <i style="color: #0082D9;" class="fas fa-wrench fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">FT</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 2)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" href="#">
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle"
+                                            src="{{ asset('img/LogoFIO.png')}}" alt="Image Description"> --}}
+                                            <i style="color: black;" class="fas fa-volleyball-ball fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">FIO</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 3)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+                    </div>
+
+                    <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" href="#">
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle"
+                                            src="{{ asset('img/LogoFIS.png')}}" alt="Image Description"> --}}
+                                            <i style="color: #F20000;" class="fas fa-user fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">FIS</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 4)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" href="#">
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle"
+                                            src="{{ asset('img/LogoFBS.png')}}" alt="Image Description"> --}}
+                                            <i style="color: #FFB3FF;" class="fas fa-book fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">FBS</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 5)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" href="#">
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle"
+                                            src="{{ asset('img/LogoPsikologi.png')}}" alt="Image Description"> --}}
+                                            <i style="color: lightblue;" class="fas fa-brain fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">Psikologi</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 6)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+                    </div>
+
+                    <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" href="#">
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle"
+                                            src="{{ asset('img/LogoFIP.png')}}" alt="Image Description"> --}}
+                                            <i style="color: #99FF33;" class="fas fa-school fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">FIP</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 7)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" href="#">
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle"
+                                            src="{{ asset('img/LogoFE.png')}}" alt="Image Description"> --}}
+                                            <i style="color: #FF00FF;" class="fas fa-coins fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">FE</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 8)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+
+                        <!-- Card -->
+                        <div class="card card-frame mb-3">
+                            <a class="card-body p-4" href="#">
+                                <div class="media align-items-center">
+                                    <div class="u-avatar mr-3">
+                                        {{-- <img class="img-fluid rounded-circle"
+                                            src="{{ asset('img/LogoPasca.png')}}" alt="Image Description"> --}}
+                                            <i style="color: #E68A17;" class="fas fa-graduation-cap fa-3x"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="text-dark">Pasca</span>
+                                        <small class="d-block text-secondary"> </small>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <span class="text-primary ml-3">
+                                            {{ $pendaftaran->where('fakultas_id', 9)->count() }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Card -->
+                    </div>
+                </div>
+                <!-- End Earning Sources -->
+
                 {{-- tab nav --}}
                 <div class="card mb-6">
                     <div class="card-header py-4 px-0 mx-4">
@@ -350,352 +574,8 @@
                             </div>
                             @endforeach
                           </div>
-
-                        {{-- KONTEN TABLE
-                        <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade active show" id="fio" role="tabpanel" aria-labelledby="fio-tab">
-                            <div class="js-focus-state input-group input-group-sm mb-4">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <span class="fas fa-search"></span>
-                                    </span>
-                                </div>
-                                <input id="datatableSearch" class="form-control" type="email"
-                                    placeholder="Search. . ." aria-label="Search activities">
-                            </div>
-
-                            <div class="table-responsive-md u-datatable">
-                                <table
-                                    class="js-datatable table table-borderless u-datatable__striped u-datatable__content u-datatable__trigger mb-5"
-                                    data-dt-info="#datatableInfo" data-dt-search="#datatableSearch"
-                                    data-dt-entries="#datatableEntries" data-dt-page-length="7"
-                                    data-dt-is-responsive="false" data-dt-is-show-paging="true"
-                                    data-dt-details-invoker=".js-datatabale-details"
-                                    data-dt-select-all-control="#invoiceToggleAllCheckbox"'>
-                    <thead>
-                        <tr class="text-uppercase font-size-1">
-                        <th scope="col" class="font-weight-medium">
-                            <div class="d-flex justify-content-between align-items-center">
-                            Nama
-                            <div class="ml-2">
-                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                            </div>
-                            </div>
-                        </th>
-                        <th scope="col" class="font-weight-medium">
-                            <div class="d-flex justify-content-between align-items-center">
-                            NRM
-                            <div class="ml-2">
-                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                            </div>
-                            </div>
-                        </th>
-                        <th scope="col" class="font-weight-medium">
-                            <div class="d-flex justify-content-between align-items-center">
-                            Kode Unik
-                            <div class="ml-2">
-                                <span class="fas fa-angle-up u-datatable__thead-icon"></span>
-                                <span class="fas fa-angle-down u-datatable__thead-icon"></span>
-                            </div>
-                            </div>
-                        </th>
-                        </tr>
-                    </thead>
-                    <tbody class="font-size-1">
-                        @foreach($pendaftaran->where('fakultas_id', 1) as $mahasiswa) <tr>
-                                    <td class="align-middle">{{ $mahasiswa->nama_mahasiswa }}</td>
-                                    <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
-                                    <td class="align-middle">{{ $mahasiswa->kode_unik }}</td>
-                                    </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div> --}}
-                        {{-- @endforeach --}}
-                        {{-- end ulang --}}
-                        {{-- kelar tab fio --}}
-                    {{-- </div> --}}
                 </div>
             </div>
-
-            {{-- <!-- Stats -->
-        <div class="card-deck d-block d-lg-flex card-lg-gutters-3 mb-6">
-          <!-- Card -->
-          <div class="card mb-3 mb-lg-0">
-            <div class="card-body p-5">
-              <div class="media align-items-center">
-                <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mr-4">
-                  <span class="fas fa-dollar-sign btn-icon__inner"></span>
-                </span>
-                <div class="media-body">
-                  <span class="d-block font-size-3">$45.99</span>
-                  <h2 class="h6 text-secondary font-weight-normal mb-0">Available balance</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-
-          <!-- Card -->
-          <div class="card mb-3 mb-lg-0">
-            <div class="card-body p-5">
-              <div class="media align-items-center">
-                <span class="btn btn-lg btn-icon btn-soft-success rounded-circle mr-4">
-                  <span class="fas fa-coins btn-icon__inner"></span>
-                </span>
-                <div class="media-body">
-                  <span class="d-block font-size-3">$1.32</span>
-                  <h3 class="h6 text-secondary font-weight-normal mb-0">Reward balance</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-
-          <!-- Card -->
-          <div class="card">
-            <div class="card-body p-5">
-              <div class="media align-items-center">
-                <span class="btn btn-lg btn-icon btn-soft-warning rounded-circle mr-4">
-                  <span class="fas fa-exchange-alt btn-icon__inner"></span>
-                </span>
-                <div class="media-body">
-                  <span class="d-block font-size-3">$0.00</span>
-                  <h3 class="h6 text-secondary font-weight-normal mb-0">Pending balance</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Card -->
-        </div>
-        <!-- End Stats --> --}}
-
-            <!-- Title -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h3 class="h6 mb-0">Peserta photoshoot wisuda UNJ</h3>
-                {{-- <a class="link-muted" href="#">View All</a> --}}
-            </div>
-            <!-- End Title -->
-
-            <!-- Earning Sources -->
-            <div class="mb-7">
-                <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" >
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle" src="{{ asset('img/LogoFMIPA.png')}}"
-                                        alt="Image Description"> --}}
-                                        <i style="color: #8033E6;" class="fas fa-flask fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">FMIPA</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 1)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFT.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #0082D9;" class="fas fa-wrench fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">FT</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 2)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFIO.png')}}" alt="Image Description"> --}}
-                                        <i style="color: black;" class="fas fa-volleyball-ball fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">FIO</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 3)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-                </div>
-
-                <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFIS.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #F20000;" class="fas fa-user fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">FIS</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 4)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFBS.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #FFB3FF;" class="fas fa-book fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">FBS</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 5)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoPsikologi.png')}}" alt="Image Description"> --}}
-                                        <i style="color: lightblue;" class="fas fa-brain fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">Psikologi</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 6)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-                </div>
-
-                <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFIP.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #99FF33;" class="fas fa-school fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">FIP</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 7)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoFE.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #FF00FF;" class="fas fa-coins fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">FE</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 8)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-
-                    <!-- Card -->
-                    <div class="card card-frame mb-3">
-                        <a class="card-body p-4" href="#">
-                            <div class="media align-items-center">
-                                <div class="u-avatar mr-3">
-                                    {{-- <img class="img-fluid rounded-circle"
-                                        src="{{ asset('img/LogoPasca.png')}}" alt="Image Description"> --}}
-                                        <i style="color: #E68A17;" class="fas fa-graduation-cap fa-3x"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="text-dark">Pasca</span>
-                                    <small class="d-block text-secondary"> </small>
-                                </div>
-                                <div class="media-body text-right">
-                                    <span class="text-primary ml-3">
-                                        {{ $pendaftaran->where('fakultas_id', 9)->count() }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- End Card -->
-                </div>
-            </div>
-            <!-- End Earning Sources -->
 
             {{-- <!-- Card -->
         <div class="card-deck d-block d-lg-flex card-lg-gutters-3">

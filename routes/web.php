@@ -26,10 +26,16 @@ Route::get('/generate/sitemap', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin', [adminController::class, 'dashboard']);
 });
 
-Route::get('pdf', [App\Http\Controllers\HomeController::class, 'pdf'])->name('pdf');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('pdf', [App\Http\Controllers\HomeController::class, 'pdf'])->name('pdf');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::post('ubahTanggal', [App\Http\Controllers\HomeController::class, 'ubahTanggal'])->name('ubahTanggal');
+
+});
+

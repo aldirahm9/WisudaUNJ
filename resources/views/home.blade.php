@@ -302,7 +302,7 @@
                             <div class="h6 col-8">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->translatedFormat('l, d F Y') }}</div>
 
                             <div class="h6 col-8">
-                            <form class="js-validate mt-3" action="/" method="POST" id="formRegister">
+                            <form class="js-validate mt-3" action="{{route('ubahTanggal')}}" method="POST" id="formRegister">
                                 {{csrf_field()}}
                                 <div class="row">
                                     <!-- Form Group -->
@@ -313,12 +313,12 @@
                                         <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="TANGGAL_KEDATANGAN" required
                                             data-msg="Tanggal harus diisi"
                                             data-error-class="u-has-error"
-                                            data-success-class="u-has-success" disabled
+                                            data-success-class="u-has-success"
                                             onkeypress="return false"
                                             autocomplete="off">
                                     </div>
                                     <div class="col-6 text-lefth-btm">
-                                        <button type="submit" class="btn btn-primary transition-3d-hover">Ubah</button>
+                                        <button type="submit" class="btn btn-primary transition-3d-hover" >Ubah</button>
                                     </div>
                                     <!-- End Form Group -->
                                 </div>
@@ -476,7 +476,9 @@
     <script src="{{ asset('front/js/components/hs.go-to.js') }}"></script>
     <script src="{{ asset('front/js/components/hs.selectpicker.js') }}"></script>
     <script src="{{ asset('front/js/components/hs.datatables.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
 
     <!-- JS Plugins Init. -->
     <script>
@@ -511,6 +513,28 @@
                     $(this).find('input[type="search"]').focus();
                 }
             });
+
+            $('input[name="tanggal_kedatangan"]').daterangepicker({
+            autoUpdateInput: false,
+            minDate: '{{Carbon\Carbon::parse(Auth::user()->pendaftaran->fakultas->tanggal_awal_photoshoot)->format("d/m/Y")}}',
+            maxDate: '{{Carbon\Carbon::parse(Auth::user()->pendaftaran->fakultas->tanggal_akhir_photoshoot)->format("d/m/Y")}}',
+            isInvalidDate: function(date) {
+                return (date.day() == 0 || date.day() == 6 || date.format('M/D/YYYY') == new Date().toLocaleDateString());
+                if(arrInvalidDates.includes(date.format('YYYY-M-D')))
+                return true
+                return false
+            },
+            singleDatePicker: true,
+            autoApply: true,
+            locale: {
+               format: 'DD/MM/YYYY'
+            }
+        });
+
+        $('input[name="tanggal_kedatangan"]').on('apply.daterangepicker',function(ev,picker) {
+            $(this).val(picker.startDate.format('DD/MM/YYYY'))
+        })
+
 
             // initialization of malihu scrollbar
             $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));

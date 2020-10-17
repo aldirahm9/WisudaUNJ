@@ -565,8 +565,23 @@
                                   </div>
                                 {{-- selesai double tab nav --}}
                                 @endif
+                            </div>
                                 @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Content Section -->
+            </main>
+            <!-- ========== END MAIN ========== -->
 
+            <!-- ========== FOOTER ========== -->
+            <footer class="container space-top-2 space-top-md-3">
+                <div class="border-bottom">
+                    <div class="row mb-7">
+                        <div class="col-lg-4 mb-7 mb-lg-0">
+                            <div class="d-inline-flex align-self-start flex-column h-100">
+                                <!-- Logo -->
                         <a class="d-flex align-items-center mb-3" href="index.html" aria-label="Front">
                             <img src="{{ asset('logounj.png') }}" alt="logo UNJ" style="height:36px; width:auto;">
                             <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>

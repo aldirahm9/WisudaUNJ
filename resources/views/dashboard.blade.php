@@ -455,7 +455,7 @@
                 <!-- End Earning Sources -->
 
                 {{-- tab nav --}}
-                <div class="card mb-6">
+                <div class="card">
                     <div class="card-header py-4 px-0 mx-4">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             @foreach($fakultas as $fak)

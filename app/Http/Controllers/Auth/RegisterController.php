@@ -108,7 +108,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
-        die("masuk");
+        
         event(new Registered($user = $this->create($request->all())));
 
         $this->guard()->login($user);

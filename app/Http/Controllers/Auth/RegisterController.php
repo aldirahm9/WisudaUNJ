@@ -99,7 +99,8 @@ class RegisterController extends Controller
             'nama_mahasiswa' => $data['nama'],
             'slot_id' => $slot->id,
         ]);
-        $pendaftaran->kode_unik = $hashids->encode($pendaftaran->id);
+
+        $pendaftaran->kode_unik = $this->generate_referral(6);
         $pendaftaran->save();
         return $user;
     }
@@ -119,5 +120,10 @@ class RegisterController extends Controller
         return $request->wantsJson()
                     ? new JsonResponse([], 201)
                     : redirect($this->redirectPath())->with('success', 'Selamat Anda Berhasil Melakukan Pendaftaran!');
+    }
+
+    public function generate_referral($length){
+        $str_result = 'abcdefghijklmnopqrstuvwxyz1234567890'; 
+        return substr(str_shuffle($str_result), 0, $length);
     }
 }

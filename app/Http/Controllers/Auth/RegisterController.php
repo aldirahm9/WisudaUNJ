@@ -92,6 +92,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role' => 0,
         ]);
+        die("masuk");
         // $hashids = new Hashids('',6,'abcdefghijklmnopqrstuvwxyz0123456789');
         $pendaftaran = Pendaftaran::create([
             'user_id' => $user->id,

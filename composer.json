@@ -20,7 +20,8 @@
         "realrashid/sweet-alert": "^3.1",
         "spatie/laravel-sitemap": "^5.8",
         "ext-bcmath": "*",
-        "ext-memcached": "*"
+        "ext-memcached": "*",
+        "ext-gd": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

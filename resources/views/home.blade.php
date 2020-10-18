@@ -268,7 +268,7 @@
                             </div>
                         </div>
                         <!-- Button -->
-                        
+
                         <!-- End Button -->
                     </div>
                 </div>
@@ -297,7 +297,7 @@
                             <div class="h6 col-0">:</div>
                             <div class="h6 col-7">{{ Auth::user()->pendaftaran->nama_mahasiswa }}</div>
 
-                            <div class="h6 col-4">NRM</div>
+                            <div class="h6 col-4">NRM / NIM</div>
                             <div class="h6 col-0">:</div>
                             <div class="h6 col-7">{{ Auth::user()->nrm }}</div>
 

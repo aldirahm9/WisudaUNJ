@@ -162,8 +162,8 @@
 
               <!-- Form Group -->
               <div class="js-form-message form-group">
-                <label class="form-label" for="signinSrEmail">NRM</label>
-                <input  class="form-control" name="nrm" id="signinSrEmail" placeholder="NRM" aria-label="NRM" required
+                <label class="form-label" for="signinSrEmail">NRM / NIM</label>
+                <input  class="form-control" name="nrm" id="signinSrEmail" placeholder="NRM / NIM" aria-label="NRM" required
                        data-msg="Please enter a valid NRM."
                        data-error-class="u-has-error"
                        data-success-class="u-has-success">
@@ -222,9 +222,21 @@
   <script src="{{asset('front/js/components/hs.validation.js')}}"></script>
   <script src="{{asset('front/js/components/hs.slick-carousel.js')}}"></script>
 
+  {{-- swal alert --}}
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
+        //swalalert
+        @if ($errors->has('nrm'))
+        Swal.fire({
+        icon: 'error',
+        title: 'Gagal Login',
+        text: 'Anda Belum Terdaftar! atau Password Salah!',
+        })
+        @endif
+
       // initialization of slick carousel
       $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 

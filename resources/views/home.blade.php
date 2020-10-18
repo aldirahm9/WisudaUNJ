@@ -255,12 +255,20 @@
                     <!-- End Navbar -->
 
                     <div class="ml-lg-auto">
+                        <div class="dropdown">
+                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->pendaftaran->nama_mahasiswa}}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <form action="{{ route('logout') }}" method="post">
+                                    {{ csrf_field() }}
+                                    <input type="submit"
+                                        class="dropdown-item text-danger cursor-pointer" value="logout">
+                                </form>
+                            </div>
+                        </div>
                         <!-- Button -->
-                        <form action="{{ route('logout') }}" method="post">
-                            {{ csrf_field() }}
-                            <button type="submit"
-                                class="btn btn-sm btn-danger transition-3d-hover">Logout</button>
-                        </form>
+                        
                         <!-- End Button -->
                     </div>
                 </div>

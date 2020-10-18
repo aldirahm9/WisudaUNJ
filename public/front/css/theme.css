@@ -6276,6 +6276,10 @@ button.close {
   vertical-align: text-top !important;
 }
 
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
 .bg-unj {
   background: #008283 !important;
 }

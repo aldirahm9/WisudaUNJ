@@ -177,9 +177,9 @@
 
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
-                  <label class="form-label" for="signinSrNRM">NRM</label>
-                  <input  class="form-control" name="nrm" id="signinSrNRM" placeholder="NRM" aria-label="NRM" required
-                         data-msg="Masukkan NRM yang valid."
+                  <label class="form-label" for="signinSrNRM">NRM / NIM</label>
+                  <input  class="form-control" name="nrm" id="signinSrNRM" placeholder="NRM / NIM" aria-label="NRM" required
+                         data-msg="Masukkan NRM / NIM yang valid."
                          data-error-class="u-has-error"
                          data-success-class="u-has-success"
                          onkeypress="validate(event)"
@@ -280,6 +280,9 @@
   <script src="{{asset('front/js/components/hs.validation.js')}}"></script>
   <script src="{{asset('front/js/components/hs.slick-carousel.js')}}"></script>
 
+  {{-- swal alert --}}
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
@@ -288,6 +291,23 @@
   <script>
     var fakultas = {!! $fakultas !!}
     $(document).on('ready', function () {
+        //swalalert
+        @if ($errors->has('nrm'))
+        Swal.fire({
+        icon: 'error',
+        title: 'Gagal Daftar',
+        text: 'NRM/NIM Sudah Dipakai!',
+        })
+        @endif
+
+        @if ($errors->has('password'))
+        Swal.fire({
+        icon: 'error',
+        title: 'Gagal Daftar',
+        text: 'Pastikan Password dan Konfirmasi Sama!',
+        })
+        @endif
+
         // initialization of slick carousel
         $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 

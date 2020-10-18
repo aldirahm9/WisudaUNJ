@@ -12,7 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Hashids\Hashids;
+// use Hashids\Hashids;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
@@ -92,7 +92,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role' => 0,
         ]);
-        $hashids = new Hashids('',6,'abcdefghijklmnopqrstuvwxyz0123456789');
+        // $hashids = new Hashids('',6,'abcdefghijklmnopqrstuvwxyz0123456789');
         $pendaftaran = Pendaftaran::create([
             'user_id' => $user->id,
             'fakultas_id' => $data['fakultas'],

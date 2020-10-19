@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::post('ubahTanggal', [App\Http\Controllers\HomeController::class, 'ubahTanggal'])->name('ubahTanggal');
+    Route::post('ubahJam', [App\Http\Controllers\HomeController::class, 'ubahJam'])->name('ubahJam');
 
 });
 

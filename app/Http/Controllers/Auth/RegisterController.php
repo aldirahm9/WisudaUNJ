@@ -98,6 +98,7 @@ class RegisterController extends Controller
             'fakultas_id' => $data['fakultas'],
             'nama_mahasiswa' => $data['nama'],
             'slot_id' => $slot->id,
+            'jam' => $data['jam']
         ]);
 
         $pendaftaran->kode_unik = $this->generate_referral(6);
@@ -108,7 +109,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
-        
+
         event(new Registered($user = $this->create($request->all())));
 
         $this->guard()->login($user);
@@ -123,7 +124,7 @@ class RegisterController extends Controller
     }
 
     public function generate_referral($length){
-        $str_result = 'abcdefghijklmnopqrstuvwxyz1234567890'; 
+        $str_result = 'abcdefghijklmnopqrstuvwxyz1234567890';
         return substr(str_shuffle($str_result), 0, $length);
     }
 }

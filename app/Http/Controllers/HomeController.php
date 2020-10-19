@@ -61,4 +61,12 @@ class HomeController extends Controller
         $pendaftaran->save();
         return redirect('home');
     }
+
+    public function ubahJam(Request $request)
+    {
+        $pendaftaran = Auth::user()->pendaftaran;
+        $pendaftaran->jam = $request->jam;
+        $pendaftaran->save();
+        return redirect('home');
+    }
 }

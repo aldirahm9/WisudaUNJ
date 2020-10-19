@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         config(['app.locale' => 'id']);
 
         \Carbon\Carbon::setLocale('id');
+        \Carbon\Carbon::setToStringFormat('d/m/Y');
 
         Schema::defaultStringLength(191);
 

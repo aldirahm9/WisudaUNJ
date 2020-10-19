@@ -268,7 +268,7 @@
                             </div>
                         </div>
                         <!-- Button -->
-                        
+
                         <!-- End Button -->
                     </div>
                 </div>
@@ -305,9 +305,13 @@
                             <div class="h6 col-0">:</div>
                             <div class="h6 col-7">{{ Auth::user()->pendaftaran->fakultas->nama_fakultas }}</div>
 
-                            <div class="h6 col-4 mb-5">Tanggal Foto</div>
+                            <div class="h6 col-4">Tanggal Foto</div>
                             <div class="h6 col-0">:</div>
                             <div class="h6 col-7">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->translatedFormat('l, d F Y') }}</div>
+
+                            <div class="h6 col-4 mb-5">Jam Foto</div>
+                            <div class="h6 col-0">:</div>
+                            <div class="h6 col-7">{{ Auth::user()->pendaftaran->jam >= 10 ? sprintf('%d:00', Auth::user()->pendaftaran->jam) : sprintf('0%d:00', Auth::user()->pendaftaran->jam) }}</div>
 
                             <h3 class="h6 col-12 d-block d-md-none">
                                 <a href="{{URL::to('/pdf')}}" type="button" class="btn btn-warning btn-pill transition-3d-hover text-white">
@@ -325,12 +329,41 @@
                                         Ganti Tanggal:
                                     </div>
                                     <div class="js-form-message form-group col-md-6 pr-1">
-                                        <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="TANGGAL_KEDATANGAN" required
+                                        <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" aria-label="TANGGAL_KEDATANGAN" required
                                             data-msg="Tanggal harus diisi"
                                             data-error-class="u-has-error"
                                             data-success-class="u-has-success"
                                             onkeypress="return false"
                                             autocomplete="off">
+                                    </div>
+                                    <div class="col-6 pl-0">
+                                        <button type="submit" class="btn btn-primary transition-3d-hover">Ubah</button>
+                                    </div>
+                                    <!-- End Form Group -->
+                                </div>
+                            </form>
+                            </div>
+
+                            <div class="h6 col-8">
+                            <form class="js-validate mt-3" action="{{route('ubahJam')}}" method="POST" id="formRegister">
+                                {{csrf_field()}}
+                                <div class="row">
+                                    <!-- Form Group -->
+                                    <div class="h6 col-12">
+                                        Ganti Jam:
+                                    </div>
+                                    <div class="js-form-message form-group col-md-6 pr-1">
+                                        <select class="custom-select" name="jam" id="jam">
+                                            <option selected disabled hidden></option>
+                                            <option value="9">09.00</option>
+                                            <option value="10">10.00</option>
+                                            <option value="11">11.00</option>
+                                            <option value="12">12.00</option>
+                                            <option value="13">13.00</option>
+                                            <option value="14">14.00</option>
+                                            <option value="15">15.00</option>
+                                            <option value="16">16.00</option>
+                                        </select>
                                     </div>
                                     <div class="col-6 pl-0">
                                         <button type="submit" class="btn btn-primary transition-3d-hover">Ubah</button>
@@ -552,6 +585,7 @@
         $('input[name="tanggal_kedatangan"]').on('apply.daterangepicker',function(ev,picker) {
             $(this).val(picker.startDate.format('DD/MM/YYYY'))
         })
+
 
 
             // initialization of malihu scrollbar

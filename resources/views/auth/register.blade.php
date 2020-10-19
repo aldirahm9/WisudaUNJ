@@ -20,7 +20,14 @@
   <link rel="stylesheet" href="{{asset('front/vendor/slick-carousel/slick/slick.css')}}">
 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
+    <style>
+        .class-tanggal {
+            font-size: 20px!important;
+        }
+        .table-condensed  tbody tr td.off{
+            color: red!important
+        }
+    </style>
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="{{ asset('front/css/theme.css') }}">
 </head>
@@ -149,7 +156,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container-fluid">
         <div class="row no-gutters">
           <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
             <!-- Form -->
@@ -184,6 +191,7 @@
                          data-success-class="u-has-success"
                          onkeypress="validate(event)"
                          maxlength="10"
+                         minlength="10"
                          autocomplete="off">
                 </div>
                 <!-- End Form Group -->
@@ -202,14 +210,28 @@
                 <!-- End Form Group -->
 
                 <!-- Form Group -->
-                <div class="js-form-message form-group col-md-6">
-                  <label class="form-label" for="signinSrTanggal">Tanggal Kedatangan</label>
-                  <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" placeholder="Tanggal kedatangan" aria-label="TANGGAL_KEDATANGAN" required
+                <div class="js-form-message form-group col-md-3">
+                  <label class="form-label" for="signinSrTanggal">Tanggal</label>
+                  <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" aria-label="TANGGAL_KEDATANGAN" required
                          data-msg="Tanggal harus diisi"
                          data-error-class="u-has-error"
                          data-success-class="u-has-success" disabled
                          onkeypress="return false"
                          autocomplete="off">
+                </div>
+                <div class="js-form-message form-group col-md-3 pl-md-0 ">
+                  <label class="form-label" for="signinSrJam">Jam</label>
+                <select class="custom-select "name="jam" id="signinJam" required>
+                    <option selected disabled hidden></option>
+                    <option value="9">09.00</option>
+                    <option value="10">10.00</option>
+                    <option value="11">11.00</option>
+                    <option value="12">12.00</option>
+                    <option value="13">13.00</option>
+                    <option value="14">14.00</option>
+                    <option value="15">15.00</option>
+                    <option value="16">16.00</option>
+                </select>
                 </div>
                 <!-- End Form Group -->
 
@@ -302,7 +324,7 @@
             $('input[name="tanggal_kedatangan"]').prop('disabled',false)
 
             var id = $(this).val()
-
+            // console.log(fakultas[id-1].tanggal_awal_photoshoot)
             $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment(fakultas[id-1].tanggal_awal_photoshoot, "YYYY-MM-DD");
             $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment(fakultas[id-1].tanggal_akhir_photoshoot, "YYYY-MM-DD");
 
@@ -324,6 +346,9 @@
             autoApply: true,
             locale: {
                format: 'DD/MM/YYYY'
+            },
+            isCustomDate: function() {
+                return 'class-tanggal'
             }
         });
 

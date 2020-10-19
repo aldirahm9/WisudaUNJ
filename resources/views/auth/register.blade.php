@@ -113,6 +113,33 @@
               <!-- End Testimonials -->
             </div>
 
+            <div class="js-slide">
+              <!-- Testimonials -->
+              <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi para wisudawan. Semoga ilmu pengetahuan yang sudah di dapat di bangku perkuliahan teraktualisasi dan bermanfaat bagi orang banyak!</blockquote>
+                <h2 class="h6 text-white-70">Dr. Agus Dudung R, M.Pd, WR2 UNJ</h2>
+              </div>
+              <!-- End Testimonials -->
+            </div>
+
+            <div class="js-slide">
+              <!-- Testimonials -->
+              <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat hari kelulusan bagi para wisudawan. Semoga kesuksesan akan menyambutmu di masa depan!</blockquote>
+                <h2 class="h6 text-white-70">Dr. H. Abdul Sukur, S.Pd., M.Si, WR3 UNJ</h2>
+              </div>
+              <!-- End Testimonials -->
+            </div>
+
+            <div class="js-slide">
+              <!-- Testimonials -->
+              <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi para wisudawan. Semoga sukses mengikuti di tiap langkah berikutnya!</blockquote>
+                <h2 class="h6 text-white-70">Dr. Totok Bintoro, M.Pd, WR4 UNJ</h2>
+              </div>
+              <!-- End Testimonials -->
+            </div>
+
             {{-- <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
@@ -143,6 +170,24 @@
             <div class="js-slide">
               <div class="u-avatar mx-auto">
                 <img class="img-fluid rounded-circle" src="{{ asset('img/wr1.jpg') }}" alt="Image Description">
+              </div>
+            </div>
+
+            <div class="js-slide">
+              <div class="u-avatar mx-auto">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/wr2.jpg') }}" alt="Image Description">
+              </div>
+            </div>
+
+            <div class="js-slide">
+              <div class="u-avatar mx-auto">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/wr3.png') }}" alt="Image Description">
+              </div>
+            </div>
+
+            <div class="js-slide">
+              <div class="u-avatar mx-auto">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/wr4.jpeg') }}" alt="Image Description">
               </div>
             </div>
 

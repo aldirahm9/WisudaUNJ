@@ -309,9 +309,34 @@
                             <div class="h6 col-0">:</div>
                             <div class="h6 col-7">{{ \Carbon\Carbon::parse(Auth::user()->pendaftaran->slot->tanggal)->translatedFormat('l, d F Y') }}</div>
 
-                            <div class="h6 col-4 mb-5">Jam Foto</div>
+                            <div class="h6 col-4">Jam Foto</div>
                             <div class="h6 col-0">:</div>
                             <div class="h6 col-7">{{ Auth::user()->pendaftaran->jam >= 10 ? sprintf('%d:00', Auth::user()->pendaftaran->jam) : sprintf('0%d:00', Auth::user()->pendaftaran->jam) }}</div>
+
+                            {{-- kondisi < 15 peserta --}}
+                            @if ($pendaftaran->where('slot_id', Auth::user()->pendaftaran->slot_id)->where('jam', Auth::user()->pendaftaran->jam)->count() < 16)
+                            <div class="h6 col-12">
+                                <span class="u-label u-label--success">
+                                    Terdapat {{ $pendaftaran->where('slot_id', Auth::user()->pendaftaran->slot_id)->where('jam', Auth::user()->pendaftaran->jam)->count() }} Peserta yang mendaftar pada jam
+                                    {{ Auth::user()->pendaftaran->jam >= 10 ? sprintf('%d:00', Auth::user()->pendaftaran->jam) : sprintf('0%d:00', Auth::user()->pendaftaran->jam) }}
+                                </span>
+                            </div>
+                            <div class="h6 col-12 mb-5">
+                                <small class="text-muted"></small>
+                            </div>
+                            {{-- kondisi > 15 peserta --}}
+                            @else
+                            <div class="h6 col-12">
+                                <span class="u-label u-label--danger">
+                                    Terdapat {{ $pendaftaran->where('slot_id', Auth::user()->pendaftaran->slot_id)->where('jam', Auth::user()->pendaftaran->jam)->count() }} Peserta yang mendaftar pada jam
+                                    {{ Auth::user()->pendaftaran->jam >= 10 ? sprintf('%d:00', Auth::user()->pendaftaran->jam) : sprintf('0%d:00', Auth::user()->pendaftaran->jam) }}
+                                </span>
+                            </div>
+                            <div class="h6 col-12 mb-5">
+                                <small class="text-muted">Sebaiknya Ganti Jam Kedatangan untuk menghindari penumpukan peserta!</small>
+                            </div>
+                            @endif
+                            {{-- selesai kondisi --}}
 
                             <h3 class="h6 col-12 d-block d-md-none">
                                 <a href="{{URL::to('/pdf')}}" type="button" class="btn btn-warning btn-pill transition-3d-hover text-white">

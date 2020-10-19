@@ -116,7 +116,7 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi para wisudawan. Semoga ilmu pengetahuan yang sudah di dapat di bangku perkuliahan teraktualisasi dan bermanfaat bagi orang banyak!</blockquote>
+                <blockquote class="h5 text-white font-weight-normal mb-4">Selamat bagi wisudawan yang telah berhasil meraih kelulusan. Semoga ilmu pengetahuan yang sudah di dapat di bangku perkuliahan teraktualisasi dan bermanfaat bagi orang banyak!</blockquote>
                 <h2 class="h6 text-white-70">Dr. Agus Dudung R, M.Pd, WR2 UNJ</h2>
               </div>
               <!-- End Testimonials -->
@@ -175,7 +175,7 @@
 
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="{{ asset('img/wr2.jpg') }}" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/wr2.png') }}" alt="Image Description">
               </div>
             </div>
 
@@ -187,7 +187,7 @@
 
             <div class="js-slide">
               <div class="u-avatar mx-auto">
-                <img class="img-fluid rounded-circle" src="{{ asset('img/wr4.jpeg') }}" alt="Image Description">
+                <img class="img-fluid rounded-circle" src="{{ asset('img/wr4.png') }}" alt="Image Description">
               </div>
             </div>
 

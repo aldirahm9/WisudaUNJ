@@ -289,10 +289,10 @@
                         <div class="card card-frame mb-3">
                             <div class="card-body">
                                 <h5>
-                                    <span class="btn btn-sm btn-icon btn-soft-indigo rounded-circle">
-                                        <span class="fas fa-flask btn-icon__inner"></span>
+                                    <span class="btn btn-sm btn-icon btn-soft-success rounded-circle">
+                                        <span class="fas fa-chalkboard-teacher btn-icon__inner"></span>
                                     </span>
-                                    <span class="ml-1">Fakultas MIPA</span>
+                                    <span class="ml-1">Fakultas Pendidikan</span>
                                 </h5>
                                 @if ($pendaftaran->where('fakultas_id', 1)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 1)->count() }} Pendaftar</p>
@@ -307,10 +307,10 @@
                         <div class="card card-frame mb-3">
                             <div class="card-body">
                                 <h5>
-                                    <span class="btn btn-sm btn-icon btn-soft-primary rounded-circle">
-                                        <span class="fas fa-cogs btn-icon__inner"></span>
+                                    <span class="btn btn-sm btn-icon btn-soft-instagram rounded-circle">
+                                        <span class="fas fa-palette btn-icon__inner"></span>
                                     </span>
-                                    <span class="ml-1">Fakultas Teknik</span>
+                                    <span class="ml-1">Fakultas Bahasa & Seni</span>
                                 </h5>
                                 @if ($pendaftaran->where('fakultas_id', 2)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 2)->count() }} Pendaftar</p>
@@ -325,10 +325,10 @@
                         <div class="card card-frame mb-3">
                             <div class="card-body">
                                 <h5>
-                                    <span class="btn btn-sm btn-icon btn-soft-dark rounded-circle">
-                                        <span class="fas fa-football-ball btn-icon__inner"></span>
+                                    <span class="btn btn-sm btn-icon btn-soft-indigo rounded-circle">
+                                        <span class="fas fa-flask btn-icon__inner"></span>
                                     </span>
-                                    <span class="ml-1">Fakultas Ilmu Olahraga</span>
+                                    <span class="ml-1">Fakultas MIPA</span>
                                 </h5>
                                 @if ($pendaftaran->where('fakultas_id', 3)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 3)->count() }} Pendaftar</p>
@@ -363,10 +363,10 @@
                         <div class="card card-frame mb-3">
                             <div class="card-body">
                                 <h5>
-                                    <span class="btn btn-sm btn-icon btn-soft-instagram rounded-circle">
-                                        <span class="fas fa-palette btn-icon__inner"></span>
+                                    <span class="btn btn-sm btn-icon btn-soft-primary rounded-circle">
+                                        <span class="fas fa-cogs btn-icon__inner"></span>
                                     </span>
-                                    <span class="ml-1">Fakultas Bahasa & Seni</span>
+                                    <span class="ml-1">Fakultas Teknik</span>
                                 </h5>
                                 @if ($pendaftaran->where('fakultas_id', 5)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 5)->count() }} Pendaftar</p>
@@ -381,10 +381,10 @@
                         <div class="card card-frame mb-3">
                             <div class="card-body">
                                 <h5>
-                                    <span class="btn btn-sm btn-icon btn-soft-info rounded-circle">
-                                        <span class="fas fa-brain btn-icon__inner"></span>
+                                    <span class="btn btn-sm btn-icon btn-soft-dark rounded-circle">
+                                        <span class="fas fa-football-ball btn-icon__inner"></span>
                                     </span>
-                                    <span class="ml-1">Fakultas Psikologi</span>
+                                    <span class="ml-1">Fakultas Ilmu Olahraga</span>
                                 </h5>
                                 @if ($pendaftaran->where('fakultas_id', 6)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 6)->count() }} Pendaftar</p>
@@ -401,10 +401,10 @@
                         <div class="card card-frame mb-3">
                             <div class="card-body">
                                 <h5>
-                                    <span class="btn btn-sm btn-icon btn-soft-success rounded-circle">
-                                        <span class="fas fa-chalkboard-teacher btn-icon__inner"></span>
+                                    <span class="btn btn-sm btn-icon btn-soft-github rounded-circle">
+                                        <span class="fas fa-chart-line btn-icon__inner"></span>
                                     </span>
-                                    <span class="ml-1">Fakultas Pendidikan</span>
+                                    <span class="ml-1">Fakultas Ekonomi</span>
                                 </h5>
                                 @if ($pendaftaran->where('fakultas_id', 7)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 7)->count() }} Pendaftar</p>
@@ -419,10 +419,10 @@
                         <div class="card card-frame mb-3">
                             <div class="card-body">
                                 <h5>
-                                    <span class="btn btn-sm btn-icon btn-soft-github rounded-circle">
-                                        <span class="fas fa-chart-line btn-icon__inner"></span>
+                                    <span class="btn btn-sm btn-icon btn-soft-info rounded-circle">
+                                        <span class="fas fa-brain btn-icon__inner"></span>
                                     </span>
-                                    <span class="ml-1">Fakultas Ekonomi</span>
+                                    <span class="ml-1">Fakultas Psikologi</span>
                                 </h5>
                                 @if ($pendaftaran->where('fakultas_id', 8)->count() >= 1)
                                     <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 8)->count() }} Pendaftar</p>

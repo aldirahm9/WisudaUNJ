@@ -203,7 +203,7 @@
 
       <div class="container-fluid">
         <div class="row no-gutters">
-          <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-3 space-lg-0">
+          <div class="col-md-8 col-lg-10 col-xl-10 offset-md-2 offset-lg-1 offset-xl-1 space-3 space-lg-0">
             <!-- Form -->
             <form class="js-validate mt-3" action="{{ route('register') }}" method="POST" id="formRegister">
                 {{csrf_field()}}

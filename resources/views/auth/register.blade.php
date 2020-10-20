@@ -363,7 +363,7 @@
         Swal.fire({
         icon: 'error',
         title: 'Gagal Daftar',
-        text: 'NRM/NIM Sudah Dipakai!',
+        text: 'NRM/NIM Sudah Dipakai! Silahkan Login Menggunakan NRM/NIM tersebut!',
         })
         @endif
 

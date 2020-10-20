@@ -24,7 +24,7 @@
         .class-tanggal {
             font-size: 20px!important;
         }
-        .table-condensed  tbody tr td.off{
+        .table-condensed  tbody tr td.disabled{
             color: red!important
         }
     </style>

@@ -402,7 +402,9 @@
         $('input[name="tanggal_kedatangan"]').daterangepicker({
             autoUpdateInput: false,
             isInvalidDate: function(date) {
-                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date());
+                // console.log(+new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'))
+                // console.log(date.format('M/D/YYYY'))
+                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date()|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
                 if(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 return true
                 return false

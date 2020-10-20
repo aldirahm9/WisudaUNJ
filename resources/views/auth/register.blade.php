@@ -387,6 +387,7 @@
 
         $('select[name="fakultas"]').on('change', function() {
             $('input[name="tanggal_kedatangan"]').prop('disabled',false)
+            $('input[name="tanggal_kedatangan"]').val('')
 
             var id = $(this).val()
             // console.log(fakultas[id-1].tanggal_awal_photoshoot)

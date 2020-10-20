@@ -488,7 +488,7 @@
                                   </ul>
                                   <div class="tab-content" id="myTabContent2">
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
-                                    <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
+                                    <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten-{{$fak->id}}-{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
                                         <div class="table-responsive-md mt-5">
                                             <table id="table{{$tableid}}"
                                                     class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">

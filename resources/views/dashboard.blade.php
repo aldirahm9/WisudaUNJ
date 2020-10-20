@@ -482,7 +482,7 @@
                                 <ul class="nav nav-tabs mt-3" id="myTab2" role="tablist">
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
                                     <li class="nav-item waves-effect waves-light">
-                                    <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten-{{$fak->item}}-{{$slot_item->id}}" role="tab" aria-controls="konten-{{$fak->id}}-{{$slot_item->id}}" aria-selected="false">{{ \Carbon\Carbon::parse($slot_item->tanggal)->translatedFormat('d F Y') }}</a>
+                                    <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten-{{$fak->id}}-{{$slot_item->id}}" role="tab" aria-controls="konten-{{$fak->id}}-{{$slot_item->id}}" aria-selected="false">{{ \Carbon\Carbon::parse($slot_item->tanggal)->translatedFormat('d F Y') }}</a>
                                     </li>
                                     @endforeach
                                   </ul>
@@ -491,7 +491,7 @@
                                     <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten-{{$fak->id}}-{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
                                         <div class="table-responsive-md mt-5">
                                             <table id="table{{$tableid}}"
-                                                    class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
+                                                     class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
                                                     <thead>
                                                         <tr class="text-uppercase font-size-1">
                                                         <th>no</th>
@@ -533,7 +533,16 @@
                                                         </th>
                                                         <th scope="col" class="font-weight-medium">
                                                             <div class="d-flex justify-content-between align-items-center">
-                                                            Kode Unik
+                                                                Jam
+                                                                <div class="ml-2">
+                                                                    <span class="fas fa-angle-up u-datatable__thead-icon"></span>
+                                                                    <span class="fas fa-angle-down u-datatable__thead-icon"></span>
+                                                                </div>
+                                                                </div>
+                                                            </th>
+                                                            <th scope="col" class="font-weight-medium">
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                Kode Unik
                                                             <div class="ml-2">
                                                                 <span class="fas fa-angle-up u-datatable__thead-icon"></span>
                                                                 <span class="fas fa-angle-down u-datatable__thead-icon"></span>

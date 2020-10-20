@@ -351,7 +351,7 @@
                                     <span class="ml-1">Fakultas Ilmu Sosial</span>
                                 </h5>
                                 @if ($pendaftaran->where('fakultas_id', 4)->count() >= 1)
-                                    <p class="text-primary mb-0">{{ $pendaftaran->where('fakultas_id', 4)->count() }} pendaftar</p>
+                                    <p class="text-primary text-right mb-0">{{ $pendaftaran->where('fakultas_id', 4)->count() }} pendaftar</p>
                                 @else
                                     <p class="text-right mb-0">Belum ada pendaftar</p>
                                 @endif
@@ -558,6 +558,7 @@
                                                             <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
                                                             <td class="align-middle">{{ $mahasiswa->fakultas->nama_fakultas }}</td>
                                                             <td class="align-middle">{{ \Carbon\Carbon::parse($mahasiswa->slot->tanggal)->translatedFormat('d F Y') }}</td>
+                                                            <td class="align-middle">{{ $mahasiswa->jam >= 10 ? sprintf('%d:00', $mahasiswa->jam) : sprintf('0%d:00', $mahasiswa->jam) }}</td>
                                                             <td class="align-middle">{{ $mahasiswa->kode_unik }}</td>
                                                             </tr>
                                                         @endforeach

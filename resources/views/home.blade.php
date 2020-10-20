@@ -33,6 +33,12 @@
            .text-unj {
           color: #006f45 !important;
       }
+      .class-tanggal {
+            font-size: 20px!important;
+        }
+        .table-condensed  tbody tr td.disabled{
+            color: red!important
+        }
     </style>
 </head>
 
@@ -595,7 +601,7 @@
 
                 console.log(new Date(date.format('M/D/YYYY')) <= +new Date())
                 console.log(date.format('D/M/YYYY'))
-                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date());
+                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date()|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
                 if(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 return true
                 return false

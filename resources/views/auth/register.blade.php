@@ -403,9 +403,11 @@
         $('input[name="tanggal_kedatangan"]').daterangepicker({
             autoUpdateInput: false,
             isInvalidDate: function(date) {
-                // console.log(+new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'))
-                // console.log(date.format('M/D/YYYY'))
-                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date()|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
+                // console.log(+new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020')
+                var now = new Date()
+                now.setHours(0,0,0,0)
+                return (date.day() == 0 || date.day() == 6 || +new Date(date.format('M/D/YYYY')) < now|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
+                // return (date.day() == 0 || date.day() == 6 || +new Date(date.format('M/D/YYYY')) <= now|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
                 if(arrInvalidDates.includes(date.format('YYYY-M-D')))
                 return true
                 return false

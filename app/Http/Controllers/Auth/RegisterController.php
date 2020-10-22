@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -109,6 +110,13 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
+
+        $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
+        $slot = Slot::where('tanggal',Carbon::parse($tanggal)->format('Y-m-d'))->first();
+        if($slot == null || Pendaftaran::where('slot_id',$slot->id)->count() == $slot->kapasitas) {
+            Session::flash('tanggal_penuh', 'This is a message!');
+            return redirect('register');
+        }
 
         event(new Registered($user = $this->create($request->all())));
 

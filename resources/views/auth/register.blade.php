@@ -375,6 +375,14 @@
         })
         @endif
 
+        @if (Session::has('tanggal_penuh'))
+        Swal.fire({
+        icon: 'error',
+        title: 'Gagal Daftar',
+        text: 'Tanggal yang kamu pilih penuh!',
+        })
+        @endif
+
         // initialization of slick carousel
         $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 

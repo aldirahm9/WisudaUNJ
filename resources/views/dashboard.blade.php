@@ -159,9 +159,6 @@
                         <span class="text-unj ml-2">Photoshoot Wisuda UNJ</span>
                     </a>
                     <!-- End Logo -->
-                                      <span class="text-unj ml-2">Wisuda Digital UNJ</span>
-                    </a>
-                    <!-- End Logo -->
                 </nav>
                 <!-- End Nav -->
             </div>

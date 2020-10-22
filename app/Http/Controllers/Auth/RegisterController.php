@@ -87,6 +87,7 @@ class RegisterController extends Controller
     {
         $tanggal = Carbon::createFromFormat('d/m/Y',$data['tanggal_kedatangan']);
         $slot = Slot::where('tanggal',Carbon::parse($tanggal)->format('Y-m-d'))->first();
+
         $user = User::create([
             'nrm' => $data['nrm'],
             'password' => Hash::make($data['password']),
@@ -109,6 +110,23 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
+
+        // validate if tanggal tidak sama
+        $fakultas = Fakultas::find($request->fakultas);
+        //declare var
+        $start_date = $fakultas->tanggal_awal_photoshoot;
+        $end_date = $fakultas->tanggal_akhir_photoshoot;
+        $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
+        $date_from_user = Carbon::parse($tanggal)->format('Y-m-d');
+        // Convert to timestamp
+        $start_ts = strtotime($start_date);
+        $end_ts = strtotime($end_date);
+        $user_ts = strtotime($date_from_user);
+        //kondisi tanggal user diantara start & end
+        if(($user_ts >= $start_ts) && ($user_ts <= $end_ts)) {
+        } else {
+            return redirect('register');
+        }
 
         event(new Registered($user = $this->create($request->all())));
 

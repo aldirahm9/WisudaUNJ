@@ -247,8 +247,10 @@
                   <select class="custom-select" name="fakultas" id="fakultas">
                       <option selected disabled hidden>Fakultas</option>
                       @foreach ($fakultas as $item)
-                        <option title="{{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lte(Carbon\Carbon::now()) ? 'Masa photoshoot sudah berakhir' : ''}}"
-                        {{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lte(Carbon\Carbon::now()) ? 'disabled' : ''}} id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option>
+                        <option title="{{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lt(Carbon\Carbon::now()->startofDay()) ? 'Masa photoshoot sudah berakhir' : ''}}"
+                        {{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lt(Carbon\Carbon::now()->startOfDay()) ? 'disabled' : ''}} id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option>
+                        {{-- <option title="{{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lte(Carbon\Carbon::now()) ? 'Masa photoshoot sudah berakhir' : ''}}"
+                        {{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lte(Carbon\Carbon::now()) ? 'disabled' : ''}} id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option> --}}
                       @endforeach
                   </select>
                 </div>
@@ -372,6 +374,14 @@
         icon: 'error',
         title: 'Gagal Daftar',
         text: 'Pastikan Password dan Konfirmasi Sama!',
+        })
+        @endif
+
+        @if (Session::has('failed'))
+        Swal.fire({
+        icon: 'error',
+        title: 'Gagal Daftar',
+        text: '{{Session::get("failed")}}',
         })
         @endif
 

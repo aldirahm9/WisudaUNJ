@@ -131,11 +131,11 @@ class RegisterController extends Controller
         //     return redirect('register');
         // }
         if($slot == null || ($user_ts <= $start_ts) || ($user_ts >= $end_ts)) {
-            Session::flash('failed', 'Tanggal Invalid');
+            Session::flash('failed', 'Tanggal Tidak Sesuai! Silahkan Pilih Tanggal Lain!');
             return redirect('register');
         }
         if(Pendaftaran::where('slot_id',$slot->id)->count() == $slot->kapasitas) {
-            Session::flash('failed', 'Tanggal penuh');
+            Session::flash('failed', 'Tanggal Penuh! Silahkan Pilih Tanggal Lain!');
             return redirect('register');
         }
 

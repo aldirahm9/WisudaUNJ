@@ -88,6 +88,7 @@ class RegisterController extends Controller
     {
         $tanggal = Carbon::createFromFormat('d/m/Y',$data['tanggal_kedatangan']);
         $slot = Slot::where('tanggal',Carbon::parse($tanggal)->format('Y-m-d'))->first();
+
         $user = User::create([
             'nrm' => $data['nrm'],
             'password' => Hash::make($data['password']),
@@ -113,8 +114,28 @@ class RegisterController extends Controller
 
         $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
         $slot = Slot::where('tanggal',Carbon::parse($tanggal)->format('Y-m-d'))->first();
-        if($slot == null || Pendaftaran::where('slot_id',$slot->id)->count() == $slot->kapasitas) {
-            Session::flash('tanggal_penuh', 'This is a message!');
+        // validate if tanggal tidak sama
+        $fakultas = Fakultas::find($request->fakultas);
+        //declare var
+        $start_date = $fakultas->tanggal_awal_photoshoot;
+        $end_date = $fakultas->tanggal_akhir_photoshoot;
+        $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
+        $date_from_user = Carbon::parse($tanggal)->format('Y-m-d');
+        // Convert to timestamp
+        $start_ts = strtotime($start_date);
+        $end_ts = strtotime($end_date);
+        $user_ts = strtotime($date_from_user);
+        //kondisi tanggal user diantara start & end
+        // if($slot == null) {
+        //     Session::flash('failed', 'Tanggal Invalid');
+        //     return redirect('register');
+        // }
+        if($slot == null || ($user_ts <= $start_ts) || ($user_ts >= $end_ts)) {
+            Session::flash('failed', 'Tanggal Invalid');
+            return redirect('register');
+        }
+        if(Pendaftaran::where('slot_id',$slot->id)->count() == $slot->kapasitas) {
+            Session::flash('failed', 'Tanggal penuh');
             return redirect('register');
         }
 

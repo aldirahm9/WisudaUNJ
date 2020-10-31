@@ -481,13 +481,16 @@
                                 @else
                                 <ul class="nav nav-tabs mt-3" id="myTab2" role="tablist">
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
+                                    @if(Carbon\Carbon::parse($slot_item->tanggal)->lte(Carbon\Carbon::parse($fak->tanggal_akhir_photoshoot)) && Carbon\Carbon::parse($slot_item->tanggal)->gte(Carbon\Carbon::parse($fak->tanggal_awal_photoshoot)))
                                     <li class="nav-item waves-effect waves-light">
                                     <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten-{{$fak->id}}-{{$slot_item->id}}" role="tab" aria-controls="konten-{{$fak->id}}-{{$slot_item->id}}" aria-selected="false">{{ \Carbon\Carbon::parse($slot_item->tanggal)->translatedFormat('d F Y') }}</a>
                                     </li>
+                                    @endif
                                     @endforeach
                                   </ul>
                                   <div class="tab-content" id="myTabContent2">
                                     @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
+                                    @if(Carbon\Carbon::parse($slot_item->tanggal)->lte(Carbon\Carbon::parse($fak->tanggal_akhir_photoshoot)) && Carbon\Carbon::parse($slot_item->tanggal)->gte(Carbon\Carbon::parse($fak->tanggal_awal_photoshoot)))
                                     <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten-{{$fak->id}}-{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
                                         <div class="table-responsive-md mt-5">
                                             <table id="table{{$tableid}}"
@@ -570,6 +573,7 @@
                                             </div>
 
                                     </div>
+                                    @endif
                                       @endforeach
 
                                   </div>

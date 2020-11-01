@@ -38,7 +38,14 @@ class HomeController extends Controller
                 $invalidDates[$key] = $item->tanggal;
             }
         }
-        return view('home', ['pendaftaran' => $pendaftaran,'invalidDates'=>$invalidDates]);
+        $tglhariini = strtotime(date('Y-m-d'));
+        $tglphotoshoot = strtotime(Auth::user()->pendaftaran->slot->tanggal);
+        return view('home', [
+            'pendaftaran' => $pendaftaran,
+            'invalidDates'=> $invalidDates,
+            'tglhariini' => $tglhariini,
+            'tglphotoshoot' => $tglphotoshoot
+        ]);
     }
 
     public function pdf()

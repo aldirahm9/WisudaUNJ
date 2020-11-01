@@ -956,6 +956,8 @@
         html:
             'Silahkan ' +
             '<a href="/login">Login </a> ' +
+            '/ ' +
+            '<a href="/register">Daftar </a> ' +
             'untuk melihat foto-foto wisuda',
         })
 

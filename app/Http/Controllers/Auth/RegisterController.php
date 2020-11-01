@@ -130,7 +130,7 @@ class RegisterController extends Controller
         //     Session::flash('failed', 'Tanggal Invalid');
         //     return redirect('register');
         // }
-        if($slot == null || ($user_ts <= $start_ts) || ($user_ts >= $end_ts)) {
+        if($slot == null || ($user_ts < $start_ts) || ($user_ts > $end_ts)) {
             Session::flash('failed', 'Tanggal Tidak Sesuai! Silahkan Pilih Tanggal Lain!');
             return redirect('register');
         }

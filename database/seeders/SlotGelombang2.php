@@ -16,27 +16,27 @@ class SlotGelombang2 extends Seeder
     {
         $kapasitas = 150;
         Slot::create([
-            'tanggal' => '2020-10-23',
+            'tanggal' => '2020-11-23',
             'kapasitas' => $kapasitas,
             'gelombang' => 2
         ]);
         Slot::create([
-            'tanggal' => '2020-10-24',
+            'tanggal' => '2020-11-24',
             'kapasitas' => $kapasitas,
             'gelombang' => 2
         ]);
         Slot::create([
-            'tanggal' => '2020-10-25',
+            'tanggal' => '2020-11-25',
             'kapasitas' => $kapasitas,
             'gelombang' => 2
         ]);
         Slot::create([
-            'tanggal' => '2020-10-26',
+            'tanggal' => '2020-11-26',
             'kapasitas' => $kapasitas,
             'gelombang' => 2
         ]);
         Slot::create([
-            'tanggal' => '2020-10-27',
+            'tanggal' => '2020-11-27',
             'kapasitas' => $kapasitas,
             'gelombang' => 2
         ]);

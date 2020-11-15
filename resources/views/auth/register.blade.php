@@ -244,8 +244,8 @@
                 <!-- Form Group -->
                 <div class="js-form-message form-group col-md-6">
                   <label class="form-label" for="signinSrFakultas">Fakultas</label>
-                  <select class="custom-select" name="fakultas" id="fakultas">
-                      <option selected disabled hidden>Fakultas</option>
+                  <select class="custom-select" name="fakultas" id="fakultas" required>
+                      <option value="" selected disabled hidden>Fakultas</option>
                       @foreach ($fakultas as $item)
                         <option title="{{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lt(Carbon\Carbon::now()->startofDay()) ? 'Masa photoshoot sudah berakhir' : ''}}"
                         {{Carbon\Carbon::parse($item->tanggal_akhir_photoshoot)->lt(Carbon\Carbon::now()->startOfDay()) ? 'disabled' : ''}} id="fakultas{{$item->id}}" value="{{$item->id}}">{{$item->nama_fakultas}}</option>
@@ -262,7 +262,7 @@
                   <input type="text" class="form-control" name="tanggal_kedatangan" id="signinSrTanggal" aria-label="TANGGAL_KEDATANGAN" required
                          data-msg="Tanggal harus diisi"
                          data-error-class="u-has-error"
-                         data-success-class="u-has-success" disabled
+                         data-success-class="u-has-success"
                          onkeypress="return false"
                          autocomplete="off">
                 </div>
@@ -391,36 +391,40 @@
         // initialization of form validation
         $.HSCore.components.HSValidation.init('.js-validate');
 
-        var invalidDates = @json($invalidDates);
-        var arrInvalidDates = Object.values(invalidDates)
+        var validDates = @json($validDates);
+        var arrValidDates = Object.values(validDates)
 
 
-        $('select[name="fakultas"]').on('change', function() {
-            $('input[name="tanggal_kedatangan"]').prop('disabled',false)
-            $('input[name="tanggal_kedatangan"]').val('')
+        // $('select[name="fakultas"]').on('change', function() {
+        //     $('input[name="tanggal_kedatangan"]').prop('disabled',false)
+        //     // $('input[name="tanggal_kedatangan"]').val('')
 
-            var id = $(this).val()
-            // console.log(fakultas[id-1].tanggal_awal_photoshoot)
-            $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment(fakultas[id-1].tanggal_awal_photoshoot, "YYYY-MM-DD");
-            $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment(fakultas[id-1].tanggal_akhir_photoshoot, "YYYY-MM-DD");
+        //     // var id = $(this).val()
+        //     // // console.log(fakultas[id-1].tanggal_awal_photoshoot)
+        //     // $('input[name="tanggal_kedatangan"]').data('daterangepicker').minDate = moment(fakultas[id-1].tanggal_awal_photoshoot, "YYYY-MM-DD");
+        //     // $('input[name="tanggal_kedatangan"]').data('daterangepicker').maxDate = moment(fakultas[id-1].tanggal_akhir_photoshoot, "YYYY-MM-DD");
 
-        })
+        // })
 
-        if($('#fakultas').val() != null) {
-            $('input[name="tanggal_kedatangan"]').prop('disabled',false)
-        }
+        // if($('#fakultas').val() != null) {
+        //     $('input[name="tanggal_kedatangan"]').prop('disabled',false)
+        // }
 
+        console.log(arrValidDates)
         $('input[name="tanggal_kedatangan"]').daterangepicker({
             autoUpdateInput: false,
+            // minDate: moment(fakultas[1].tanggal_awal_photoshoot, "YYYY-MM-DD"),
+            // maxDate: moment(fakultas[1].tanggal_akhir_photoshoot, "YYYY-MM-DD"),
             isInvalidDate: function(date) {
                 // console.log(+new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020')
                 var now = new Date()
                 now.setHours(0,0,0,0)
-                return (date.day() == 0 || date.day() == 6 || +new Date(date.format('M/D/YYYY')) < now|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
-                // return (date.day() == 0 || date.day() == 6 || +new Date(date.format('M/D/YYYY')) <= now|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
-                if(arrInvalidDates.includes(date.format('YYYY-M-D')))
+                if(+new Date(date.format('M/D/YYYY')) < now)
                 return true
+                // return (date.day() == 0 || date.day() == 6 || +new Date(date.format('M/D/YYYY')) <= now|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
+                if(arrValidDates.includes(date.format('YYYY-M-D')))
                 return false
+                return true
             },
             singleDatePicker: true,
             autoApply: true,

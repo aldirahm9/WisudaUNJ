@@ -457,41 +457,41 @@
                 {{-- tab nav --}}
                 <div class="card">
                     <div class="card-header py-4 px-0 mx-4">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        {{-- <ul class="nav nav-tabs" id="myTab" role="tablist">
                             @foreach($fakultas as $fak)
                             <li class="nav-item waves-effect waves-light">
                               <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$fak->nama_fakultas}}-tab" data-toggle="tab" href="#{{$fak->nama_fakultas}}" role="tab" aria-controls="{{$fak->nama_fakultas}}" aria-selected="false">{{$fak->nama_fakultas}}</a>
                             </li>
                             @endforeach
-                          </ul>
+                          </ul> --}}
                           <div class="tab-content" id="myTabContent">
-                              @foreach($fakultas as $fak)
-                          <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="{{$fak->nama_fakultas}}" role="tabpanel" aria-labelledby="{{$fak->nama_fakultas}}-tab">
+                              {{-- @foreach($fakultas as $fak) --}}
+                          {{-- <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="{{$fak->nama_fakultas}}" role="tabpanel" aria-labelledby="{{$fak->nama_fakultas}}-tab"> --}}
                                 {{-- double tab nav --}}
-                                @if ($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique())->first()==NULL)
+                                {{-- @if ($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique())->first()==NULL)
                                 {{-- Kartu ucapan Form Kosong --}}
-                                <div class="card card-frame">
+                                {{-- <div class="card card-frame">
                                     <div class="card-body mt-3">
                                         <div class="alert alert-danger" role="alert">
                                             No Data Available!
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 {{-- selesai Kartu ucapan Form Kosong --}}
-                                @else
+                                {{-- @else  --}}
                                 <ul class="nav nav-tabs mt-3" id="myTab2" role="tablist">
-                                    @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
-                                    @if(Carbon\Carbon::parse($slot_item->tanggal)->lte(Carbon\Carbon::parse($fak->tanggal_akhir_photoshoot)) && Carbon\Carbon::parse($slot_item->tanggal)->gte(Carbon\Carbon::parse($fak->tanggal_awal_photoshoot)))
+                                    @foreach($slot->where('gelombang',config('app.gelombang')) as $slot_item)
+                                    {{-- @if(Carbon\Carbon::parse($slot_item->tanggal)->lte(Carbon\Carbon::parse($fak->tanggal_akhir_photoshoot)) && Carbon\Carbon::parse($slot_item->tanggal)->gte(Carbon\Carbon::parse($fak->tanggal_awal_photoshoot))) --}}
                                     <li class="nav-item waves-effect waves-light">
-                                    <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten-{{$fak->id}}-{{$slot_item->id}}" role="tab" aria-controls="konten-{{$fak->id}}-{{$slot_item->id}}" aria-selected="false">{{ \Carbon\Carbon::parse($slot_item->tanggal)->translatedFormat('d F Y') }}</a>
+                                    <a class="nav-link {{$loop->iteration == 1 ? 'active' : ''}}" id="{{$slot_item->id}}-tab" data-toggle="tab" href="#konten-{{$slot_item->id}}" role="tab" aria-controls="konten-{{$slot_item->id}}" aria-selected="false">{{ \Carbon\Carbon::parse($slot_item->tanggal)->translatedFormat('d F Y') }}</a>
                                     </li>
-                                    @endif
+                                    {{-- @endif --}}
                                     @endforeach
                                   </ul>
                                   <div class="tab-content" id="myTabContent2">
-                                    @foreach($slot->whereIn('id',$fak->pendaftaran->pluck('slot_id')->unique()) as $slot_item)
-                                    @if(Carbon\Carbon::parse($slot_item->tanggal)->lte(Carbon\Carbon::parse($fak->tanggal_akhir_photoshoot)) && Carbon\Carbon::parse($slot_item->tanggal)->gte(Carbon\Carbon::parse($fak->tanggal_awal_photoshoot)))
-                                    <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten-{{$fak->id}}-{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
+                                    @foreach($slot->where('gelombang',config('app.gelombang')) as $slot_item)
+                                    {{-- @if(Carbon\Carbon::parse($slot_item->tanggal)->lte(Carbon\Carbon::parse($fak->tanggal_akhir_photoshoot)) && Carbon\Carbon::parse($slot_item->tanggal)->gte(Carbon\Carbon::parse($fak->tanggal_awal_photoshoot))) --}}
+                                    <div class="tab-pane fade {{$loop->iteration == 1 ? 'active show' : ''}}" id="konten-{{$slot_item->id}}" role="tabpanel" aria-labelledby="{{$slot_item->id}}-tab">
                                         <div class="table-responsive-md mt-5">
                                             <table id="table{{$tableid}}"
                                                      class="table_admin js-datatable table table-borderless u-datatable__striped u-datatable__content mb-5">
@@ -555,7 +555,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody class="font-size-1">
-                                                        @foreach($pendaftaran->where('fakultas_id', $fak->id)->where('slot_id',$slot_item->id) as $mahasiswa) <tr>
+                                                        @foreach($pendaftaran->where('slot_id',$slot_item->id) as $mahasiswa) <tr>
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td class="align-middle">{{ $mahasiswa->nama_mahasiswa }}</td>
                                                             <td class="align-middle">{{ $mahasiswa->user->nrm }}</td>
@@ -573,14 +573,14 @@
                                             </div>
 
                                     </div>
-                                    @endif
+                                    {{-- @endif --}}
                                       @endforeach
 
                                   </div>
                                 {{-- selesai double tab nav --}}
-                                @endif
-                            </div>
-                                @endforeach
+                                {{-- @endif --}}
+                            {{-- </div> --}}
+                                {{-- @endforeach --}}
                             </div>
                         </div>
                     </div>

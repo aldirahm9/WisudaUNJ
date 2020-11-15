@@ -231,4 +231,8 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
+
+    //Gelombang photoshoot
+    'gelombang' => env('GELOMBANG',null)
+
 ];

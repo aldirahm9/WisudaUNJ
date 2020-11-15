@@ -52,15 +52,16 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $invalidDates = [];
+        $validDates = [];
         $fakultas = Fakultas::all();
-        $slot = Slot::all();
+        // $slot = Slot::all();
+        $slot = Slot::where('gelombang',config('app.gelombang'))->get();
         foreach($slot as $key=>$item) {
-            if($item->pendaftaran->count() == $item->kapasitas) {
-                $invalidDates[$key] = $item->tanggal;
+            if($item->pendaftaran->count() != $item->kapasitas) {
+                $validDates[$key] = $item->tanggal;
             }
         }
-        return view('auth.register',['fakultas' => $fakultas,'invalidDates'=>$invalidDates]);
+        return view('auth.register',['fakultas' => $fakultas,'validDates'=>$validDates]);
     }
 
     /**
@@ -115,22 +116,20 @@ class RegisterController extends Controller
         $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
         $slot = Slot::where('tanggal',Carbon::parse($tanggal)->format('Y-m-d'))->first();
         // validate if tanggal tidak sama
-        $fakultas = Fakultas::find($request->fakultas);
+        // $fakultas = Fakultas::find($request->fakultas);
         //declare var
-        $start_date = $fakultas->tanggal_awal_photoshoot;
-        $end_date = $fakultas->tanggal_akhir_photoshoot;
-        $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
-        $date_from_user = Carbon::parse($tanggal)->format('Y-m-d');
+        // $start_date = $fakultas->tanggal_awal_photoshoot;
+        // $end_date = $fakultas->tanggal_akhir_photoshoot;
+        // $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
+        // $date_from_user = Carbon::parse($tanggal)->format('Y-m-d');
         // Convert to timestamp
-        $start_ts = strtotime($start_date);
-        $end_ts = strtotime($end_date);
-        $user_ts = strtotime($date_from_user);
+        // $start_ts = strtotime($start_date);
+        // $end_ts = strtotime($end_date);
+        // $user_ts = strtotime($date_from_user);
         //kondisi tanggal user diantara start & end
-        // if($slot == null) {
-        //     Session::flash('failed', 'Tanggal Invalid');
-        //     return redirect('register');
-        // }
-        if($slot == null || ($user_ts <= $start_ts) || ($user_ts >= $end_ts)) {
+
+        if($slot == null) {
+        // if($slot == null || ($user_ts <= $start_ts) || ($user_ts >= $end_ts)) {
             Session::flash('failed', 'Tanggal Tidak Sesuai! Silahkan Pilih Tanggal Lain!');
             return redirect('register');
         }
@@ -152,7 +151,7 @@ class RegisterController extends Controller
                     : redirect($this->redirectPath())->with('success', 'Selamat Anda Berhasil Melakukan Pendaftaran!');
     }
 
-    public function generate_referral($length){
+    public function generate_referral($length) {
         $str_result = 'abcdefghijklmnopqrstuvwxyz1234567890';
         return substr(str_shuffle($str_result), 0, $length);
     }

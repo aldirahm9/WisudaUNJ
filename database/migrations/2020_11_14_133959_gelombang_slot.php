@@ -14,7 +14,7 @@ class GelombangSlot extends Migration
     public function up()
     {
         Schema::table('slot', function (Blueprint $table) {
-            $table->smallInteger('gelombang');
+            $table->smallInteger('gelombang')->default(1);
         });
     }
 

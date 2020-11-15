@@ -57,7 +57,7 @@ class RegisterController extends Controller
         // $slot = Slot::all();
         $slot = Slot::where('gelombang',config('app.gelombang'))->get();
         foreach($slot as $key=>$item) {
-            if($item->pendaftaran->count() != $item->kapasitas) {
+            if($item->pendaftaran->count() < $item->kapasitas) {
                 $validDates[$key] = $item->tanggal;
             }
         }
@@ -133,7 +133,7 @@ class RegisterController extends Controller
             Session::flash('failed', 'Tanggal Tidak Sesuai! Silahkan Pilih Tanggal Lain!');
             return redirect('register');
         }
-        if(Pendaftaran::where('slot_id',$slot->id)->count() == $slot->kapasitas) {
+        if(Pendaftaran::where('slot_id',$slot->id)->count() >= $slot->kapasitas) {
             Session::flash('failed', 'Tanggal Penuh! Silahkan Pilih Tanggal Lain!');
             return redirect('register');
         }

@@ -8,6 +8,7 @@ use App\Models\Slot;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use PDF;
+use Session;
 
 class HomeController extends Controller
 {
@@ -30,19 +31,19 @@ class HomeController extends Controller
     {
         if(auth()->user()->isAdmin())
         return redirect('/admin');
-        $slot = Slot::all();
         $pendaftaran = Pendaftaran::all();
-        $invalidDates = [];
+        $validDates = [];
+        $slot = Slot::where('gelombang',config('app.gelombang'))->get();
         foreach($slot as $key=>$item) {
-            if($item->pendaftaran->count() == $item->kapasitas) {
-                $invalidDates[$key] = $item->tanggal;
+            if($item->pendaftaran->count() < $item->kapasitas) {
+                $validDates[$key] = $item->tanggal;
             }
         }
         $tglhariini = strtotime(date('Y-m-d'));
         $tglphotoshoot = strtotime(Auth::user()->pendaftaran->slot->tanggal);
         return view('home', [
             'pendaftaran' => $pendaftaran,
-            'invalidDates'=> $invalidDates,
+            'validDates'=> $validDates,
             'tglhariini' => $tglhariini,
             'tglphotoshoot' => $tglphotoshoot
         ]);
@@ -62,6 +63,15 @@ class HomeController extends Controller
         $tanggal = Carbon::createFromFormat('d/m/Y',$request->tanggal_kedatangan);
         $slot = Slot::where('tanggal',Carbon::parse($tanggal)->format('Y-m-d'))->first();
 
+        if(Pendaftaran::where('slot_id',$slot->id)->count() >= $slot->kapasitas) {
+            Session::flash('failed', 'Tanggal Penuh! Silahkan Pilih Tanggal Lain!');
+            return redirect('home');
+        }
+
+        if($slot == null) {
+            Session::flash('failed', 'Tanggal Tidak Sesuai! Silahkan Pilih Tanggal Lain!');
+            return redirect('register');
+        }
 
         $pendaftaran = Auth::user()->pendaftaran;
         $pendaftaran->slot_id = $slot->id;

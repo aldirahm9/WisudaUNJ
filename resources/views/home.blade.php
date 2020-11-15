@@ -567,6 +567,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
+    {{-- swal alert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <!-- JS Plugins Init. -->
     <script>
@@ -602,18 +604,33 @@
                 }
             });
 
+            @if(Session::has('failed'))
+            Swal.fire({
+            icon: 'error',
+            title: 'Gagal Daftar',
+            text: '{{Session::get("failed")}}',
+            })
+            @endif
+
+
+            var validDates = @json($validDates);
+            var arrValidDates = Object.values(validDates)
+
             $('input[name="tanggal_kedatangan"]').daterangepicker({
             autoUpdateInput: false,
-            minDate: '{{Carbon\Carbon::parse(Auth::user()->pendaftaran->fakultas->tanggal_awal_photoshoot)->format("d/m/Y")}}',
-            maxDate: '{{Carbon\Carbon::parse(Auth::user()->pendaftaran->fakultas->tanggal_akhir_photoshoot)->format("d/m/Y")}}',
+            // minDate: '{{Carbon\Carbon::parse(Auth::user()->pendaftaran->fakultas->tanggal_awal_photoshoot)->format("d/m/Y")}}',
+            // maxDate: '{{Carbon\Carbon::parse(Auth::user()->pendaftaran->fakultas->tanggal_akhir_photoshoot)->format("d/m/Y")}}',
             isInvalidDate: function(date) {
 
-                console.log(new Date(date.format('M/D/YYYY')) <= +new Date())
-                console.log(date.format('D/M/YYYY'))
-                return (date.day() == 0 || date.day() == 6 || new Date(date.format('M/D/YYYY')) <= +new Date()|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
-                if(arrInvalidDates.includes(date.format('YYYY-M-D')))
+                // console.log(+new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020')
+                var now = new Date()
+                now.setHours(0,0,0,0)
+                if(+new Date(date.format('M/D/YYYY')) < now)
                 return true
+                // return (date.day() == 0 || date.day() == 6 || +new Date(date.format('M/D/YYYY')) <= now|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
+                if(arrValidDates.includes(date.format('YYYY-M-D')))
                 return false
+                return true
             },
             singleDatePicker: true,
             autoApply: true,

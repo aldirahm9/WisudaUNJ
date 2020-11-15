@@ -929,6 +929,9 @@
   <script src="{{ asset('front/js/components/hs.svg-injector.js') }}"></script>
   <script src="{{ asset('front/js/components/hs.go-to.js') }}"></script>
 
+  {{-- swal alert --}}
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
   <!-- JS Plugins Init. -->
   <script>
     $(window).on('load', function () {
@@ -945,29 +948,42 @@
     });
 
     $(document).on('ready', function () {
-      // initialization of header
-      $.HSCore.components.HSHeader.init($('#header'));
 
-      // initialization of unfold component
-      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+        // swal alert
+        Swal.fire({
+        title: '<strong>Info</strong>',
+        icon: 'info',
+        html:
+            'Silahkan ' +
+            '<a href="/login">Login </a> ' +
+            '/ ' +
+            '<a href="/register">Daftar </a> ' +
+            'untuk melihat foto-foto wisuda',
+        })
 
-      // initialization of fancybox
-      $.HSCore.components.HSFancyBox.init('.js-fancybox');
+        // initialization of header
+        $.HSCore.components.HSHeader.init($('#header'));
 
-      // initialization of slick carousel
-      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+        // initialization of unfold component
+        $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
 
-      // initialization of form validation
-      $.HSCore.components.HSValidation.init('.js-validate');
+        // initialization of fancybox
+        $.HSCore.components.HSFancyBox.init('.js-fancybox');
 
-      // initialization of forms
-      $.HSCore.components.HSFocusState.init();
+        // initialization of slick carousel
+        $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 
-      // initialization of cubeportfolio
-      $.HSCore.components.HSCubeportfolio.init('.cbp');
+        // initialization of form validation
+        $.HSCore.components.HSValidation.init('.js-validate');
 
-      // initialization of go to
-      $.HSCore.components.HSGoTo.init('.js-go-to');
+        // initialization of forms
+        $.HSCore.components.HSFocusState.init();
+
+        // initialization of cubeportfolio
+        $.HSCore.components.HSCubeportfolio.init('.cbp');
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
     });
   </script>
 </body>

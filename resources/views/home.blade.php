@@ -284,7 +284,16 @@
 
         <!-- Content Section -->
         <div class="bg-light">
-            <div class="container space-2">
+            <div class="container space-1">
+                {{-- kondisi tgl hari ini > tgl photoshoot --}}
+                @if ($tglhariini > $tglphotoshoot)
+                    <div class="alert alert-danger" role="alert">
+                        Foto Wisuda Anda dapat dilihat
+                        <a href="https://drive.google.com/drive/folders/1xV8XvGr1VvlikqFMtzSFe5Kc-s31AGog?usp=sharing"  target="blank">
+                            di sini!
+                        </a>
+                    </div>
+                @endif
                 <div class="card card-frame card-frame-highlighted mb-6">
                     <div class="card-header py-4 px-0 mx-4">
                         <!-- Title -->

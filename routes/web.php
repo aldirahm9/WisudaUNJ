@@ -43,6 +43,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin', [adminController::class, 'dashboard']);
+    Route::get('/delete/pendaftaran/{nrm}', [adminController::class, 'delete_pendaftar']);
 });
 
 Route::group(['middleware' => 'auth'], function () {

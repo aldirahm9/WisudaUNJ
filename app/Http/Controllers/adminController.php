@@ -11,7 +11,7 @@ class adminController extends Controller
 {
     public function dashboard()
     {
-        $slot = Slot::all();
+        $slot = Slot::where('gelombang',config('app.gelombang'));
         $fakultas = Fakultas::all();
         $pendaftaran = Pendaftaran::all();
         return view('dashboard', ['pendaftaran' => $pendaftaran, 'fakultas' => $fakultas, 'slot' => $slot]);

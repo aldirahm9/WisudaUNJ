@@ -14,31 +14,22 @@ class SlotGelombang2 extends Seeder
      */
     public function run()
     {
+        $date = array();
+        $currentDay = 21;
+        $weekend = ['Sun', 'Sat'];
         $kapasitas = 150;
-        Slot::create([
-            'tanggal' => '2020-11-23',
-            'kapasitas' => $kapasitas,
-            'gelombang' => 2
-        ]);
-        Slot::create([
-            'tanggal' => '2020-11-24',
-            'kapasitas' => $kapasitas,
-            'gelombang' => 2
-        ]);
-        Slot::create([
-            'tanggal' => '2020-11-25',
-            'kapasitas' => $kapasitas,
-            'gelombang' => 2
-        ]);
-        Slot::create([
-            'tanggal' => '2020-11-26',
-            'kapasitas' => $kapasitas,
-            'gelombang' => 2
-        ]);
-        Slot::create([
-            'tanggal' => '2020-11-27',
-            'kapasitas' => $kapasitas,
-            'gelombang' => 2
-        ]);
+        for ($x = $currentDay; $x < $currentDay + 30; $x++) {
+            if ( !in_array( date('D', mktime(0, 0, 0, 11+($x/30), $x%30)), $weekend) ) {
+                $date[] = date('Y-m-d', mktime(0, 0, 0, 11+($x/30), $x%30));
+            }
+        }
+
+        foreach ($date as $d) {
+            Slot::create([
+                'tanggal' => $d,
+                'kapasitas' => $kapasitas,
+                'gelombang' => 2
+            ]);
+        }
     }
 }

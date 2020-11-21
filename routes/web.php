@@ -24,6 +24,20 @@ Route::get('/generate/sitemap', function () {
     SitemapGenerator::create('https://photoshoot-wisuda-unj.herokuapp.com/')->writeToFile('sitemap.xml');
 });
 
+Route::get('/get/date', function(){
+    $date = array();
+    $currentDay = 21;
+    $weekend = ['Sun', 'Sat'];
+    // dd(date('Y-m-d', mktime(0, 0, 0, 1, 20%30)));
+    for ($x = $currentDay; $x < $currentDay + 30; $x++) {
+        if ( !in_array( date('D', mktime(0, 0, 0, 11+($x/30), $x%30)), $weekend) ) {
+            $date[] = date('Y-m-d', mktime(0, 0, 0, 11+($x/30), $x%30));
+        }
+    }
+
+    dd($date);
+});
+
 Auth::routes();
 
 

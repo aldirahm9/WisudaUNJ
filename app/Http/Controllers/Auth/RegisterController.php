@@ -61,6 +61,7 @@ class RegisterController extends Controller
                 $validDates[$key] = $item->tanggal;
             }
         }
+        
         return view('auth.register',['fakultas' => $fakultas,'validDates'=>$validDates]);
     }
 

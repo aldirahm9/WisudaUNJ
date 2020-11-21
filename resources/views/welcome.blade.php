@@ -87,7 +87,7 @@
           <!-- Navigation -->
           <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
             <ul class="navbar-nav u-header__navbar-nav">
-              {{-- @if (Auth::check())
+              @if (Auth::check())
                 <li class="nav-item d-md-none">
                   <a href="{{ route('register') }}" class="nav-link">Masuk</a>
                 </li>
@@ -95,14 +95,14 @@
                 <li class="nav-item d-md-none">
                   <a href="{{ route('register') }}" class="nav-link">Daftar</a>
                 </li>
-              @endif --}}
+              @endif
             </ul>
           </div>
           <!-- End Navigation -->
 
           <!-- Last Item -->
           <div class="u-header-center-aligned-nav__col u-header-center-aligned-nav__col-last-item">
-            {{-- @if (Auth::check())
+            @if (Auth::check())
               <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('register')}}">
                 Masuk
               </a>
@@ -110,7 +110,7 @@
               <a class="btn btn-sm btn-unj transition-3d-hover" href="{{route('register')}}">
                 Daftar
               </a>
-            @endif --}}
+            @endif
           </div>
           <!-- End Last Item -->
         </nav>
@@ -268,7 +268,7 @@
               </div>
               <!-- End Title -->
 
-              {{-- <a class="btn btn-sm btn-unj btn-wide transition-3d-hover" href="{{ route('register') }}">Daftar <span class="fas fa-angle-right ml-2"></span></a> --}}
+              <a class="btn btn-sm btn-unj btn-wide transition-3d-hover" href="{{ route('register') }}">Daftar <span class="fas fa-angle-right ml-2"></span></a>
             </div>
           </div>
 
@@ -950,16 +950,16 @@
     $(document).on('ready', function () {
 
         // swal alert
-        // Swal.fire({
-        // title: '<strong>Info</strong>',
-        // icon: 'info',
-        // html:
-        //     'Silahkan ' +
-        //     '<a href="/login">Login </a> ' +
-        //     '/ ' +
-        //     '<a href="/register">Daftar </a> ' +
-        //     'untuk melihat foto-foto wisuda',
-        // })
+        Swal.fire({
+        title: '<strong>Info</strong>',
+        icon: 'info',
+        html:
+            'Silahkan ' +
+            '<a href="/login">Login </a> ' +
+            '/ ' +
+            '<a href="/register">Daftar </a> ' +
+            'untuk melihat foto-foto wisuda',
+        })
 
         // initialization of header
         $.HSCore.components.HSHeader.init($('#header'));

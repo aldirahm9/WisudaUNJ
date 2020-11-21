@@ -52,8 +52,6 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return redirect(route('landing'));
-
         $validDates = [];
         $fakultas = Fakultas::all();
         // $slot = Slot::all();

@@ -822,7 +822,7 @@
             $.HSCore.components.HSGoTo.init('.js-go-to');
         });
 
-        @foreach($slot as $item)
+        @foreach($slot->where('gelombang',config('app.gelombang')) as $item)
         $('#table{{$loop->iteration}}').DataTable({
             dom: 'Bfrtip',
             buttons: [

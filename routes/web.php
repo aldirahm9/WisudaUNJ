@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landing');
 
 Route::get('/generate/sitemap', function () {
     SitemapGenerator::create('https://photoshoot-wisuda-unj.herokuapp.com/')->writeToFile('sitemap.xml');
@@ -43,6 +43,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin', [adminController::class, 'dashboard']);
+    Route::get('/delete/pendaftaran/{nrm}', [adminController::class, 'delete_pendaftar']);
 });
 
 Route::group(['middleware' => 'auth'], function () {

@@ -142,7 +142,7 @@
                 <div class="col-md-8 col-lg-8 position-relative">
                   <span class="d-block h4 text-white font-weight-light mb-2"
                         data-scs-animation-in="fadeInUp">
-                    Wisuda UNJ 2020
+                    Wisuda Digital UNJ 2020
                   </span>
                   <h1 class="text-white display-4 font-size-md-down-5 mb-0"
                       data-scs-animation-in="fadeInUp"
@@ -164,7 +164,7 @@
                 <div class="col-md-8 col-lg-8">
                   <span class="d-block h4 text-white font-weight-light mb-2"
                         data-scs-animation-in="fadeInUp">
-                    Wisuda UNJ 2020
+                    Wisuda Digital UNJ 2020
                   </span>
                   <h2 class="text-white display-4 font-size-md-down-5 mb-0"
                       data-scs-animation-in="fadeInUp"

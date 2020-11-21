@@ -416,12 +416,13 @@
             // maxDate: moment(fakultas[1].tanggal_akhir_photoshoot, "YYYY-MM-DD"),
             isInvalidDate: function(date) {
                 // console.log(+new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020')
+                console.log(date.format('YYYY-MM-DD'))
                 var now = new Date()
                 now.setHours(0,0,0,0)
                 if(+new Date(date.format('M/D/YYYY')) < now)
                 return true
                 // return (date.day() == 0 || date.day() == 6 || +new Date(date.format('M/D/YYYY')) <= now|| +new Date(date.format('M/D/YYYY')) == +new Date('10/30/2020')|| +new Date(date.format('M/D/YYYY')) == +new Date('10/29/2020'));
-                if(arrValidDates.includes(date.format('YYYY-M-D')))
+                if(arrValidDates.includes(date.format('YYYY-MM-DD')))
                 return false
                 return true
             },
